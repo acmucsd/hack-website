@@ -6,6 +6,10 @@ This is a template for creating documentation with [Nextra](https://nextra.site)
 
 ## Local Development
 
+Prerequisites
+- Node v16.14.0 or higher
+- Yarn
+
 First, run `yarn` to install the dependencies.
 
 Then, run `yarn dev` to start the development server and visit localhost:3000.
