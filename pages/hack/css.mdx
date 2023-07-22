@@ -1,0 +1,134 @@
+# Week 1 CSS
+
+## What is CSS
+
+CSS (Cascading Style Sheets) is a fundamental web technology used to control the presentation 
+and layout of HTML documents. It provides a powerful set of rules and properties that allow 
+developers to customize the appearance of HTML elements, making it an essential tool for building 
+visually appealing and responsive web applications.
+
+## Applying CSS to HTML components
+
+CSS can be applied to HTML components in various ways. Here are some common methods:
+
+### Inline CSS
+
+Inline CSS involves adding styles directly to an HTML element using the "style" attribute. 
+This method is handy for making quick style changes to specific elements, but it's generally 
+not recommended for extensive styling due to its lack of separation between content and presentation.
+
+```html copy showLineNumbers
+<h2 style="color: red; text-align: center;">Come to Hack School next week!</h2>
+```
+
+### Internal CSS
+
+Internal CSS is placed within the `<style>` tags in the `<head>` section of the HTML document. 
+It allows you to define CSS rules that apply only to the specific HTML document.
+
+```html copy showLineNumbers
+<head>
+  <style>
+    h2 {
+      color: red;
+      text-align: center;
+    }
+  </style>
+</head>
+
+<h2>Come to Hack School next week!</h2>
+```
+
+### External CSS
+
+External CSS involves creating a separate CSS file with all the styles and linking it 
+to the HTML document using the `<link>` tag. This method promotes better code organization 
+and maintainability, as you can reuse the same stylesheet across multiple HTML files.
+
+styles.css:
+```css copy showLineNumbers
+h2 {
+    color: red;
+    text-align: center;
+}
+```
+
+index.html:
+```html copy showLineNumbers
+<head>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<h2>Come to Hack School next week!</h2>
+```
+
+### Selectors
+
+* Universal Selector: Selects all HTML elements. The universal selector is represented by an asterisk `*`.
+* Element Selector: Selects HTML elements by their tag name. For example, the p selector targets all `<div>` elements.
+
+styles.css:
+```css copy showLineNumbers
+div {
+    padding: 32px;
+}
+```
+
+index.html:
+```html copy showLineNumbers
+<div>
+    <p> The padding of this div is 32 px!</p>
+</div>
+<div>
+    <h3> The padding of this div is also 32 px!</p>
+</div>
+```
+
+* Class Selector: Selects HTML elements by their class attribute. Class selectors start with a dot `.`, 
+followed by the class name. For example, the .important selector targets all elements with the class "important."
+* ID Selector: Selects a single HTML element by its ID attribute. ID selectors start with a hash `#`, 
+followed by the ID name. For example, the #special selector targets the element with the ID "special."
+
+styles.css:
+```css copy showLineNumbers
+#navbar {
+    background-color: black;
+    font-size: 16px;
+}
+
+.blue {
+    color: blue;
+}
+```
+
+index.html:
+```html copy showLineNumbers
+<div id="navbar">
+    <ul>
+        <li class="blue"><a href="home.asp">Blue Home</a></li>
+        <li><a href="contact.asp">Contact</a></li>
+        <li class="blue"><a href="about.asp">Blue About</a></li>
+    </ul>
+</div>
+```
+
+## Common properties that CSS can modify 
+
+- **Color**: `color` - Changing the text color, background color, or border color of elements.
+- **Font**: `font-family`, `font-size`, `font-weight`, `font-style`, etc. - Modifying the font family, size, weight, style, and other typography-related properties.
+- **Margins**: `margin` - Adjusting the space around an element, controlling the gap between elements.
+- **Padding**: `padding` - Adding space inside an element's boundaries, creating space between content and borders.
+- **Borders**: `border`, `border-width`, `border-style`, `border-color` - Styling borders around elements, controlling their width, style (solid, dashed, dotted, etc.), and color.
+- **Width and Height**: `width`, `height` - Specifying the dimensions of an element, allowing control over its size.
+- **Background**: `background-image`, `background-color`, `background-position`, etc. - Setting background images, colors, and positioning for elements.
+- **Text**: `text-align`, `text-decoration`, `text-transform` - Controlling text alignment, text decoration (underline, overline, etc.), and text transformation (uppercase, lowercase, capitalize).
+- **Display**: `display` - Changing how elements are displayed (block, inline, flex, grid, etc.) and how they interact with other elements.
+- **Positioning**: `position`, `top`, `bottom`, `left`, `right` - Controlling the positioning of elements on the page using properties like position, top, bottom, left, right, etc.
+- **Float**: `float` - Floating elements to either the left or right side of their container.
+- **Opacity**: `opacity` - Adjusting the transparency of elements and their content.
+- **Transitions and Animations**: `transition`, `animation` - Applying smooth transitions and animations to elements.
+- **Shadows**: `box-shadow`, `text-shadow` - Adding box shadows or text shadows to elements for visual effects.
+- **List Styles**: `list-style-type`, `list-style-image`, `list-style-position` - Customizing the appearance of lists (unordered and ordered) with various list-style-type properties.
+- **Flexbox and Grid**: `display: flex`, `display: grid`, etc. - Utilizing CSS layout systems like Flexbox and Grid to create responsive and flexible layouts.
+
+## Flexbox Layout
