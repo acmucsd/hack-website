@@ -131,4 +131,91 @@ index.html:
 - **List Styles**: `list-style-type`, `list-style-image`, `list-style-position` - Customizing the appearance of lists (unordered and ordered) with various list-style-type properties.
 - **Flexbox and Grid**: `display: flex`, `display: grid`, etc. - Utilizing CSS layout systems like Flexbox and Grid to create responsive and flexible layouts.
 
+
 ## Flexbox Layout
+
+### Introduction to Flexbox
+
+CSS Flexbox is a powerful layout system used to create flexible and responsive web designs. 
+It provides an intuitive way to arrange elements within a container and control their alignment, 
+distribution, and order.
+
+### Flex Container and Flex Items
+
+A Flex Container is an element to which you apply the CSS property 
+`display: flex;` or `display: inline-flex;`. This makes it a container 
+for Flex Items, which are the child elements within the Flex Container. 
+Flex Items are flexibly arranged inside the container.
+
+import Image from 'next/image'
+
+<Image src="/flex.png" alt="image that explains flex container vs items" width={500} height={500} />
+
+### Main Axis and Cross Axis
+
+Flexbox operates along two axes: the "Main Axis" and the "Cross Axis." 
+The Main Axis represents the primary direction of Flex Items' alignment, 
+and the Cross Axis is perpendicular to it.
+
+### Flex Container Properties
+
+#### 1. `flex-direction`
+
+The `flex-direction` property determines the direction of the Main Axis. It has four possible values:
+- `row`: Flex Items are placed horizontally in a row from left to right (default).
+- `row-reverse`: Flex Items are placed horizontally in a reversed order from right to left.
+- `column`: Flex Items are placed vertically in a column from top to bottom.
+- `column-reverse`: Flex Items are placed vertically in a reversed order from bottom to top.
+
+#### 2. `justify-content`
+
+The `justify-content` property aligns Flex Items along the Main Axis. 
+It offers various values to control the spacing between Flex Items:
+- `flex-start`: Items are aligned to the start of the container (default).
+- `flex-end`: Items are aligned to the end of the container.
+- `center`: Items are centered within the container.
+- `space-between`: Items are evenly distributed with the first item at the start and the last item at the end.
+- `space-around`: Items are evenly distributed with equal space around them.
+- `space-evenly`: Items are evenly distributed with equal space around and at the start and end.
+
+#### 3. `align-items`
+
+The `align-items` property aligns Flex Items along the Cross Axis. It has the following values:
+- `flex-start`: Items are aligned to the start of the container.
+- `flex-end`: Items are aligned to the end of the container.
+- `center`: Items are centered along the Cross Axis.
+- `baseline`: Items are aligned based on their text baselines.
+- `stretch`: Items are stretched to fill the container along the Cross Axis (default).
+
+#### 4. `flex-wrap`
+
+The `flex-wrap` property determines whether Flex Items should wrap to a new line when 
+they exceed the Flex Container's width. It has three possible values:
+- `nowrap`: Items are displayed in a single line (default).
+- `wrap`: Items wrap to a new line as necessary.
+- `wrap-reverse`: Items wrap to a new line in reverse order.
+
+#### 5. Quick speed hack
+
+The `flex-flow` property is a shorthand property for setting both the flex-direction and flex-wrap properties.
+
+```css copy showLineNumbers
+.flex-container {
+  display: flex;
+  flex-flow: row wrap;
+}
+```
+
+### Flex Item Properties
+
+#### 1. `flex-grow`, `flex-shrink`, and `flex-basis`
+
+These properties are collectively known as the "flex shorthand." They control the growth, shrinking, and initial size of Flex Items.
+- `flex-grow`: Determines how much an item should grow relative to other items when extra space is available.
+- `flex-shrink`: Determines how much an item should shrink relative to other items when there is not enough space.
+- `flex-basis`: Specifies the initial size of an item before any available space is distributed.
+
+#### 2. `order`
+
+The `order` property allows you to change the order in which Flex Items appear within the 
+Flex Container without changing their source order in the HTML.
