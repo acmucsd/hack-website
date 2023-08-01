@@ -31,7 +31,7 @@ html[class~='light'] {
 html,
 body,
 kbd {
-  font-family: 'DM Sans', 'sans-serif';
+  font-family: 'DM Sans', 'Helvetica Neue', 'Helvetica', 'Arial', 'sans-serif';
   -webkit-font-smoothing: 'antialiased';
 }
 
