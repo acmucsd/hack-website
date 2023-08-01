@@ -16,7 +16,6 @@ const config: DocsThemeConfig = {
       titleTemplate: '%s',
     };
   },
-  primaryHue: 30,
   footer: {
     text: 'ACM Hack is so cool!',
   },
