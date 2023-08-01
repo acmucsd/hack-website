@@ -1,6 +1,6 @@
 :root {
   --docs-accent-color: #f9a857;
-  --docs-accent-color-opacity: #f9a85760;
+  --docs-accent-color-opacity: #f9a85795;
   --docs-accent-color-link: #f9a857;
   --docs-light-bg: #e5e5e560;
   --docs-light-bg-hover: #d0d0d060;
@@ -51,16 +51,6 @@ aside {
   top: calc(7rem + 4px) !important;
 }
 
-.nextra-nav-container nav {
-  box-sizing: border-box;
-  padding: 0 2.5rem;
-}
-
-.nextra-sidebar-container {
-  box-sizing: border-box;
-  padding-left: 1rem;
-}
-
 .nextra-toc {
   padding-right: 1rem;
 }
@@ -68,10 +58,6 @@ aside {
 @media (max-width: 640px) {
   .nextra-nav-container {
     padding: 0;
-  }
-
-  .nextra-nav-container nav {
-    padding: 0 2rem;
   }
 
   aside {
