@@ -1,5 +1,5 @@
 import React from 'react';
-import { DocsThemeConfig } from 'nextra-theme-docs';
+import { DocsThemeConfig, Link } from 'nextra-theme-docs';
 import { useRouter } from 'next/router';
 import Logo from './components/Logo';
 
@@ -25,6 +25,7 @@ const config: DocsThemeConfig = {
   sidebar: {
     toggleButton: true,
   },
+  docsRepositoryBase: 'https://github.com/acmucsd/nextra-docs/blob/main',
 };
 
 export default config;

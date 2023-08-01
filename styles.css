@@ -23,8 +23,8 @@ html[class~='light'] {
   --nextra-primary-hue-saturation: 93%;
   --nextra-primary-hue-lightness: 66%;
   --docs-accent-color: #f9a857;
-  --docs-dark-bg: #e5e5e560;
 
+  --docs-dark-bg: #e5e5e560;
   --docs-secondary-bg: var(--docs-light-bg);
   --docs-secondary-bg-hover: var(--docs-light-bg-hover);
 }
