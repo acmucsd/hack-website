@@ -1,6 +1,3 @@
 {
-  "*": {
-    "type": "page",
-    "display": "hidden"
-  }
+  "index": "ACM Hack"
 }

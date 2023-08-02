@@ -1,11 +1,23 @@
 import React from 'react';
-import { DocsThemeConfig } from 'nextra-theme-docs';
+import { DocsThemeConfig, Link } from 'nextra-theme-docs';
+import { useRouter } from 'next/router';
+import Logo from './components/Logo';
 
 const config: DocsThemeConfig = {
-  logo: <span>ACM Blog</span>,
-  docsRepositoryBase: 'https://github.com/shuding/nextra-docs-template',
+  logo: <Logo />,
+  useNextSeoProps() {
+    const { asPath } = useRouter();
+    if (asPath !== '/') {
+      return {
+        titleTemplate: '%s – ACM Hack',
+      };
+    }
+    return {
+      titleTemplate: '%s',
+    };
+  },
   footer: {
-    text: 'ACM Blog is so cool!',
+    text: 'ACM Hack is so cool!',
   },
   search: {
     placeholder: 'Search',
@@ -13,6 +25,7 @@ const config: DocsThemeConfig = {
   sidebar: {
     toggleButton: true,
   },
+  docsRepositoryBase: 'https://github.com/acmucsd/hack-website/blob/main',
 };
 
 export default config;
