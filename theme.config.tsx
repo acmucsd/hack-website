@@ -25,7 +25,7 @@ const config: DocsThemeConfig = {
   sidebar: {
     toggleButton: true,
   },
-  docsRepositoryBase: 'https://github.com/acmucsd/nextra-docs/blob/main',
+  docsRepositoryBase: 'https://github.com/acmucsd/hack-website/blob/main',
 };
 
 export default config;

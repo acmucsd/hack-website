@@ -10,14 +10,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/acmucsd/nextra-docs.git"
+    "url": "git+https://github.com/acmucsd/hack-website.git"
   },
   "author": "Shu Ding <g@shud.in>",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/acmucsd/nextra-docs/issues"
+    "url": "https://github.com/acmucsd/hack-website/issues"
   },
-  "homepage": "https://github.com/acmucsd/nextra-docs#readme",
+  "homepage": "https://github.com/acmucsd/hack-website#readme",
   "dependencies": {
     "next": "^13.0.6",
     "nextra": "latest",
