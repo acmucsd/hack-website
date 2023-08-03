@@ -2,7 +2,7 @@
 import React from 'react';
 import { DocsThemeConfig, useConfig } from 'nextra-theme-docs';
 import { useRouter } from 'next/router';
-import Logo from './assets/Logo';
+import Logo from './public/Logo';
 
 const config: DocsThemeConfig = {
   logo: <Logo />,
@@ -24,7 +24,7 @@ const config: DocsThemeConfig = {
 
         <title>{title}</title>
         <meta name="description" content={description} />
-        <link rel="shortcut icon" href="./assets/favicon.ico" />
+        <link rel="shortcut icon" href="/favicon.ico" />
 
         {/* link sharing data */}
 
