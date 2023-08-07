@@ -53,7 +53,7 @@ const config: DocsThemeConfig = {
     };
   },
   footer: {
-    text: 'ACM Hack is so cool!',
+    text: 'Made with 🧡 by ACM Hack!',
   },
   search: {
     placeholder: 'Search',
