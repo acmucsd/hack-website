@@ -16,6 +16,7 @@
     "no-shadow": "off",
     "react/require-default-props": "off",
     "jsx-a11y/control-has-associated-label": "off",
+    "camelcase": "off",
     "jsx-a11y/anchor-is-valid": [
       "error",
       {

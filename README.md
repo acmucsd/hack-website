@@ -2,7 +2,8 @@
 
 This is a template for creating documentation with [Nextra](https://nextra.site).
 
-[**Live Demo (https://acmurl.com/nextra-docs)**](https://acmurl.com/nextra-docs)
+
+[**Live Demo (https://hack-website-acmucsd.vercel.app/)**](https://hack-website-acmucsd.vercel.app/)
 
 ## Local Development
 
