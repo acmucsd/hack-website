@@ -1,6 +1,7 @@
 {
   "index": "Welcome to ACM Hack School!",
   "logistics": "Hack School Logistics",
+  "git-github": "Git/GitHub",
   "css": "Week 1: HTML & CSS",
   "js": "Week 2: JavaScript"
 }
