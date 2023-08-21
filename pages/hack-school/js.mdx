@@ -1,6 +1,6 @@
-# Week 2 JavaScript
+# Week 2: JavaScript
 
-## Introduction to JavaScript
+## What is JavaScript?
 JavaScript is a versatile programming language used for adding interactivity, 
 dynamic content, and logic to web pages. It enables developers to create engaging user 
 experiences and enhance the functionality of web applications.
@@ -51,7 +51,7 @@ var count = 10;
 |:---------:|:---------:|:---------:|:---------:|
 |scope      |   Block   |   Block   |globally/locally|
 |updated    |   ✅      |   ❌     |   ✅      |
-|redecalred |   ❌      |   ❌     |   ✅      |
+|redeclared |   ❌      |   ❌     |   ✅      |
 
 
 ### let
@@ -62,7 +62,7 @@ let greeting = "say Hello instead";
 // error: Identifier 'greeting' has already been declared
 
 if (true) {
-    let freeting = "say Hello instead";
+    let greeting = "say Hello instead";
     console.log(greeting); // "say Hello instead"
     //no error because differet scope
 }
@@ -78,7 +78,7 @@ const greeting = "say Hi";
 greeting = "hello";
 // error: Assignement to constant variable
 
-constant greeting = "hey";
+const greeting = "hey";
 // error: Identifier 'greeting' has already been declared
 
 //can update object properties
@@ -100,7 +100,7 @@ frunction newFucntion(){
 }
 
 console.log(hello); // error: hello is not defined
-console.log(greety); // hey
+console.log(greeter); // hey
 
 var greety = "hi";
 console.log(greety); // hi
@@ -209,13 +209,13 @@ const organization = {
 
 Accessing properties (dot notation):
 ```javascript copy showLineNumbers
-const myNmae = organization.name;
+const myName = organization.name;
 console.log(myName);; // prints "ACM UCSD"
 ```
 
 Accessing properties (bracket notation):
 ```javascript copy showLineNumbers
-const myNmae = organization[age];
+const myName = organization[age];
 console.log(myName);; // prints 5
 ```
 
@@ -286,7 +286,7 @@ const numArr = [1, 2, 3, 4];
 const strArr = ["ACM", "UCSD", "HACK"];
 const diffArr = [8, "JS Workshop", true, 16.16];
 ```
-### Common array operations:
+### Common Array Operations:
 1. Accessing Elements:
 Use index notation to access individual elements in an array.
 ```javascript copy showLineNumbers

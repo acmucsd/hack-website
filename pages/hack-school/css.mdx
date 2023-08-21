@@ -1,13 +1,13 @@
-# Week 1 CSS
+# Week 1: CSS
 
-## What is CSS
+## What is CSS?
 
 CSS (Cascading Style Sheets) is a fundamental web technology used to control the presentation 
 and layout of HTML documents. It provides a powerful set of rules and properties that allow 
 developers to customize the appearance of HTML elements, making it an essential tool for building 
 visually appealing and responsive web applications.
 
-## Applying CSS to HTML components
+## Applying CSS to HTML Components
 
 CSS can be applied to HTML components in various ways. Here are some common methods:
 
@@ -112,29 +112,80 @@ index.html:
 </div>
 ```
 
-## Common properties that CSS can modify 
+## Common Properties that CSS can Modify 
 
 - **Color**: `color` - Changing the text color, background color, or border color of elements.
+```html copy showLineNumbers
+<p style="color: blue;">Text with blue color</p>
+```
 - **Font**: `font-family`, `font-size`, `font-weight`, `font-style`, etc. - Modifying the font family, size, weight, style, and other typography-related properties.
+```html copy showLineNumbers
+<p style="font-family: Arial, sans-serif; font-size: 16px; font-weight: bold;">Bold Arial 16px text</p>
+```
 - **Margins**: `margin` - Adjusting the space around an element, controlling the gap between elements.
+```html copy showLineNumbers
+<div style="margin: 20px;">Content with a 20px margin</div>
+```
 - **Padding**: `padding` - Adding space inside an element's boundaries, creating space between content and borders.
+```html copy showLineNumbers
+<div style="padding: 10px;">Content with 10px padding</div>
+```
 - **Borders**: `border`, `border-width`, `border-style`, `border-color` - Styling borders around elements, controlling their width, style (solid, dashed, dotted, etc.), and color.
+```html copy showLineNumbers
+<div style="border: 1px solid black; width: 100px; height: 50px;">Box with black 1px solid border</div>
+```
 - **Width and Height**: `width`, `height` - Specifying the dimensions of an element, allowing control over its size.
+```html copy showLineNumbers
+<div style="width: 200px; height: 100px; background-color: lightgray;"></div>
+```
 - **Background**: `background-image`, `background-color`, `background-position`, etc. - Setting background images, colors, and positioning for elements.
+```html copy showLineNumbers
+<div style="width: 200px; height: 100px; background-color: lightgray;"></div>
+```
 - **Text**: `text-align`, `text-decoration`, `text-transform` - Controlling text alignment, text decoration (underline, overline, etc.), and text transformation (uppercase, lowercase, capitalize).
+```html copy showLineNumbers
+<p style="text-align: center; text-decoration: underline; text-transform: uppercase;">Centered, underlined, uppercase text</p>
+```
 - **Display**: `display` - Changing how elements are displayed (block, inline, flex, grid, etc.) and how they interact with other elements.
+```html copy showLineNumbers
+<div style="display: flex; justify-content: space-between;">
+  <div>Item 1</div>
+  <div>Item 2</div>
+</div>
+```
 - **Positioning**: `position`, `top`, `bottom`, `left`, `right` - Controlling the positioning of elements on the page using properties like position, top, bottom, left, right, etc.
+```html copy showLineNumbers
+<div style="position: absolute; top: 50px; left: 100px;">Positioned at 50px from top and 100px from left</div>
+```
 - **Float**: `float` - Floating elements to either the left or right side of their container.
+```html copy showLineNumbers
+<img src="image.jpg" style="float: left; margin-right: 10px;" alt="Floating image">
+```
 - **Opacity**: `opacity` - Adjusting the transparency of elements and their content.
+```html copy showLineNumbers
+<div style="opacity: 0.7;">Semi-transparent content</div>
+```
 - **Transitions and Animations**: `transition`, `animation` - Applying smooth transitions and animations to elements.
+```html copy showLineNumbers
+<button style="transition: background-color 0.3s ease;">Hover me</button>
+```
 - **Shadows**: `box-shadow`, `text-shadow` - Adding box shadows or text shadows to elements for visual effects.
-- **List Styles**: `list-style-type`, `list-style-image`, `list-style-position` - Customizing the appearance of lists (unordered and ordered) with various list-style-type properties.
-- **Flexbox and Grid**: `display: flex`, `display: grid`, etc. - Utilizing CSS layout systems like Flexbox and Grid to create responsive and flexible layouts.
+```html copy showLineNumbers
+<div style="box-shadow: 2px 2px 5px gray; text-shadow: 1px 1px 2px black;">Shadowed box and text</div>
+```
+- **List Styles**: `list-style-type`, `list-style-image`, `list-style-position` 
+```html copy showLineNumbers
+<ul style="list-style-type: square;">
+  <li>Item 1</li>
+  <li>Item 2</li>
+</ul>
+```
+- **Flexbox and Grid**: `display: flex`, `display: grid`, etc. - Utilizing CSS layout systems like Flexbox and Grid to create responsive and flexible layouts (see section below).
 
 
 ## Flexbox Layout
 
-### Introduction to Flexbox
+### What is Flexbox?
 
 CSS Flexbox is a powerful layout system used to create flexible and responsive web designs. 
 It provides an intuitive way to arrange elements within a container and control their alignment, 
@@ -192,7 +243,7 @@ they exceed the Flex Container's width. It has three possible values:
 - `wrap`: Items wrap to a new line as necessary.
 - `wrap-reverse`: Items wrap to a new line in reverse order.
 
-#### 5. Quick speed hack
+#### 5. Quick Speed Hack
 
 The `flex-flow` property is a shorthand property for setting both the flex-direction and flex-wrap properties.
 
@@ -200,6 +251,56 @@ The `flex-flow` property is a shorthand property for setting both the flex-direc
 .flex-container {
   display: flex;
   flex-flow: row wrap;
+}
+```
+
+### Flexbox Example Usage:
+
+Creating the content using index.html:
+```html copy showLineNumbers
+<div class="table">
+  <div class="row header">
+    <div class="cell">Header 1</div>
+    <div class="cell">Header 2</div>
+    <div class="cell">Header 3</div>
+  </div>
+  <div class="row">
+    <div class="cell">Cell 1</div>
+    <div class="cell">Cell 2</div>
+    <div class="cell">Cell 3</div>
+  </div>
+</div>
+```
+
+Now we can style the table cells, area and the rows using Flexbox by adding the
+following code in style.css
+
+Styling the table cells:
+```css copy showLineNumbers
+.cell {
+  width: 100px;
+  padding: 10px;
+  border: 1px black solid;
+  background-color: #f1f1f1;
+}
+```
+Styling the table area:
+```css copy showLineNumbers
+.table {
+  width: 400px;
+  height: 400px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  background-color: #1e90ff;
+}
+```
+Styling the rows:
+```css copy showLineNumbers
+.row {
+  display: flex;
+  flex-direction: row;
 }
 ```
 
@@ -216,3 +317,9 @@ These properties are collectively known as the "flex shorthand." They control th
 
 The `order` property allows you to change the order in which Flex Items appear within the 
 Flex Container without changing their source order in the HTML.
+
+### Games to Learn Flexbox:
+
+[Coding Fantasy](https://codingfantasy.com/games/flexboxadventure/play)
+
+[Flexbox Froggy](https://flexboxfroggy.com/)
