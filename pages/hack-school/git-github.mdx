@@ -8,6 +8,38 @@ Git is a distributed version control system that enables developers to manage co
 
 Version control is essential in software development to track changes, manage collaborative work, and maintain a history of revisions. Without version control, managing code changes becomes complex, error-prone, and challenging to collaborate on. Git offers a structured approach to version control, making it easier to work in teams, track changes, and revert to previous versions if needed.
 
+
+### Git Installation
+
+You can follow this [guide](https://github.com/git-guides/install-git) or follow the instructions below
+
+#### [Windows](https://github.com/git-guides/install-git#install-git-on-windows)
+
+1. Go to this [link](https://git-scm.com/download/win) and click on the blue `Click here to download` at the top of the page. This should download an exe file.
+2. Run the exe file 
+3. It will ask for permission to make changes to your device, select `YES`
+4. Click `Next` then choose installation location (leave as default unless you have a reason not to) then press `Next` again
+5. You will be able to choose many options, leave all the defaults unless you have a reason not to. Click `Next` untill you get the `Install` button, click it.
+6. Then wait for installation and hit `Finish`
+7. Verify that it was correctly installed by opening any command prompt and typing: 
+```sh copy
+git --version
+```
+If everything worked correctly it should print something like this:
+`git version 2.41.0.windows.3`
+
+You now have git installed on your Windows machine!!
+
+#### [Mac](https://github.com/git-guides/install-git#install-git-on-mac)
+
+Most versions of MacOS will already have Git installed, and you can activate it through the terminal with git version. However, if you don't have Git installed, you can install the latest version of Git through this [link](https://git-scm.com/download/mac).
+
+* Verify that it was correctly installed by opening the command prompt "terminal" and typing: 
+```sh copy
+git version
+```
+
+
 ### Key Concepts in Git
 
 #### Repositories
@@ -40,35 +72,6 @@ Merging is the process of integrating changes from one branch into another. Afte
 
 For full documentation for all git commands check this [link](https://git-scm.com/docs/git#_high_level_commands_porcelain) out
 
-### Git Instalation
-
-You can follow this [guide](https://github.com/git-guides/install-git) or follow the instructions below
-
-#### [Windows](https://github.com/git-guides/install-git#install-git-on-windows)
-
-1. Go to this [link](https://git-scm.com/download/win) and click on the blue `Click here to download` at the top of the page. This should download an exe file.
-2. Run the exe file 
-3. It will ask for permission to make changes to your device, select `YES`
-4. Click `Next` then choose installation location (leave as default unless you have a reason not to) then press `Next` again
-5. You will be able to choose many options, leave all the defaults unless you have a reason not to. Click `Next` untill you get the `Install` button, click it.
-6. Then wait for installation and hit `Finish`
-7. Verify that it was correctly installed by opening any command prompt and typing: 
-```sh copy
-git --version
-```
-If everything worked correctly it should print something like this:
-`git version 2.41.0.windows.3`
-
-You now have git installed on your Windows machine!!
-
-#### [Mac](https://github.com/git-guides/install-git#install-git-on-mac)
-
-Most versions of MacOS will already have Git installed, and you can activate it through the terminal with git version. However, if you don't have Git installed, you can install the latest version of Git through this [link](https://git-scm.com/download/mac).
-
-* Verify that it was correctly installed by opening the command prompt "terminal" and typing: 
-```sh copy
-git version
-```
 
 ## What is GitHub?
 
@@ -84,7 +87,7 @@ Pull requests are a core feature of GitHub's collaborative workflow. They allow 
 
 ### Creating a GitHub Account
 
-1. Go to https://github.com/
+1. Go to [github.com](https://github.com)
 2. Click on the `Sign Up` button at the top right
 3. Add your email address
 4. Create a password
@@ -160,13 +163,25 @@ jobs:
 1. Open your command line or terminal.
 2. Navigate to the directory where you want to create the repository.
 3. Use the following commands:
-```sh copy
-git init
-git remote add origin <repository_url>
-git pull origin main
-```
 
-#### Making Commits
+     * Initialize a new Git repository in the current directory by typing
+    ```sh copy
+    git init
+    ```
+    * Add a remote repository named 'origin' and associate it with the provided `<repository_url>`. The `<repository_url>` should be the URL of the remote repository on GitHub where you want to push your code.
+    ```sh copy
+    git remote add origin <repository_url>
+    ```
+    * Pull any existing content from the 'main' branch of the remote repository into your local repository. This ensures that your local repository is synced.
+    ```sh copy
+    git pull origin main
+    ```
+
+
+#### Making Changes and Updating Git
+
+Whether you're working directly on GitHub or using Git on your local machine, making changes, committing them, and pushing those changes is a fundamental aspect of version control. 
+
 
 **Using GitHub:**
 
@@ -175,6 +190,7 @@ git pull origin main
 3. Make your changes directly in the editor.
 4. Scroll down and provide a commit message.
 5. Click 'Commit changes'.
+6. After committing changes on GitHub, they will be automatically pushed to the repository.
 
 **Using Git:**
 
@@ -191,17 +207,7 @@ git add --all
 ```sh copy
 git commit -m "Commit message"
 ```
-
-#### Pushing Changes
-
-**Using GitHub:**
-
-1. After committing changes on GitHub, they will be automatically pushed to the repository.
-
-**Using Git:**
-
-1. After committing your changes, use the following command to push them to a remote repository on GitHub:
-
+4. After committing your changes, use the following command to push them to a remote repository on GitHub:
 ```sh copy
 git push origin main
 ```
