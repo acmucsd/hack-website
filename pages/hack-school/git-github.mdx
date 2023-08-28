@@ -40,9 +40,11 @@ Merging is the process of integrating changes from one branch into another. Afte
 
 For full documentation for all git commands check this [link](https://git-scm.com/docs/git#_high_level_commands_porcelain) out
 
-### Git Instalation (Windows)
+### Git Instalation
 
 You can follow this [guide](https://github.com/git-guides/install-git) or follow the instructions below
+
+#### [Windows](https://github.com/git-guides/install-git#install-git-on-windows)
 
 1. Go to this [link](https://git-scm.com/download/win) and click on the blue `Click here to download` at the top of the page. This should download an exe file.
 2. Run the exe file 
@@ -50,33 +52,99 @@ You can follow this [guide](https://github.com/git-guides/install-git) or follow
 4. Click `Next` then choose installation location (leave as default unless you have a reason not to) then press `Next` again
 5. You will be able to choose many options, leave all the defaults unless you have a reason not to. Click `Next` untill you get the `Install` button, click it.
 6. Then wait for installation and hit `Finish`
-7. Veriffy that it was correctly installed by opening any command prompt and typing: 
+7. Verify that it was correctly installed by opening any command prompt and typing: 
 ```sh copy
 git --version
 ```
-If everythting worked correctly it should print something like this:
+If everything worked correctly it should print something like this:
 `git version 2.41.0.windows.3`
 
 You now have git installed on your Windows machine!!
 
+#### [Mac](https://github.com/git-guides/install-git#install-git-on-mac)
+
+Most versions of MacOS will already have Git installed, and you can activate it through the terminal with git version. However, if you don't have Git installed, you can install the latest version of Git through this [link](https://git-scm.com/download/mac).
+
+* Verify that it was correctly installed by opening the command prompt "terminal" and typing: 
+```sh copy
+git version
+```
+
 ## What is GitHub?
 
 GitHub is a web-based platform built on top of Git. It provides an interface for hosting and collaborating on Git repositories. GitHub offers additional features, such as issue tracking, project management, and social interaction among developers.
+
+### Forking and Cloning
+
+GitHub allows users to fork repositories, creating their own copy. Forks are often used to experiment with changes without affecting the original project. Cloning a repository means copying it from GitHub to your local machine, enabling you to work on code locally.
+
+### Pull Requests
+
+Pull requests are a core feature of GitHub's collaborative workflow. They allow developers to propose changes and improvements to a repository. After creating a pull request, other team members review the changes, provide feedback, and approve the merge if everything looks good.
 
 ### Creating a GitHub Account
 
 1. Go to https://github.com/
 2. Click on the `Sign Up` button at the top right
 3. Add your email address
-4. Create a Password
-5. Choose your Username
+4. Create a password
+5. Choose your username
 6. Choose if you want updates and announcements
 7. Play the game to verify that you are human
 8. Hit the `Create Account` button
 9. Verify email with the code sent to your inbox and input it
 10. You now have your own GitHub Account!!
 
+
+### GitHub Actions
+
+GitHub Actions is an automation tool provided by GitHub that allows you to define and automate your software development workflows. With GitHub Actions, you can automate tasks like building, testing, and deploying your code directly from your GitHub repository.
+
+#### Setting Up a Basic Workflow
+
+To set up a basic GitHub Actions workflow:
+
+1. On your repository's GitHub page, navigate to the 'Actions' tab.
+2. Click the 'New workflow' button or select an existing workflow template.
+3. Choose a workflow template or start with a blank file.
+4. Define the workflow using YAML syntax. This includes specifying triggers, jobs, steps, and more.
+
+Example Workflow YAML:
+```yaml copy
+name: CI/CD Pipeline
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v2
+
+    - name: Set up Node.js
+      uses: actions/setup-node@v2
+      with:
+        node-version: '14'
+
+    - name: Install dependencies
+      run: npm install
+
+    - name: Run tests
+      run: npm test
+```
+
+1. Commit the workflow file to your repository.
+2. GitHub Actions will automatically execute the defined workflow when the specified triggers are met.
+
+
 ## Git/GitHub Workflow
+
+![git/github flow](pages/hack-school/github_flow.png)
 
 #### Creating a Repository
 
