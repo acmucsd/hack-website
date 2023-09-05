@@ -14,6 +14,7 @@ const Typewriter = ({ text, delay }) => {
 
       return () => clearTimeout(timeout);
     }
+    return undefined;
   }, [currentIndex, delay, text]);
 
   return <h6 className={styles.landing_caption}>{currentText}</h6>;
