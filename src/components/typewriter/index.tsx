@@ -1,7 +1,12 @@
 import { useState, useEffect } from 'react';
 import styles from './style.module.css';
 
-const Typewriter = ({ text, delay }) => {
+interface TypewriterProps {
+  text: string;
+  delay: number;
+}
+
+const Typewriter: React.FC<TypewriterProps> = ({ text, delay }) => {
   const [currentText, setCurrentText] = useState('');
   const [currentIndex, setCurrentIndex] = useState(0);
 

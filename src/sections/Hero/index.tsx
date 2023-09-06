@@ -4,10 +4,17 @@ import Typewriter from '../../components/typewriter';
 import leftside from '../../../public/assets/left_diamonds.svg';
 import rightside from '../../../public/assets/right_diamonds.svg';
 import styles from './style.module.css';
+import aboutStyles from '../About/style.module.css';
 
 const Hero: React.FC = () => {
   const scrollToInfo: () => void = () => {
-    document.getElementsByClassName('about')[0]?.scrollIntoView({ behavior: 'smooth' });
+    const navbarHeight = 115;
+    const element = document.getElementsByClassName(aboutStyles.about)[0];
+    const elementTop = element.getBoundingClientRect().top + window.scrollY;
+    window.scrollTo({
+      top: elementTop - navbarHeight,
+      behavior: 'smooth',
+    });
   };
   return (
     <div className={styles.hero}>
