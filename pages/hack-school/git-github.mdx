@@ -11,48 +11,33 @@ Version control is essential in software development to track changes, manage co
 
 ### Git Installation
 
-You can follow this [guide](https://github.com/git-guides/install-git) or follow the instructions below
+You can follow this [guide](https://github.com/git-guides/install-git) or follow the instructions below.
 
 #### [Windows](https://github.com/git-guides/install-git#install-git-on-windows)
 
-1. Go to this [link](https://git-scm.com/download/win) and click on the blue `Click here to download` at the top of the page. This should download an exe file.
-2. Run the exe file 
-3. It will ask for permission to make changes to your device, select `YES`
-4. Click `Next` then choose installation location (leave as default unless you have a reason not to) then press `Next` again
-5. You will be able to choose many options, leave all the defaults unless you have a reason not to. Click `Next` untill you get the `Install` button, click it.
-6. Then wait for installation and hit `Finish`
+1. Go to this [link](https://git-scm.com/download/win) and click on the blue `Click here to download` at the top of the page. This should download an executable file.
+2. Run the executable file. 
+3. It will ask for permission to make changes to your device; select `YES`.
+4. Click `Next`, then choose installation location (leave as default unless you have a reason not to). Again, press `Next`.
+5. You will be able to choose many options, but leave all the defaults unless you have a reason not to. Click `Next` until you get the `Install` button, then click it.
+6. Then wait for installation and hit `Finish`.
 7. Verify that it was correctly installed by opening any command prompt and typing: 
 ```sh copy
 git version
 ```
-If everything worked correctly it should print something like this:
+If everything worked correctly it should print something like
 `git version 2.41.0.windows.3`
 
-You now have git installed on your Windows machine!!
+You now have Git installed on your Windows machine!!
 
 #### [Mac](https://github.com/git-guides/install-git#install-git-on-mac)
 
-Most versions of MacOS will already have Git installed, and you can activate it through the terminal with git version. However, if you don't have Git installed, you can install the latest version of Git through this [link](https://git-scm.com/download/mac).
+Most versions of MacOS will already have Git installed with XCode, and you can activate it through the terminal with `git version`. If you don't have Git installed, you can install the latest version of Git through this [link](https://git-scm.com/download/mac).
 
 * Verify that it was correctly installed by opening the command prompt "terminal" and typing: 
 ```sh copy
 git version
 ```
-
-### What is GitHub Desktop?
-
-GitHub Desktop is a user-friendly graphical interface for managing Git repositories and collaborating on GitHub projects. It simplifies many of the Git commands and operations, making version control more accessible.
-
-#### Installing GitHub Desktop
-
-1. Visit the GitHub Desktop website (https://desktop.github.com/) and download the installer for your operating system.
-2. Run the installer and follow the on-screen instructions to install GitHub Desktop.
-3. After installation, launch GitHub Desktop.
-
-#### Authenticating with Your GitHub Account
-
-1. When you first launch GitHub Desktop, you'll be prompted to sign in with your GitHub account. If you don't have one, you can create one for free by following [these instructions](http://localhost:3000/hack-school/git-github#creating-a-github-account).
-2. After signing in, GitHub Desktop will link to your GitHub account, allowing you to access and manage your repositories.
 
 
 ### Key Concepts in Git
@@ -74,7 +59,7 @@ Branching allows developers to create separate lines of development within a rep
 
 1. The main or master branch, should always be the **stable version** of your project. 
 
-2. You decide to add a new feature, so you create a feature branch named `your-name/feature-x`
+2. You decide to add a new feature, so you create a feature branch named `your-name/feature-x`.
 
 3. While you're working on 'feature-x,' your colleague starts working on another feature, 'feature-y,' on a separate branch `colleague-name/feature-y`. Each of you can make changes to your respective branches without affecting the main branch.
 
@@ -91,7 +76,7 @@ Merging is the process of integrating changes from one branch into another. Afte
 1. `git init`: Initializes a new Git repository.
 2. `git clone <repository>`: Creates a local copy of a remote repository.
 3. `git add <file>`: Stages changes for commit.
-4. `git add --all`: Stages all modified files
+4. `git add --all`: Stages all modified files.
 5. `git commit -m "message"`: Commits staged changes with a message.
 6. `git pull`: Fetches and merges changes from a remote repository.
 7. `git push`: Pushes local commits to a remote repository.
@@ -99,7 +84,7 @@ Merging is the process of integrating changes from one branch into another. Afte
 9. `git checkout <branch>`: Switches into a different branch.
 10. `git merge <branch>`: Merges changes from one branch into the current branch.
 
-For full documentation for all git commands check this [link](https://git-scm.com/docs/git#_high_level_commands_porcelain) out
+For full documentation of all Git commands, check this [link](https://git-scm.com/docs/git#_high_level_commands_porcelain) out.
 
 
 ## What is [Github](https://github.com)?
@@ -138,15 +123,15 @@ When it comes to merging changes in GitHub, you have several options:
 
 ### Creating a GitHub Account
 
-1. Go to [github.com](https://github.com)
-2. Click on the `Sign Up` button at the top right
-3. Add your email address
-4. Create a password
-5. Choose your username
-6. Choose if you want updates and announcements
-7. Play the game to verify that you are human
-8. Hit the `Create Account` button
-9. Verify email with the code sent to your inbox and input it
+1. Go to [github.com](https://github.com).
+2. Click on the `Sign Up` button at the top right.
+3. Add your email address.
+4. Create a password.
+5. Choose your username.
+6. Choose if you want updates and announcements.
+7. Play the game to verify that you are human.
+8. Hit the `Create Account` button.
+9. Verify email with the code sent to your inbox and input it.
 10. You now have your own GitHub Account!!
 
 
@@ -214,6 +199,20 @@ jobs:
 
 * `run:` Executes a shell command as part of the step. In this workflow, it's used to run npm commands for checking out code, installing dependencies, and running tests.
 
+### GitHub Desktop
+
+GitHub Desktop is a user-friendly graphical interface for managing Git repositories and collaborating on GitHub projects. It simplifies many of the Git commands and operations, making version control more accessible.
+
+#### Installing GitHub Desktop
+
+1. Visit the GitHub Desktop website (https://desktop.github.com/) and download the installer for your operating system.
+2. Run the installer and follow the on-screen instructions to install GitHub Desktop.
+3. After installation, launch GitHub Desktop.
+
+#### Authenticating with Your GitHub Account
+
+1. When you first launch GitHub Desktop, you'll be prompted to sign in with your GitHub account. If you don't have one, you can create one for free by following [these instructions](http://localhost:3000/hack-school/git-github#creating-a-github-account).
+2. After signing in, GitHub Desktop will link to your GitHub account, allowing you to access and manage your repositories.
 
 ## Git/GitHub Workflow
 
@@ -259,7 +258,7 @@ In Git, you manage two versions of your project: the local and remote repositori
     ```sh copy
     git remote add origin <repository_url>
     ```
-    * Pull any existing content from the 'main' branch of the remote repository into your local repository. This ensures that your local repository is synced with the version on Github.
+    * Pull any existing content from the 'main' branch of the remote repository into your local repository. This ensures that your local repository is synced with the version on GitHub.
     ```sh copy
     git pull origin main
     ```
@@ -285,7 +284,7 @@ In Git, you manage two versions of your project: the local and remote repositori
 ```sh copy
 git add <filename>
 ```
-Or use `git add --all` to stage all changed files
+Or use `git add --all` to stage all changed files:
 ```sh copy
 git add --all
 ```
