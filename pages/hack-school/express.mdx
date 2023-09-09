@@ -1,8 +1,8 @@
-# Week 4: Express.js
+# Week 4: Building APIs with Express.js
 
 ## What is Express?
-Express is a web application framework for Node.js that enables developers to start a local server and develop API routes. Express does
-a good job of abstracting away the complexity of serving a web application.
+[Express](https://expressjs.com) is a web application framework for Node.js that enables developers to start a local server and develop API routes. Express does
+a good job of abstracting away the complexity of serving a web application. Before we explore Express, some background on the Internet and APIs is helpful!
 
 ## Background on the Internet
 
@@ -57,7 +57,33 @@ attemping to `GET` a movie from Netflix's servers. While both requests are attem
 API stands for **A**pplication **P**rogramming **I**nterface. An API is simply a toolkit for a client to interact with. Every server is different and accomplishes different goals 
 through the use of this toolkit. APIs provide a framework and standard for how clients can interact with any given server.
 
-Generally, APIs provide API Routes, which are specific routes on a server that HTTP requests can be sent to.
+A good analogy for APIs is that of a waiter in a restaurant. The tables and dining area is the client, where the customers send requests for food to the kitchen (Requests), which is the backend. The kitchen is responsible for creating
+the food and sending it back to the dining area (Responses). How is this communication done? Through the waiters and waitresses! APIs are similar to waiters and waitresses, since they're the middlemen responsible for requests making it to the back-end, and 
+responses making it back to the client.
+
+![image here]()
+
+Generally, APIs provide API Routes, which are specific routes on a server that HTTP requests can be sent to. This allows clients to figure out how to interact with a particular server and request
+a certain set of resources. API routes have the following syntax:
+
+```
+http://localhost:5000/api/purchases
+
+```
+
+The same API route can be used for various HTTP methods. For example, a GET request sent to this route might return all purchases, while a POST
+request sent to this route (with a request body) would post a new purchase.
+
+Let's see this in action with the Spotify API. Many enterprise APIs have comprehensive documentation, allowing developers to easily develop applications that can consume these APIs.
+
+
+
+## Building our own APIs with Express
+
+Now that we have a background on what APIs are and how we interact with them, we can discuss how Express enables developers to build their own APIs.
+
+
+
 
 
 
