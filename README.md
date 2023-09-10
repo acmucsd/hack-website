@@ -10,8 +10,7 @@ This project was bootstrapped with [Nextra](https://nextra.site) and deployed wi
 
 ## Contributing
 
-We welcome any contributions from the ACM community! If you have ideas for new content to add, feel free to contact us in the [ACM Discord](https://acmurl.com/discord) or [ACM Hack Discord](https://acmurl.com/hack-discord) by pinging the `@Hack` role, or directly opening up a pull request. If you notice any content errors or have suggestions
-for improvements, feel free to raise an issue on our repository. Make sure to follow the instructions below to set up your local environment for development.
+We welcome any contributions from the ACM community! If you have ideas for new content to add, feel free to contact us in the [ACM Discord](https://acmurl.com/discord) or [ACM Hack Discord](https://acmurl.com/hack-discord) by pinging the `@Hack` role, or directly opening up a pull request. If you notice any content errors or have suggestions for improvements, feel free to raise an issue on our repository. Make sure to follow the instructions below to set up your local environment for development.
 
 Prerequisites: 
 - Node v16.14.0 or higher
