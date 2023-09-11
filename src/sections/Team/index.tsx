@@ -7,7 +7,7 @@ const Team: React.FC = () => {
       <h3 className={styles.team}>Team Section</h3>
       <TeamCard />
     </div>
-  )
+  );
 };
 
 export default Team;

@@ -34,16 +34,12 @@ const TeamCard: React.FC = () => {
       imageUrl: 'assets/alexis_pfp.PNG',
     },
   ];
-
-
   return (
     <div className={styles.team}>
       {teamMembers.map((member, index) => (
-        <div key={index} className={styles.card}>
+        <div key={member.name} className={styles.card}>
           <div className={styles.cardOutline}>
-            <img src={member.imageUrl} 
-              alt={member.name} 
-            />
+            <img src={member.imageUrl} alt={member.name} />
             <h4>{member.name}</h4>
             <p>{member.position}</p>
             <p>{member.email}</p>
