@@ -29,9 +29,9 @@ const Hero: React.FC = () => {
             delay={60}
           />
         </div>
-        <div className={styles.arrow}>
+        <div className={styles.arrow} role="presentation" onClick={scrollToInfo}>
           <h6 className={styles.scroll_text}>Learn More</h6>
-          <FaChevronDown className={styles.scroll} onClick={scrollToInfo} />
+          <FaChevronDown className={styles.scroll} />
         </div>
       </div>
     </div>
