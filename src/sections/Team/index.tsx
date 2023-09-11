@@ -1,7 +1,13 @@
 import styles from './style.module.css';
+import TeamCard from '../../components/team-card/index';
 
 const Team: React.FC = () => {
-  return <h3 className={styles.team}>Team Section</h3>;
+  return (
+    <div>
+      <h3 className={styles.team}>Team Section</h3>
+      <TeamCard />
+    </div>
+  )
 };
 
 export default Team;
