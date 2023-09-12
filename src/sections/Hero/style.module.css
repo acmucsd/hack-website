@@ -5,57 +5,46 @@
     overflow: hidden;
 }
 
-/* Landing Card Icons */
 .backdrop {
     display: flex;
     align-items: center;
     text-align: center;
-    height: 42em;
-    max-height: 100vh;
-    position: relative;
+    height: 37em;
+    max-height: 75vh;
 }
+
+/* Landing Card Icons */
 
 .backdrop_left {
     z-index: 0;
-    overflow: hidden;
-    position: absolute;
     max-width: 35%;
+    margin-top: 5em;
 }
 
 .backdrop_right {
     z-index: 0;
-    right: 0px;
-    overflow: hidden;
-    position: absolute;
-    max-width: 35%;
+    max-width: 25%;
 }
 
 /* Landing Card Text */
 
 .landing_text {
     z-index: 1;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    position: relative;
-    width: 100vw;
-    margin-left: 20%;
-    margin-bottom: 10%;
+    flex-grow: 1;
+    margin-left: 3em;
+    padding: 1em;
 }
 
 .landing_title {
     font-weight: 900;
     font-size: 5em;
-    margin-bottom: 0.5em;
 }
 
 /* Landing Card Scroll Down */
 
 .arrow {
     z-index: 2;
-    position: absolute;
-    left: 46%;
-    bottom: 1em;
+    margin-bottom: 1em;
     text-align: center;
     font-size: 1.5em;
     font-weight: 700;
@@ -66,15 +55,11 @@
     cursor: pointer;
 }
 
-.scroll {
-    margin: auto;
-}
-
 /* Font size and layout for mobile*/
 
 @media screen and (max-width: 768px) {
     .hero {
-        font-size: 5px;
+        font-size: 4px;
     }
     .backdrop {
         max-height: 25vh;
@@ -88,6 +73,6 @@
         font-size: 10px;
     }
     .backdrop {
-        max-height: 50vh;
+        max-height: 60vh;
     }
 }

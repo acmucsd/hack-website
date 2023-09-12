@@ -1,6 +1,4 @@
 .landing_caption {
-    position: absolute;
-    top: 80%;
-    max-width: 60%;
+    width: 100%;
     font-size: 2em;
 }
