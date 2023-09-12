@@ -32,7 +32,7 @@ const Hero: React.FC = () => {
       </div>
       <div className={styles.arrow} role="presentation" onClick={scrollToInfo}>
         <h6>Learn More</h6>
-        <FaChevronDown />
+        <FaChevronDown className={styles.scroll} />
       </div>
     </div>
   );

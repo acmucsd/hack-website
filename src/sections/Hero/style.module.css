@@ -55,6 +55,10 @@
     cursor: pointer;
 }
 
+.scroll {
+    margin: auto;
+}
+
 /* Font size and layout for mobile*/
 
 @media screen and (max-width: 768px) {
