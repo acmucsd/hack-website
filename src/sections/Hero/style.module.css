@@ -31,8 +31,8 @@
 .landing_text {
     z-index: 1;
     flex-grow: 1;
-    margin-left: 3em;
-    padding: 1em;
+    margin-left: 4em;
+    padding-bottom: 8em;
 }
 
 .landing_title {
