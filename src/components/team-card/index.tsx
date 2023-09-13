@@ -80,5 +80,5 @@ const TeamCard: React.FC = () => {
       ))}
     </div>
   );
-}
+};
 export default TeamCard;
