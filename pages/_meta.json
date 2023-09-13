@@ -9,5 +9,17 @@
   "hack-school": {
     "title": "Hack School",
     "type": "page"
+  },
+  "projects": {
+    "title": "ACM Projects",
+    "type": "page",
+    "href": "https://acmucsd.com",
+    "newWindow": true
+  },
+  "membership-portal": {
+    "title": "ACM Membership Portal",
+    "type": "page",
+    "href": "https://acmucsd.com",
+    "newWindow": true
   }
 }
