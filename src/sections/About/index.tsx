@@ -3,13 +3,14 @@ import styles from './style.module.css';
 const About: React.FC = () => {
   return (
     <div className={styles.about}>
-      <h2 className="title">Welcome to ACM Hack!</h2>
+      <h2 className={styles.title}>Welcome to ACM Hack!</h2>
       <br />
-      <div className="description">
-        <div className="content">
+      <div className={styles.main}>
+        <div className={styles.main_desc}>
           <p>
             ACM Hack is a community dedicated to software engineering and
-            exploring what’s possible through code. Whether you’re a seasoned
+            exploring what’s possible through code. Our name comes from hackathons–events where the power of coding
+            results in cool pieces of technology. Whether you’re a seasoned
             developer or just starting out, ACM Hack has a community of
             like-minded software engineers and events for you! We host a number
             of workshops throughout the year on industry-relevant tools and
@@ -18,10 +19,12 @@ const About: React.FC = () => {
             below!
           </p>
         </div>
+        <img src="assets/hackimage.JPG" alt="hi" className={styles.mainImage}></img>
       </div>
       <br />
-      <div className="hackschool-description">
-        <div className="content">
+      <div className={styles.hackschool}>
+      <img src="assets/sample.jpg" alt="hi" className={styles.hackschoolImage}></img>
+        <div className={styles.hackschool_desc}>
           <p>
             We’re proud to host Hack School: a series of 6 workshops designed to
             teach students the fundamentals of full-stack development and
@@ -33,16 +36,17 @@ const About: React.FC = () => {
         </div>
       </div>
       <br />
-      <div className="projects-description">
-        <div className="content">
+      <div className={styles.projects}>
+        <div className={styles.projects_desc}>
           <p>
             Interested in hands-on software engineering experience? ACM Hack
             also hosts project teams under ACM Projects! Our project teams are a
             great way to get relevant experience for your resume and to learn
-            new technologies. We’ll provide the mentorship and guidance! Learn
-            more at ACM Projects.
+            new technologies. We’ll provide the mentorship and guidance, so don't worry about having prior experience! Learn
+            more at ACM Projects (link to projects somehow).
           </p>
         </div>
+        <img src="assets/projects.JPG" alt="hi" className={styles.projectImage}></img>
       </div>
     </div>
   );
