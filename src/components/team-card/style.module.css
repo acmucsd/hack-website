@@ -1,25 +1,48 @@
 .team {
     display: flex;
-    flex-wrap: wrap;
     justify-content: center;
-}
+    gap: 0.5rem;
+    overflow-x: auto;
+  }
   
-.card {
-    margin: 10px;
+  .card {
     text-align: center;
-}
+    display: flex;
+    flex-direction: column;
+    width: 270px;
+    flex: 1;
+  }
   
-.cardOutline {
-    border: 2px solid #333;
+  .card h4 {
+    font-weight: bold;
+    font-size: 1.2em;
+    margin-top: 10px;
+  }
+  
+  .icons {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1.5rem;
+    margin-top: 0.25rem;
+  }
+  
+  .icons svg {
+    fill: #f9a857;
+  }
+  
+  .cardOutline {
+    border: 2px solid #f9a857;
     padding: 16px;
     text-align: center;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
     border-radius: 10px;
-}
-
-.card img {
-    width: 250px;
-    height: 250px;
+  }
+  
+  .card img {
+    max-width: 100%;
+    height: auto;
     border-radius: 50%;
     display: inline-block;
-}
+  }
+  
