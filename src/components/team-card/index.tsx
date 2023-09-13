@@ -39,6 +39,7 @@ const TeamCard: React.FC = () => {
       imageUrl: 'assets/alexis_pfp.PNG',
     },
   ];
+
   return (
     <div className={styles.team}>
       {teamMembers.map((member, index) => (
