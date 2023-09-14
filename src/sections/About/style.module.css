@@ -5,53 +5,52 @@
   }
   
 .title {
-  font-size: 50px;
+  font-size: 3.5rem;
   font-weight: 700;
-  margin-bottom: 10px;
+  /* margin-bottom: 10px; */
 }
   
 .main {
-  display: flex;
-  justify-content: space-between;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
   align-items: center;
-  width: 100%;
-  margin-bottom: 20px;
-  padding: 10px;
-  border-radius: 5px;
-}
-
-.hackschool {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  width: 100%;
-  margin-bottom: 20px;
-  padding: 10px;
-  border-radius: 5px;
 }
 
 .mainImage, .hackschoolImage, .projectImage {
-  height: auto;
-  width: 400px;
-  height: 400px;
+  padding: 20px; 
+  display: flex;
+  justify-content: center; 
+  align-items: center; 
+}
+
+.mainImage img {
   border-radius: 50%;
-  display: inline-block;
+  max-width: 100%;
+  height: auto; 
+}
+
+.hackschoolImage img {
+  border-radius: 50%; 
+  max-width: 100%; 
+  height: auto; 
+}
+
+.projectImage img {
+  border-radius: 50%; 
+  max-width: 100%; 
+  height: auto; 
+}
+
+.hackschool {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
 }
 
 .projects {
-  display: flex;
-  justify-content: space-between;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
   align-items: center;
-  width: 100%;
-  margin-bottom: 20px;
-  padding: 10px;
-  border-radius: 5px;
-}
-
-.content {
-  display: flex;
-  flex-direction: column;
-  width: 100%;
 }
 
 .main_desc, .projects_desc, .hackschool_desc {

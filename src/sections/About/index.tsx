@@ -19,11 +19,15 @@ const About: React.FC = () => {
             below!
           </p>
         </div>
-        <img src="assets/hackimage.JPG" alt="hi" className={styles.mainImage}></img>
+        <div className={styles.mainImage}>
+          <img src="assets/hackimage.JPG" alt="hi"></img>
+        </div>
       </div>
       <br />
       <div className={styles.hackschool}>
-      <img src="assets/sample.jpg" alt="hi" className={styles.hackschoolImage}></img>
+        <div className={styles.hackschoolImage}>
+          <img src="assets/sample.jpg" alt="hi"></img>
+        </div>
         <div className={styles.hackschool_desc}>
           <p>
             We’re proud to host Hack School: a series of 6 workshops designed to
@@ -46,7 +50,9 @@ const About: React.FC = () => {
             more at ACM Projects (link to projects somehow).
           </p>
         </div>
-        <img src="assets/projects.JPG" alt="hi" className={styles.projectImage}></img>
+        <div className={styles.projectImage}>
+          <img src="assets/projects.JPG" alt="hi" className={styles.projectImage}></img>
+        </div>
       </div>
     </div>
   );
