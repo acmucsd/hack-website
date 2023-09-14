@@ -42,11 +42,11 @@ of them [here](https://developer.mozilla.org/en-US/docs/Web/HTTP/Status)!
 
 ### Web application architecture
 
-Ultimately, this is a standard web application architecture:
+Putting our clients, servers, requests, and responses together, this is a standard web application architecture:
 
 ![image](./webapparch.png)
 
-As we mentioned before, clients communicate with servers via HTTP requests and responses. When those requests and recieved and processed,
+To summarize, clients communicate with servers via HTTP requests and responses. When those requests and recieved and processed,
 the server may make database queries to provide actual data for the client to use.
 
 ## APIs
@@ -61,9 +61,10 @@ A good analogy for APIs is that of a waiter in a restaurant. The tables and dini
 the food and sending it back to the dining area (Responses). How is this communication done? Through the waiters and waitresses! APIs are similar to waiters and waitresses, since they're the middlemen responsible for requests making it to the back-end, and 
 responses making it back to the client.
 
-![image here]()
+![image here](./apiwaiter.png)
+Source: monosolutions.com
 
-Generally, APIs provide API Routes, which are specific routes on a server that HTTP requests can be sent to. This allows clients to figure out how to interact with a particular server and request
+Generally, APIs provide **API routes**, which are specific routes on a server that HTTP requests can be sent to. This allows clients to figure out how to interact with a particular server and request
 a certain set of resources. API routes have the following syntax:
 
 ```
@@ -71,17 +72,99 @@ http://localhost:5000/api/purchases
 
 ```
 
-The same API route can be used for various HTTP methods. For example, a GET request sent to this route might return all purchases, while a POST
+The same API route can be used for different HTTP methods. For example, a GET request sent to this route might return all purchases, while a POST
 request sent to this route (with a request body) would post a new purchase.
 
-Let's see this in action with the Spotify API. Many enterprise APIs have comprehensive documentation, allowing developers to easily develop applications that can consume these APIs.
-
+You can see this in action with the [Spotify API](https://developer.spotify.com/documentation/web-api)! Take a look at the endpoints for various routes, possible responses based on status code, and parameters for [GET Album](https://developer.spotify.com/documentation/web-api/reference/get-an-album).
 
 
 ## Building our own APIs with Express
 
-Now that we have a background on what APIs are and how we interact with them, we can discuss how Express enables developers to build their own APIs.
+Now that we have a background on what APIs are and how we interact with them, we can discuss how Express enables developers to build their own APIs. Express abstracts away
+the complexity in serving a web application, allowing developers to quickly set up and customize their application.
 
+### Server setup
+To get started, create a directory called `server` within your application.
+
+Next, [initialize a Node.js application](https://docs.npmjs.com/cli/v10/commands/npm-init). 
+This is achieved by executing `npm init -y` in your terminal. The `-y` flag is a shortcut to allow default configurations.
+
+```bash copy showLineNumbers
+npm init -y
+```
+
+Now, we need to install Express as a package. [NPM (Node Package Manager)](https://www.npmjs.com) has hundreds of packages for developing applications, which you can see here.
+We just need Express for now, so you can execute
+
+```bash copy showLineNumbers
+npm i express
+```
+
+which will install Express. You should notice a `package.json` file in your directory
+
+Then, navigate inside this directory with `cd server` and create a file called
+`index.js`. You can populate it with the following three lines:
+
+```javascript copy showLineNumbers
+const express = require('express');
+const server = express();
+server.listen(3000);
+```
+
+These three lines import Express, instantiates a server, and has it listening on your computer's `PORT 3000`. If you open your web browser and
+go to `localhost:3000`, you can see the result of this API!
+
+### Creating an API route
+
+Now that Express is instantiated, we can add API routes. The following lines define a `GET` route:
+
+```javascript copy showLineNumbers
+const router = express.Router();
+router.get('/purchases', async (req, res) => {
+    // fetch purchases from database
+    res.status(200).json({ purchase });
+});
+```
+
+We begin by instantiating an Express router, which enables us to attach routes to our API.
+Then, we define a `GET` route with arrow function syntax. This route is now live on `localhost:3000/purchases`, so sending a `GET` request
+would return the `json` representation of `purchase`.
+
+You'll notice that we have a callback function here too; an asynchronous function with `(req, res)` as parameters. If you guessed that these are
+our **request** and **response** objects, you'd be correct! This is how our `GET` route can access the request and attach a status code to the response.
+
+What if we want to get a specific purchase? This is where route parameters come into play. We can slightly adjust our route to take in a specific ID, and use it
+to query from our database
+
+```javascript copy showLineNumbers
+router.get('/purchases/:id', async (req, res) => {
+    
+    const purchaseId = req.params.id;
+     
+    // fetch purchases from database
+    res.status(200).json({ purchase });
+});
+```
+
+We can do something similar with `POST` requests, we can utilize the `req` parameter to access details of our request body:
+
+```javascript copy showLineNumbers
+router.post('/purchases', async (req, res) => {
+
+    const purchase = req.body.purchase;
+
+    const name = purchase.name;
+
+    const {description} = purchase; // object destructuring
+
+    // log purchases to database
+    res.status(200).json({ purchase });
+});
+```
+
+## Testing our API with Postman
+
+It's always important to test APIs, just as you would test any software you build. Check out our section on testing with Postman!
 
 
 
