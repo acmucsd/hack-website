@@ -8,7 +8,7 @@ import aboutStyles from '../About/style.module.css';
 
 const Hero: React.FC = () => {
   const scrollToInfo: () => void = () => {
-    const navbarHeight = 115;
+    const navbarHeight = 80;
     const element = document.getElementsByClassName(aboutStyles.about)[0];
     const elementTop = element.getBoundingClientRect().top + window.scrollY;
     window.scrollTo({
