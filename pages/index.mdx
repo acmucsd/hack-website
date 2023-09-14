@@ -1,2 +1,18 @@
 import HomePage from '../src/homepage';
-export default HomePage;
+import { useSSG } from 'nextra/ssg';
+import { getAllHackEvents } from '../src/api/events_api';
+
+export async function getStaticProps() {
+  const events = await getAllHackEvents('past');
+
+  return {
+    props: {
+        ssg: {
+            events: events || [],
+        }
+    },
+    revalidate: 1 * 60 * 60, // once every hour (in seconds)
+  };
+}
+
+<HomePage events={useSSG().events} />

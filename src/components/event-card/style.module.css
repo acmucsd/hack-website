@@ -1,0 +1,26 @@
+.card {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 100%;
+    height: 180px;
+    box-shadow: 0px 1px 6px black;
+    border-radius: 20px;
+    position: relative;
+    padding: 0.75rem;
+    cursor: pointer;
+}
+
+.card_header {
+    display: flex;
+    justify-content: space-between;
+    font-size: 1.5rem;
+}
+
+.card_title {
+    color: var(--docs-accent-color) !important;
+}
+
+.card_day {
+    font-size: 1rem;
+}

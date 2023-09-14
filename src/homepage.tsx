@@ -5,12 +5,14 @@ import About from './sections/About';
 import Events from './sections/Events';
 import Team from './sections/Team';
 
-const HomePage: NextPage = () => {
+import { EventsArray } from './api/events_api';
+
+const HomePage: NextPage<{ events: EventsArray }> = ({ events }) => {
   return (
     <main>
       <Hero />
       <About />
-      <Events />
+      <Events events={events} />
       <Team />
     </main>
   );
