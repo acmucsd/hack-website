@@ -12,10 +12,10 @@
 .backdrop {
     flex-grow: 1;
     display: grid;
-    grid-template-columns: 2fr 3fr 1fr;
+    grid-template-columns: 2fr 3fr 1.25fr;
     column-gap: 1rem;
     align-items: center;
-    width: 100%;
+    max-width: 100%;
     text-align: center;
 }
 
@@ -102,7 +102,7 @@
 /* Dark Mode */
 
 html[class~='dark'] .hero {
-    background-color: black;
+    background-color: rgba(17,17,17,var(--tw-bg-opacity));
     color: var(--docs-accent-color);
 }
 /* It's hard to color svg files in image tag*/
