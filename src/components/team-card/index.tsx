@@ -35,7 +35,6 @@ const TeamCard: React.FC = () => {
     },
   ];
 
-
   return (
     <div className={styles.team}>
       {teamMembers.map((member, index) => (
