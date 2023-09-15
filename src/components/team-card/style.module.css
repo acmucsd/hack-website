@@ -3,13 +3,14 @@
     justify-content: center;
     gap: 0.5rem;
     overflow-x: auto;
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
   }
   
   .card {
     text-align: center;
     display: flex;
     flex-direction: column;
-    width: 270px;
     flex: 1;
   }
   
@@ -35,7 +36,6 @@
     border: 2px solid #f9a857;
     padding: 16px;
     text-align: center;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
     border-radius: 10px;
   }
   
@@ -45,4 +45,13 @@
     border-radius: 50%;
     display: inline-block;
   }
+  
+  /*
+  @media screen and (max-width: 999px) {
+    .card h4,
+    .card h5 {
+      font-size: 0.9em !important;
+    }
+  }
+  */
   

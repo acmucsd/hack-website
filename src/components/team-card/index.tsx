@@ -8,35 +8,35 @@ const TeamCard: React.FC = () => {
       position: 'Hack Technical Lead',
       email: 'nikhil@acmucsd.org',
       linkedinLink: 'https://www.linkedin.com/in/nsdange/',
-      imageUrl: 'assets/nikhil_pfp.PNG',
+      imageUrl: 'assets/nikhil.JPG',
     },
     {
       name: 'Angela Hu',
       position: 'Hack Technical Event Director',
       email: 'angelahu@acmucsd.org',
       linkedinLink: 'https://www.linkedin.com/in/angelahu925/',
-      imageUrl: 'assets/angela_pfp.PNG',
+      imageUrl: 'assets/angela.jpeg',
     },
     {
       name: 'Khushi Patel',
       position: 'Hack Technical Event Director',
       email: 'khushi@acmucsd.org',
       linkedinLink: 'http://www.linkedin.com/in/pateljkhushi',
-      imageUrl: 'assets/khushi_pfp.PNG',
+      imageUrl: 'assets/khushi.jpeg',
     },
     {
       name: 'Charvi Shukla',
       position: 'Hack Technical Event Director',
       email: 'charvi@acmucsd.org',
       linkedinLink: 'https://www.linkedin.com/in/charvi-shukla-439b681b2/',
-      imageUrl: 'assets/charvi_pfp.PNG',
+      imageUrl: 'assets/charvi.jpeg',
     },
     {
       name: 'Alexis Vergnet',
       position: 'Hack Technical Event Director',
       email: 'alexis@acmucsd.org',
       linkedinLink: 'https://www.linkedin.com/in/avergnet/',
-      imageUrl: 'assets/alexis_pfp.PNG',
+      imageUrl: 'assets/alexis.jpeg',
     },
   ];
   return (
@@ -46,7 +46,7 @@ const TeamCard: React.FC = () => {
           <div className={styles.cardOutline}>
             <img src={member.imageUrl} alt={member.name} />
             <h4>{member.name}</h4>
-            <p>{member.position}</p>
+            <h5>{member.position}</h5>
             <div className={styles.icons}>
               {member.email && (
                 <a href={`mailto:${member.email}`} target="_blank" rel="noopener noreferrer">
