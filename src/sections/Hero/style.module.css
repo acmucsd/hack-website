@@ -1,73 +1,82 @@
 /* Landing Card Background */
 .hero {
     background-color: #f9a857;
-    color: #FFFFFF;
+    color: white;
     overflow: hidden;
 }
 
-/* Landing Card Icons */
 .backdrop {
     display: flex;
     align-items: center;
     text-align: center;
-    width: 100%;
-    max-height: 100vh;
-    height: 42rem;
-    position: relative;
+    height: 37em;
+    max-height: 75vh;
 }
+
+/* Landing Card Icons */
 
 .backdrop_left {
     z-index: 0;
-      overflow: hidden;
-      position: absolute;
+    max-width: 35%;
+    margin-top: 5em;
 }
 
 .backdrop_right {
     z-index: 0;
-      right: 0px;
-      overflow: hidden;
-      position: absolute;
+    max-width: 25%;
 }
 
 /* Landing Card Text */
 
 .landing_text {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
     z-index: 1;
-    margin-left: 20rem;
-    margin-bottom: 5rem;
-    width: 100vw;
+    flex-grow: 1;
+    margin-left: 4em;
+    padding-bottom: 8em;
 }
 
 .landing_title {
     font-weight: 900;
-    font-size: 5rem;
+    font-size: 5em;
 }
 
 /* Landing Card Scroll Down */
 
 .arrow {
-    position: absolute;
-    bottom: 2rem;
-    text-align: center;
-    font-size: 2.5rem;
     z-index: 2;
-    left: 45%;
+    margin-bottom: 1em;
+    text-align: center;
+    font-size: 1.5em;
+    font-weight: 700;
+}
+
+.arrow:hover {
+    opacity: 85%;
+    cursor: pointer;
 }
 
 .scroll {
     margin: auto;
 }
 
-.scroll:hover {
-    opacity: 85%;
-    cursor: pointer;
+/* Font size and layout for mobile*/
+
+@media screen and (max-width: 768px) {
+    .hero {
+        font-size: 4px;
+    }
+    .backdrop {
+        max-height: 25vh;
+    }
 }
 
-.scroll_text {
-    font-weight: 700;
-    font-size: 1.5rem;
+/* Font size and layout for tablet*/
+
+@media screen and (min-device-width : 768px) and (max-device-width : 1024px) {
+    .hero {
+        font-size: 10px;
+    }
+    .backdrop {
+        max-height: 60vh;
+    }
 }
