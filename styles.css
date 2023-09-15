@@ -45,12 +45,11 @@ html {
 }
 
 .nextra-nav-container nav {
-  height: 7rem;
+  height: 5rem;
 }
 
 aside {
   height: calc(100vh - 7rem);
-  top: calc(7rem + 4px) !important;
 }
 
 .nextra-toc {
