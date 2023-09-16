@@ -7,6 +7,7 @@
     background-color: var(--docs-accent-color);
     color: #fff;
     overflow: hidden;
+    transition: all 0.5s ease-in-out;
 }
 
 .backdrop {
@@ -69,6 +70,7 @@
     }
     .backdrop {
         grid-template-columns: minmax(18em, 1fr);
+        grid-template-rows: minmax(0, 0.7fr);
         max-width: 95%;
     }
     .backdrop_left{
@@ -89,6 +91,7 @@
 @media screen and (min-device-width : 768px) and (max-device-width : 1024px) {
     .backdrop {
         grid-template-columns: 1fr 2fr;
+        grid-template-rows: 1fr;
         max-width: 95%;
     }
     .backdrop_left{
