@@ -1,1 +1,292 @@
 # Week 3: React
+
+## What is React?
+
+React is a JavaScript library for building user interfaces. It allows you to to create interactive, complex, and dynamic user interfaces by breaking them down into small, isolated pieces of code called components. The name "React" is derived from its ability to synchronize changes in the user interface with changes in data reactively. This means that when your data changes, React updates the corresponding parts of the user interface without the need for manual intervention, resulting in a highly responsive and efficient application.
+
+## JSX
+
+JSX (JavaScript XML) is a syntax extension for JavaScript used in React. It allows you to write HTML-like code within your JavaScript files to describe the structure of your UI. JSX provides several added functionalities that make it a powerful tool for building dynamic user interfaces:
+
+* **Curly Braces for Variables:**
+    You can use curly braces `{}` in JSX to embed variables and JavaScript expressions directly within your HTML-like code. This allows you to dynamically render content based on variables. For example:
+
+    ```jsx copy showLineNumbers
+    const greeting = "Hello, React!";
+    const element = <h1>{greeting}</h1>;
+    ```
+
+* **Embedding JavaScript Logic:**
+    With JSX, you can add JavaScript logic directly to your code. This lets you do things like show or hide elements based on conditions, create lists from arrays, and perform other dynamic operations. For example:
+
+    ```jsx copy showLineNumbers
+    const isUserLoggedIn = true;
+
+    const element = (
+    <div>
+        <h1>Welcome to our website</h1>
+        {isUserLoggedIn ? <p>You are logged in.</p> : <p>Please log in.</p>}
+    </div>
+    );
+    ```
+
+* **Class Declaration:**
+    You can declare CSS classes in JSX using the `className` attribute instead of the traditional `class` attribute used in HTML. This is because `class` is a reserved keyword in JavaScript. For example:
+
+    ```jsx copy showLineNumbers
+    const element = <div className="container">This has a CSS class.</div>;
+    ```
+
+* **Event Handlers:**
+    In JSX, you can add event handlers directly to elements by specifying them as attributes. For example, to add a click event handler to a button:
+
+
+    ```jsx copy showLineNumbers
+    function handleClick() {
+    alert('Button clicked!');
+    }
+
+    const element = <button onClick={handleClick}>Click me</button>;
+    ```
+
+## Components
+
+In React, components are the fundamental building blocks of user interfaces. They are independant and reusable pieces of UI and can range from small, simple elements like buttons or input fields to entire complex sections of a web page. React applications are composed of many components as shown in the picture below:
+
+![components web page](pages/hack-school/images/components1.PNG)
+
+Each component can hold other components to make more complex sturcutres as show below:
+
+![components nested](pages/hack-school/images/components2.PNG)
+
+## Class Components
+
+Class components are one of the two primary ways to define React components. Class components is the more traditional way to create components and are defined using ES6 classes and have a special lifecycle. Class components are often referred to as "stateful components" because they are capable of managing and maintaining their own internal state. State is a way to store and manage data that can change over time and affect the component's rendering. Class components can implement logic and state management, making them suitable for complex components that need to handle dynamic data and user interactions.
+
+A class component must extend the `React.Component` class and must have a `render()` method, which returns the component's JSX structure. Look below to see an how the Tweet Component from above would be coded as a class component:
+
+```jsx copy showLineNumbers
+import React, { Component } from 'react';
+
+class Tweets extends Component {
+  render() {
+    return (
+      <div>
+        <Tweet />
+      </div>
+    );
+  }
+}
+
+class Tweet extends Component {
+  render() {
+    return (
+      <div>
+        <Author />
+        <Content />
+        <Actions />
+      </div>
+    );
+  }
+}
+
+class Author extends Component {
+  render() {
+    return <div>Author Component</div>;
+  }
+}
+
+class Content extends Component {
+  render() {
+    return <div>Content Component</div>;
+  }
+}
+
+class Actions extends Component {
+  render() {
+    return <div>Actions Component</div>;
+  }
+}
+
+export default Tweets;
+```
+
+## Functional Components
+
+Functional components are a modern and concise way to define components using JavaScript functions that return JSX. They are simpler than class components and are often referred to as stateless functional components because they don't manage their own state. Instead, they rely on props to receive data and render content. These components are well-suited for rendering UI elements based on the input data (props) they receive. When combined with React Hooks (which we will cover below), functional components have the ability to manage state and handle side effects.
+
+Here's an equivalent example of the previous of the Tweet Component but as a functional component:
+
+```jsx copy showLineNumbers
+import React from 'react';
+
+function Tweets() {
+  return (
+    <div>
+      <Tweet />
+    </div>
+  );
+}
+
+function Tweet() {
+  return (
+    <div>
+      <Author />
+      <Content />
+      <Actions />
+    </div>
+  );
+}
+
+function Author() {
+  return <div>Author Component</div>;
+}
+
+function Content() {
+  return <div>Content Component</div>;
+}
+
+function Actions() {
+  return <div>Actions Component</div>;
+}
+
+export default Tweets;
+```
+
+## Props
+
+Props (short for properties) allow you to pass data from a parent component to a child component. They are a way to make your components dynamic and reusable by enabling you to customize a component's behavior and appearance by providing it with data from its parent component.
+
+![components web page](pages/hack-school/images/props-removebg-preview.png)
+
+Consider the tweet example above but where we pass in data through props from the partent component which is `Tweets` to the child component `Tweet`:
+
+```jsx copy showLineNumbers
+import React from 'react';
+
+// Parent Component
+function Tweets() {
+  return (
+    <div>
+      <Tweet
+        author="John Doe"
+        content="This is a sample tweet."
+        likes={42}
+      />
+      <Tweet
+        author="Jane Smith"
+        content="Another tweet example."
+        likes={23}
+      />
+    </div>
+  );
+}
+
+// Child Component (Tweet) with regular props
+function Tweet(props) {
+  return (
+    <div className="tweet">
+      <div className="author">{props.author}</div>
+      <div className="content">{props.content}</div>
+      <div className="likes">Likes: {props.likes}</div>
+    </div>
+  );
+}
+
+export default Tweets;
+```
+
+**ES6 Props:**
+
+With ES6 destructuring, you can destructure props directly within the functional component's parameters, making it more concise to access and use props. ES6 also allows for arrow functions further enhancing readability.
+
+The code below behaves exactly like the example above with the same parent component Tweet:
+```jsx copy showLineNumbers
+// Child Component (Tweet) with ES6 arrow function props
+const Tweet = ({ author, content, likes }) => {
+  return (
+    <div className="tweet">
+      <div className="author">{author}</div>
+      <div className="content">{content}</div>
+      <div className="likes">Likes: {likes}</div>
+    </div>
+  );
+}
+```
+
+## React Hooks
+
+React Hooks are functions that enable functional components to manage state and incorporate other React features that were traditionally available only in class components. Hooks provide a more organized and concise way to work with state, side effects, and context in functional components.
+
+Some common React Hooks include `useState`, `useEffect`, `useContext`, `useMemo`, `useReducer`, and [more](https://react.dev/reference/react). 
+
+
+## Use State
+
+`useState` is a React Hook that allows functional components to manage state. It lets you add state to your functional components, making them capable of handling dynamic data and re-rendering when that data changes.
+
+With the useState Hook, you can:
+
+* **Initialize State:** Create and initialize state variables within your functional component.
+* **Access and Update State:** Access the current state value and update it when necessary.
+* **Trigger Re-renders:** When the state changes, the component automatically re-renders to reflect the updated data in the user interface.
+
+Here's an example of how to use the useState Hook:
+
+```jsx copy showLineNumbers
+import React, { useState } from 'react';
+
+function Tweets() {
+  // Initialize state for the list of tweets
+  const [tweets, setTweets] = useState([
+    { id: 1, author: 'John Doe', content: 'This is a sample tweet.', likes: 42 },
+    { id: 2, author: 'Jane Smith', content: 'Another tweet example.', likes: 23 },
+  ]);
+
+  // Function to add a new tweet
+  const addTweet = () => {
+    const newTweet = {
+      id: tweets.length + 1,
+      author: 'New Author',
+      content: 'A new tweet!',
+      likes: 0,
+    };
+
+    setTweets([...tweets, newTweet]);
+  };
+
+  return (
+    <div>
+      <button onClick={addTweet}>Add Tweet</button>
+      {tweets.map((tweet) => (
+        <Tweet key={tweet.id} tweet={tweet} />
+      ))}
+    </div>
+  );
+}
+
+function Tweet({ tweet }) {
+  return (
+    <div className="tweet">
+      <div className="author">{tweet.author}</div>
+      <div className="content">{tweet.content}</div>
+      <div className="likes">Likes: {tweet.likes}</div>
+    </div>
+  );
+}
+
+export default Tweets;
+```
+
+In this example:
+
+* We use the `useState` hook to create and initialize a state variable called `tweets`, which is an array of tweet objects.
+* The `addTweet` function is used to add a new tweet to the list of tweets. It creates a new tweet object and uses the spread operator to update the state with the new tweet.
+* The `Tweets` component renders a button to add a new tweet and maps over the `tweets` array to render each tweet using the `Tweet` component.
+* The `Tweet` component receives a single `tweet` prop and displays the author, content, and likes of each tweet.
+
+
+
+## What is Next.js?
+
+Next.js is a framework that makes it easier to build websites with React. It helps you create fast and search-engine-friendly web pages. Next.js takes care of many technical details, like how pages are loaded and how to handle website routing (i.e., moving from one page to another). It also allows you to make parts of your website dynamic while keeping it fast. Check this [reference](https://nextjs.org/learn/basics/create-nextjs-app) to learn more.
