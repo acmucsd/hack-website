@@ -21,20 +21,23 @@ const EventsCard: React.FC<{ event: EventObject }> = ({ event }) => {
   const month = months[new Date(event.start).getMonth()];
   const day = days[new Date(event.start).getDay()];
   const year = new Date(event.start).getFullYear();
-  const { uuid, title, location } = event;
+  const { uuid, title, cover, location } = event;
   const formatTitle = (title: string): string => {
     return encodeURIComponent(title.toLowerCase().trim().replace(/ /g, '-'));
   };
   return (
     <div className={styles.container}>
       <a href={`https://acmucsd.com/events/${formatTitle(title)}-${uuid}`} target="_blank">
-        <div className={styles.card} key={uuid}>
+        <div className={styles.card}>
           <div className={styles.card_header}>
             <h1 className={styles.card_date}>
               <b>{month} </b>
               {date} {year}
             </h1>
             <h2 className={styles.card_day}>{day}</h2>
+          </div>
+          <div className={styles.card_cover}>
+            <img className={styles.card_image} src={cover} alt="Event cover" />
           </div>
           <div className={styles.card_info}>
             <h3 className={styles.card_title}>{title}</h3>

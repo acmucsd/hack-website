@@ -7,12 +7,15 @@ import Team from './sections/Team';
 
 import { EventsArray } from './api/events_api';
 
-const HomePage: NextPage<{ events: EventsArray }> = ({ events }) => {
+const HomePage: NextPage<{ past_events: EventsArray; future_events: EventsArray }> = ({
+  past_events,
+  future_events,
+}) => {
   return (
     <main>
       <Hero />
       <About />
-      <Events events={events} />
+      <Events past_events={past_events} future_events={future_events} />
       <Team />
     </main>
   );

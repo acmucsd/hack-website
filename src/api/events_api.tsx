@@ -23,6 +23,12 @@ export type EventsResponse = {
   error: unknown;
   events: EventsArray;
 };
+
+export type EventResponse = {
+  error: unknown;
+  event: EventObject;
+};
+
 const handleErrors = (response: Response) => {
   if (!response.ok) {
     throw Error(response.statusText);
@@ -45,4 +51,16 @@ const getAllHackEvents = async (
   }
 };
 
-export { getAllHackEvents };
+const getHackEvent = async (uuid: string): Promise<EventObject | undefined> => {
+  const api_url = `${EVENT_API}/${uuid}`;
+
+  try {
+    const response: any = await fetch(api_url);
+    const result: EventResponse = await handleErrors(response);
+    return result.event;
+  } catch (error) {
+    return undefined;
+  }
+};
+
+export { getAllHackEvents, getHackEvent };

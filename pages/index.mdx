@@ -1,18 +1,22 @@
 import HomePage from '../src/homepage';
 import { useSSG } from 'nextra/ssg';
-import { getAllHackEvents } from '../src/api/events_api';
+import { getAllHackEvents, getHackEvent } from '../src/api/events_api';
 
 export async function getStaticProps() {
-  const events = await getAllHackEvents('past');
+  const uuids = ["1668587f-5816-45cc-8b5e-1a4825dff9e4", "2ba9e5ed-614e-4c19-9d7c-ab2cfd57e140", "73fc61ef-b3db-46c4-a5bf-71aba152e2f6", "3b922d84-9c57-4f2a-9e76-19e4e9130fe2", "6124d23b-ab77-481f-9248-920565ac07f3", "fdd1c33f-f31b-4421-abc9-0887158147cc"]
+  const promises = uuids.map(uuid => getHackEvent(uuid))
+  const past_events = await Promise.all(promises);
+  const future_events = await getAllHackEvents('future');
 
   return {
     props: {
         ssg: {
-            events: events || [],
+            past_events: past_events || [],
+            future_events: future_events || []
         }
     },
     revalidate: 1 * 60 * 60, // once every hour (in seconds)
   };
 }
 
-<HomePage events={useSSG().events} />
+<HomePage past_events={useSSG().past_events} future_Events={useSSG().future_events} />
