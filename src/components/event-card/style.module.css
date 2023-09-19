@@ -20,7 +20,9 @@
 }
 
 .card_cover {
+    flex-grow: 1;
     width: 100%;
+    margin-bottom: 1rem;
 }
 
 .card_image {
