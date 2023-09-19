@@ -2,7 +2,8 @@
   "index": "Welcome to ACM Hack School!",
   "logistics": "Hack School Logistics",
   "git-github": "Git/GitHub",
-  "css": "Week 1: HTML & CSS",
+  "html": "Week 1: HTML",
+  "css": "Week 1: CSS",
   "js": "Week 2: JavaScript",
   "mongodb": "Week 5: Databases & MongoDB"
 }
