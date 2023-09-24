@@ -41,9 +41,10 @@ The main type of database that this chapter focuses on is a NoSQL (non-SQL) data
 a tabular format, NoSQL databases usually order data using **documents**. Documents store data in key-value pairs.
 The values can be strings, numbers, arrays, or objects while the keys are unique identifiers (usually strings) for the values.
 These documents are typically stored as JSON, BSON, or XML files. JSON (JavaScript Object Notation) is a text-based format
-for structured data which is based on Javascript object syntax. 
+for structured data which is based on JavaScript object syntax. Some other kinds of NoSQL databases are key value, wide column, vector, and graph
+databases.
 
-## MongoDB
+## [MongoDB](https://www.mongodb.com/)
 MongoDB is a free and open-source NoSQL database management program with data in collections of documents. 
 It uses BSON which is a binary encoded JSON-like documents. However, it runs locally on the user's device
 which means that the user has to set up, manage, and deploy the database. 
@@ -55,12 +56,49 @@ MongdoDB Atlas is a cloud database service that deploys and manages a database f
 1. Create an account on [MongoDB](https://account.mongodb.com/account/login)
 2. Once logged in, navigate to the **Database Deployments** page and click on the **Build a Database** button 
 3. Choose the M0 (free) option and customize name for the cluster
-4. Authenticate the connection with a username and password and add your ip address to whitelist it
+4. Authenticate the connection with a username and password and add your IP address to whitelist it
 5. Connect to the database with the Node.js driver and copy the connection string
 
+### Creating an Environment Variables File
+To protect sensitive information such as passwords and API credentials, it's good to create a .env file
+which configures your information into variables that can be used in the code. This hides your information
+from the public when you push your code to a platform like Github.
+1. Use npm to install the dotenv library
+```
+npm install dotenv
+```
+2. In your code environment, create a new file and name it *.env*
+3. Add any secret information into variables
+```js copy
+KEY=1593ad25grb98324
+PASSWORD=123456789a
+```
+4. Create a folder named *config* and add a JavaScript file with following code snippet
+```js copy
+require('dotenv').config()
+
+const config = {
+    key: process.env.KEY,
+    password: process.env.PASSWORD
+}
+
+module.exports = config;
+```
+5. To use a variable from your .env file, you can access it from the config object
+```js copy
+// 1593ad25grb98324
+config.key
+// 123456789a
+config.password
+```
+6. In your .gitignore file, make sure to add your .env file so it isn't pushed to your Github repo!
+
 ### Connecting to MongoDB Atlas Database
-1. After you copy the connection string, add it to an .env file (hides it from public)
-2. In a js file, add the following code snippet
+1. After you copy the connection string, add it to an .env file
+```js copy
+DATABASE_URL=connectionstringurl
+```
+2. In a JavaScript file, add the following code snippet
 ```js copy
 const mongoose = require('mongoose');
 
@@ -76,7 +114,7 @@ Learn more at [Get Started With Atlas](https://www.mongodb.com/docs/atlas/gettin
 ```
 npm install mongoose
 ```
-Mongoose is a JavaScript library that wraps MongoDB with a schema-based approach. Schemas are blueprints for
+Mongoose is a ODM (Object Data Modeling/Object Document Mapping) JavaScript library that wraps MongoDB with a schema-based approach. Schemas are blueprints for
 the data. Using these schemas, we can create models which help us create and read documents. Install
 the library with npm. 
 
