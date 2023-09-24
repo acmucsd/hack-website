@@ -8,7 +8,7 @@ import aboutStyles from '../About/style.module.css';
 
 const Hero: React.FC = () => {
   const scrollToInfo: () => void = () => {
-    const navbarHeight = 115;
+    const navbarHeight = 80;
     const element = document.getElementsByClassName(aboutStyles.about)[0];
     const elementTop = element.getBoundingClientRect().top + window.scrollY;
     window.scrollTo({
@@ -20,7 +20,6 @@ const Hero: React.FC = () => {
     <div className={styles.hero}>
       <div className={styles.backdrop}>
         <Image src={leftside} className={styles.backdrop_left} alt="backdrop" />
-        <Image src={rightside} className={styles.backdrop_right} alt="backdrop" />
         <div className={styles.landing_text}>
           <h1 className={styles.landing_title}>ACM Hack</h1>
           <Typewriter
@@ -29,10 +28,11 @@ const Hero: React.FC = () => {
             delay={60}
           />
         </div>
-        <div className={styles.arrow}>
-          <h6 className={styles.scroll_text}>Learn More</h6>
-          <FaChevronDown className={styles.scroll} onClick={scrollToInfo} />
-        </div>
+        <Image src={rightside} className={styles.backdrop_right} alt="backdrop" />
+      </div>
+      <div className={styles.arrow} role="presentation" onClick={scrollToInfo}>
+        <h6>Learn More</h6>
+        <FaChevronDown className={styles.scroll} />
       </div>
     </div>
   );
