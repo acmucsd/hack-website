@@ -23,7 +23,7 @@ like Google Sheets and Microsoft Excel. Popular database management platforms th
 
 
 ## NoSQL
-```
+``` js copy
 // Example of a document with user information
 {
      "_id": 1,
@@ -35,7 +35,7 @@ like Google Sheets and Microsoft Excel. Popular database management platforms th
         "kpop",
         "ACM"
      ]
-  }
+}
 ```
 The main type of database that this chapter focuses on is a NoSQL (non-SQL) database. Instead of storing data in
 a tabular format, NoSQL databases usually order data using **documents**. Documents store data in key-value pairs.
@@ -64,17 +64,17 @@ To protect sensitive information such as passwords and API credentials, it's goo
 which configures your information into variables that can be used in the code. This hides your information
 from the public when you push your code to a platform like Github.
 1. Use npm to install the dotenv library
-```
+```bash copy showLineNumbers
 npm install dotenv
 ```
 2. In your code environment, create a new file and name it *.env*
 3. Add any secret information into variables
-```js copy
+```js copy showLineNumbers
 KEY=1593ad25grb98324
 PASSWORD=123456789a
 ```
 4. Create a folder named *config* and add a JavaScript file with following code snippet
-```js copy
+```js copy showLineNumbers
 require('dotenv').config()
 
 const config = {
@@ -85,7 +85,7 @@ const config = {
 module.exports = config;
 ```
 5. To use a variable from your .env file, you can access it from the config object
-```js copy
+```js copy showLineNumbers
 // 1593ad25grb98324
 config.key
 // 123456789a
@@ -95,11 +95,11 @@ config.password
 
 ### Connecting to MongoDB Atlas Database
 1. After you copy the connection string, add it to an .env file
-```js copy
+```js copy showLineNumbers
 DATABASE_URL=connectionstringurl
 ```
 2. In a JavaScript file, add the following code snippet
-```js copy
+```js copy showLineNumbers
 const mongoose = require('mongoose');
 
 mongoose.connect(config.databaseUrl, {
@@ -111,7 +111,7 @@ mongoose.connect(config.databaseUrl, {
 Learn more at [Get Started With Atlas](https://www.mongodb.com/docs/atlas/getting-started/) on MongoDB!
 
 ## Mongoose
-```
+```bash copy showLineNumbers
 npm install mongoose
 ```
 Mongoose is a ODM (Object Data Modeling/Object Document Mapping) JavaScript library that wraps MongoDB with a schema-based approach. Schemas are blueprints for
@@ -119,7 +119,7 @@ the data. Using these schemas, we can create models which help us create and rea
 the library with npm. 
 
 ## Defining Schemas
-```js copy
+```js copy showLineNumbers
 const mongoose = require('mongoose');
 
 const userSchema = new Schema({
@@ -189,7 +189,7 @@ Explore more types on this Mongoose documentation [page](https://mongoosejs.com/
 CRUD (**C**reate **R**ead **U**pdate **D**elete) Operations are four basic operations for any application with a database.
 
 ### Create
-```js copy
+```js copy showLineNumbers
 // Create a new user from the given object
 const newUser = {
     "_id": 2,
@@ -209,7 +209,7 @@ User.create(newUser);
 Create operations add a new document to the database. Let's add a new user using the User schema!
 
 ### Read
-```js copy
+```js copy showLineNumbers
 // Find all users
 User.find().exec();
 
@@ -223,7 +223,7 @@ Read operations allow us to get data from the database. They can also filter bas
 most common operations are shown above: find, findById, and findOne. 
 
 ### Update
-```js copy
+```js copy showLineNumbers
 // Update a user with specified username to have a new college 
 User.updateOne({username: "acmlovesyou"},
     {$set: {college: "Revelle"}});
@@ -251,7 +251,7 @@ only one user document while updateMany modifies all documents in a collection.
 | $upsert | If true, creates new document when one isn't found |
 
 ### Delete
-```js copy
+```js copy showLineNumbers
 // delete user with username ihatehack in the database
 User.deleteOne({username: 'ihatehack'});
 
