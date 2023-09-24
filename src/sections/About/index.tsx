@@ -17,39 +17,35 @@ const About: React.FC = () => {
             prerequisites. You can check out all of our upcoming workshops below!
           </p>
         </div>
-        <div className={styles.mainImage}>
-          <img src="assets/hackimage.JPG" alt="hi" />
-        </div>
+        <img className={styles.mainImage} src="assets/hackimage.JPG" alt="Hack School Fall 2022" />
       </div>
-      <br />
+      
       <div className={styles.hackschool}>
-        <div className={styles.hackschoolImage}>
-          <img src="assets/sample.jpg" alt="hi" />
-        </div>
+        <img className={styles.hackschoolImage} src="assets/sample.jpg" alt="still looking for a suitable image here" />
         <div className={styles.hackschool_desc}>
           <p>
             We&apos;re proud to host Hack School: a series of 6 workshops designed to teach students
             the fundamentals of full-stack development and software engineering. We host Hack School
-            in-person every fall, so keep an eye out for upcoming application information during
-            Week 0. All Hack School content is open source and hosted on this website, so feel free
+            in-person every fall, and the Fall 2023 application is live at  <a href="https://acmurl.com/apply-hackschool" target="_blank" rel="noopener noreferrer">
+          acmurl.com/apply-hackschool!
+        </a>. All Hack School content is open source and hosted on this website, so feel free
             to check it out and learn something new!
           </p>
         </div>
       </div>
-      <br />
+      
       <div className={styles.projects}>
         <div className={styles.projects_desc}>
           <p>
             Interested in hands-on software engineering experience? ACM Hack also hosts project
             teams under ACM Projects! Our project teams are a great way to get relevant experience
             for your resume and to learn new technologies. We&apos;ll provide the mentorship and
-            guidance, so don&apos;t worry about having prior experience! Learn more at ACM Projects
-            (link to projects somehow).
+            guidance, so don&apos;t worry about having prior experience! Learn more at <a href="https://projects.acmucsd.com" target="_blank" rel="noopener noreferrer">
+          projects.acmucsd.com
+        </a>!
           </p>
         </div>
-        <div className={styles.projectImage}>
-          <img src="assets/projects.JPG" alt="hi" className={styles.projectImage} />
-        </div>
+        <img className={styles.projectImage} src="assets/projects.JPG" alt="An ACM Hack Project Team" />
       </div>
     </div>
   );

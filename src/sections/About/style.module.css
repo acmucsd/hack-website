@@ -10,7 +10,7 @@
   /* margin-bottom: 10px; */
 }
   
-.main {
+.main, .hackschool, .projects {
   display: grid;
   grid-template-columns: 1fr 1fr;
   align-items: center;
@@ -18,43 +18,20 @@
 
 .mainImage, .hackschoolImage, .projectImage {
   padding: 20px; 
-  display: flex;
+  /* display: flex; */
+  margin: auto;
   justify-content: center; 
   align-items: center; 
 }
 
-.mainImage img {
-  border-radius: 50%;
+.mainImage, .hackschoolImage, .projectImage {
+  border-radius: 8px;
   max-width: 100%;
   height: auto; 
 }
 
-.hackschoolImage img {
-  border-radius: 50%; 
-  max-width: 100%; 
-  height: auto; 
-}
-
-.projectImage img {
-  border-radius: 50%; 
-  max-width: 100%; 
-  height: auto; 
-}
-
-.hackschool {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  align-items: center;
-}
-
-.projects {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  align-items: center;
-}
-
 .main_desc, .projects_desc, .hackschool_desc {
-  font-size: large;
+  font-size: 1.15rem;
 }
 
 
