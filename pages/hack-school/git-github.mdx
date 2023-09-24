@@ -1,0 +1,345 @@
+# Git/GitHub
+
+## What is Git?
+
+Git is a distributed version control system that enables developers to manage code changes, collaborate on projects, and maintain a history of revisions. It allows multiple developers to work on a project simultaneously and provides tools for tracking changes over time.
+
+### Why do we need Git? (What is Version Control?)
+
+Version control is essential in software development to track changes, manage collaborative work, and maintain a history of revisions. Without version control, managing code changes becomes complex, error-prone, and challenging to collaborate on. Git offers a structured approach to version control, making it easier to work in teams, track changes, and revert to previous versions if needed.
+
+
+### Git Installation
+
+You can follow this [guide](https://github.com/git-guides/install-git) or follow the instructions below.
+
+#### [Windows](https://github.com/git-guides/install-git#install-git-on-windows)
+
+1. Go to this [link](https://git-scm.com/download/win) and click on the blue `Click here to download` at the top of the page. This should download an executable file.
+2. Run the executable file. 
+3. It will ask for permission to make changes to your device; select `YES`.
+4. Click `Next`, then choose installation location (leave as default unless you have a reason not to). Again, press `Next`.
+5. You will be able to choose many options, but leave all the defaults unless you have a reason not to. Click `Next` until you get the `Install` button, then click it.
+6. Then wait for installation and hit `Finish`.
+7. Verify that it was correctly installed by opening any command prompt and typing: 
+```sh copy
+git version
+```
+If everything worked correctly it should print something like
+`git version 2.41.0.windows.3`
+
+You now have Git installed on your Windows machine!!
+
+#### [Mac](https://github.com/git-guides/install-git#install-git-on-mac)
+
+Most versions of MacOS will already have Git installed with XCode, and you can activate it through the terminal with `git version`. If you don't have Git installed, you can install the latest version of Git through this [link](https://git-scm.com/download/mac).
+
+* Verify that it was correctly installed by opening the command prompt "terminal" and typing: 
+```sh copy
+git version
+```
+
+
+### Key Concepts in Git
+
+#### Repositories
+
+A Git repository is a centralized location where your codebase and its complete history of changes are stored. It contains all versions of your files, branches, and commits.
+
+#### Commits
+
+Commits in Git are snapshots of your code at a specific point in time. Each commit has a unique identifier, a timestamp, and a message describing the changes made. Commits provide a detailed history of the project's development.
+
+#### Branching
+
+Branching allows developers to create separate lines of development within a repository. The main branch (often 'master' or 'main') serves as the foundation. Feature branches are created for specific changes, enabling developers to work on features without affecting the main branch.
+
+![branching](pages/hack-school/images/branching.png)
+
+
+1. The main or master branch, should always be the **stable version** of your project. 
+
+2. You decide to add a new feature, so you create a feature branch named `your-name/feature-x`.
+
+3. While you're working on 'feature-x,' your colleague starts working on another feature, 'feature-y,' on a separate branch `colleague-name/feature-y`. Each of you can make changes to your respective branches without affecting the main branch.
+
+4. Now you and your colleague can keep making **parallel progress** independently. You can commit and push your progess without making any changes to the main branch.
+
+5. Once you or your colleauge completed and tested their feature, you create a pull request to merge your feature into the main branch. Git automatically manages the merging process and resolves any conflicts that might arise in the main branch.
+
+
+#### Merging
+
+Merging is the process of integrating changes from one branch into another. After changes are complete in a feature branch, they are merged back into the main branch. Conflicts may arise during merging, requiring resolution.
+
+### Common Git Commands
+1. `git init`: Initializes a new Git repository.
+2. `git clone <repository>`: Creates a local copy of a remote repository.
+3. `git add <file>`: Stages changes for commit.
+4. `git add --all`: Stages all modified files.
+5. `git commit -m "message"`: Commits staged changes with a message.
+6. `git pull`: Fetches and merges changes from a remote repository.
+7. `git push`: Pushes local commits to a remote repository.
+8. `git branch`: Lists existing branches.
+9. `git checkout <branch>`: Switches into a different branch.
+10. `git merge <branch>`: Merges changes from one branch into the current branch.
+
+For full documentation of all Git commands, check this [link](https://git-scm.com/docs/git#_high_level_commands_porcelain) out.
+
+
+## What is [Github](https://github.com)?
+
+GitHub is a web-based platform built on top of Git. It provides an interface for hosting and collaborating on Git repositories. GitHub offers additional features, such as issue tracking, project management, and social interaction among developers.
+
+### Forking and Cloning
+
+GitHub allows users to fork repositories, creating their own copy. Forks are often used to experiment with changes without affecting the original project. Cloning a repository means copying it from GitHub to your local machine, enabling you to work on code locally.
+
+### Pull Requests
+
+Pull requests are a core feature of GitHub's collaborative workflow. They allow developers to propose changes and improvements to a repository. After creating a pull request, other team members review the changes, provide feedback, and approve the merge if everything looks good.
+
+### Merging Options on GitHub
+
+When it comes to merging changes in GitHub, you have several options:
+
+![merge explanation](pages/hack-school/images/merge.png)
+
+#### Merge
+
+- The "Merge" option combines the changes from a pull request into the target branch. It creates a new merge commit that records the integration of the changes.
+- Use "Merge" when you want to maintain a detailed commit history and preserve individual commits from the pull request.
+
+#### Squash and Merge
+
+- "Squash and Merge" combines all the commits from a pull request into a single, new commit. This can help keep your commit history clean and concise.
+- Use "Squash and Merge" when you want to condense multiple commits into one before merging.
+
+#### Rebase and Merge
+
+- "Rebase and Merge" rewrites the commit history of the target branch to incorporate the changes from the pull request. It replays the commits on top of the target branch, creating a linear history.
+- Use "Rebase and Merge" when you want a linear, cleaner commit history and you want to incorporate the changes without creating merge commits.
+
+
+### Creating a GitHub Account
+
+1. Go to [github.com](https://github.com).
+2. Click on the `Sign Up` button at the top right.
+3. Add your email address.
+4. Create a password.
+5. Choose your username.
+6. Choose if you want updates and announcements.
+7. Play the game to verify that you are human.
+8. Hit the `Create Account` button.
+9. Verify email with the code sent to your inbox and input it.
+10. You now have your own GitHub Account!!
+
+
+### GitHub Actions
+
+GitHub Actions is an automation tool provided by GitHub that allows you to define and automate your software development workflows. With GitHub Actions, you can automate tasks like building, testing, and deploying your code directly from your GitHub repository.
+
+#### Setting Up a Basic Workflow
+
+To set up a basic GitHub Actions workflow:
+
+1. On your repository's GitHub page, navigate to the 'Actions' tab.
+2. Click the 'New workflow' button or select an existing workflow template.
+3. Choose a workflow template or start with a blank file.
+4. Define the workflow using YAML syntax. This includes specifying triggers, jobs, steps, and more ([see example below](http://localhost:3000/hack-school/git-github#example-workflow-yaml)).
+5. Commit the workflow file to your repository.
+6. GitHub Actions will automatically execute the defined workflow when the specified triggers are met.
+
+#### Example Workflow YAML:
+
+
+```yaml copy
+name: CI/CD Pipeline
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v2
+
+    - name: Set up Node.js
+      uses: actions/setup-node@v2
+      with:
+        node-version: '14'
+
+    - name: Install dependencies
+      run: npm install
+
+    - name: Run tests
+      run: npm test
+```
+
+* `name:` This is the name of your GitHub Actions workflow, in this case, it's named "CI/CD Pipeline." This name is displayed on your GitHub repository's Actions page for clarity.
+
+* `on:` Specifies the events that trigger this workflow. In this example, the workflow is triggered whenever there is a push event (a commit is pushed) to the 'main' branch. You can customize the branch name or add more events as needed.
+
+* `jobs:` Defines one or more jobs that will be executed as part of this workflow. In this case, there's a single job named "build."
+
+* `runs-on:` Specifies the runner for this job. This job runs on an "ubuntu-latest" virtual machine. GitHub provides various runner types for different environments (Windows, macOS, Linux) and allows you to specify versions as needed.
+
+* `steps:` Describes the sequence of steps to be executed within the job. Each step performs a specific task.
+
+* `- name:` Provides a name or description for each step, making it easier to understand the purpose of each step.
+
+* `uses:` Specifies an action that should be used for the step. Actions are reusable units of code that perform specific tasks. In this workflow, actions are used to checkout code, set up Node.js, etc.
+
+* `with:` Specifies inputs or parameters for an action. For example, it sets the Node.js version to '14' for the "Set up Node.js" step.
+
+* `run:` Executes a shell command as part of the step. In this workflow, it's used to run npm commands for checking out code, installing dependencies, and running tests.
+
+### GitHub Desktop
+
+GitHub Desktop is a user-friendly graphical interface for managing Git repositories and collaborating on GitHub projects. It simplifies many of the Git commands and operations, making version control more accessible.
+
+#### Installing GitHub Desktop
+
+1. Visit the GitHub Desktop website (https://desktop.github.com/) and download the installer for your operating system.
+2. Run the installer and follow the on-screen instructions to install GitHub Desktop.
+3. After installation, launch GitHub Desktop.
+
+#### Authenticating with Your GitHub Account
+
+1. When you first launch GitHub Desktop, you'll be prompted to sign in with your GitHub account. If you don't have one, you can create one for free by following [these instructions](http://localhost:3000/hack-school/git-github#creating-a-github-account).
+2. After signing in, GitHub Desktop will link to your GitHub account, allowing you to access and manage your repositories.
+
+## Git/GitHub Workflow
+
+![git/github flow](pages/hack-school/images/github_flow.png)
+
+In Git, you manage two versions of your project: the local and remote repositories.
+
+**Pushing Commits to Remote**
+- Make changes in your working directory.
+- Use `git add` to bring changes to staging area.
+- Commit changes with `git commit` to bring it to local repository.
+- Push commits to the remote repository using `git push`.
+
+**Fetching and Pulling Changes**
+- Use `git fetch` to upadate local repository.
+- Use `git pull` to fetch and merge remote changes into your working directory.
+
+**Updating Working Directory with Branches**
+- Switch branches with `git checkout` for an updated working directory aligned with the branch.
+
+#### Creating a Repository
+
+**Using GitHub:**
+
+1. On GitHub, log in to your account.
+2. Click the '+' sign in the top right corner and select 'New Repository'.
+3. Provide a repository name, description, and other settings as needed.
+4. Click 'Create repository'.
+
+![git/github flow](pages/hack-school/images/new_repo.PNG)
+
+**Using Git:**
+
+1. Open your command line or terminal.
+2. Navigate to the directory where you want to create the repository.
+3. Use the following commands:
+
+     * Initialize a new Git repository in the current directory by typing
+    ```sh copy
+    git init
+    ```
+    * Add a remote repository named 'origin' and associate it with the provided `<repository_url>`. The `<repository_url>` should be the URL of the remote repository on GitHub where you want to push your code.
+    ```sh copy
+    git remote add origin <repository_url>
+    ```
+    * Pull any existing content from the 'main' branch of the remote repository into your local repository. This ensures that your local repository is synced with the version on GitHub.
+    ```sh copy
+    git pull origin main
+    ```
+
+
+#### Making Changes and Updating Git
+
+**Using GitHub:**
+
+1. On your repository's GitHub page, navigate to the file you want to change.
+2. Click the pencil icon to edit the file.
+3. Make your changes directly in the editor.
+4. Scroll down and provide a commit message.
+5. Click 'Commit changes'.
+6. After committing changes on GitHub, they will be automatically pushed to the repository.
+
+![git/github flow](pages/hack-school/images/edit.png)
+
+**Using Git:**
+
+1. Make changes to your code.
+2. Use the following command to stage changes for commit:
+```sh copy
+git add <filename>
+```
+Or use `git add --all` to stage all changed files:
+```sh copy
+git add --all
+```
+3. Use the following command to commit changes with a message:
+```sh copy
+git commit -m "Commit message"
+```
+4. After committing your changes, use the following command to push them to a remote repository on GitHub:
+```sh copy
+git push origin main
+```
+
+#### Creating a Branch
+
+**Using GitHub:**
+
+1. On your repository's GitHub page, click the `Branch: main` button.
+2. Enter a name for your new branch and click `Create branch`.
+
+![git/github flow](pages/hack-school/images/branch_image.PNG)
+
+**Using Git:**
+
+To create a new branch and switch to it, use the following commands:
+```sh copy
+git checkout -b new-feature
+```
+This command creates a new branch called new-feature and switches to it.
+
+#### Merging New Branch with Main
+
+**Using GitHub:**
+
+1. On your repository's GitHub page, navigate to the 'Pull requests' tab.
+![git/github flow](pages/hack-school/images/pr.PNG)
+2. Click the green 'New pull request' button on the top right.
+3. Set the base and compare branches for the pull request.
+4. Click 'Create pull request'.
+5. Review the changes and click 'Merge pull request'.
+
+![git/github flow](pages/hack-school/images/compare.png)
+
+**Using Git:**
+
+1. Switch to the main branch:
+```sh copy
+git checkout main
+```
+2. Merge the new branch into the main branch:
+```sh copy
+git merge new-feature
+```
+3. Resolve any merge conflicts if they occur.
+4. Push the changes to the remote repository:
+```sh copy
+git push origin main
+```
+

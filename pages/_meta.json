@@ -1,4 +1,13 @@
 {
-  "index": "ACM Hack",
-  "hack-school": "Hack School"
+  "index": {
+    "title": "ACM Hack",
+    "type": "page",
+    "theme": {
+      "layout": "raw"
+    }
+  },
+  "hack-school": {
+    "title": "Hack School",
+    "type": "page"
+  }
 }
