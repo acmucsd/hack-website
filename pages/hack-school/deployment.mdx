@@ -8,10 +8,12 @@ users to access and interact with them.
 ## How do servers (briefly) work?
 
 Recalling back to our discussion on clients and servers in week 4, clients send requests to servers for data, and servers process these requests and send back data in the form of a response.
+![Web App Architecture](pages/hack-school/images/webapparch.png)
+
 Formally, a server is a specialized computer that can accept requests made by clients across a network.
 
 Servers are linked to a network via **IP addresses**. IP addresses are unique identifiers (similar to a home address), allowing distinction between servers. This IP address is where data packets are sent (from the client's requests). Learn more about
-IP addresses here.
+IP addresses [here](https://en.wikipedia.org/wiki/IP_address).
 
 From a client perspective, using IP addresses to access a server is impractical, since IP addresses are long alphanumeric sequences. This is where the **Domain Name System (DNS)** comes in.
 Domain names (such as acmucsd.com or apple.com) are much more human readable, and are mapped to IP addresses through the DNS. When a user enters a domain name into their client, a DNS resolution request is sent to
