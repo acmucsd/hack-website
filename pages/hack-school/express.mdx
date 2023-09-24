@@ -72,10 +72,19 @@ http://localhost:5000/api/purchases
 
 ```
 
+where `/api/purchases` is the route, and `localhost:5000` is the server.
+
 The same API route can be used for different HTTP methods. For example, a GET request sent to this route might return all purchases, while a POST
 request sent to this route (with a request body) would post a new purchase.
 
 You can see this in action with the [Spotify API](https://developer.spotify.com/documentation/web-api)! Take a look at the endpoints for various routes, possible responses based on status code, and parameters for [GET Album](https://developer.spotify.com/documentation/web-api/reference/get-an-album).
+
+### Further API functionality
+
+Routes aren't the only part of APIs. Production APIs especially can be far more complex with many moving parts. You might have heard of **rate-limiting**, or limiting the number of API requests or calls made by a certain
+user within a time period. APIs may also need to deal with **authentication/authorization** (this is the case for routes involving user profiles for Spotify, since it handles user account information). In both of these cases, **middleware** is important. Like the name
+suggests, middleware is a blanket term for any technology or processes that sit in the "middle" of an API. Middleware often intercepts requests and can process them in a certain way, *before* the server handles them. For example,
+a certain request's headers can be validated for the necessary authorization to access a route, or the signature can be checked to ensure the same user isn't breaking the rate-limiting threshold. You can read about Express middleware [here](https://expressjs.com/en/guide/using-middleware.html). 
 
 
 ## Building our own APIs with Express
@@ -146,7 +155,37 @@ router.get('/purchases/:id', async (req, res) => {
 });
 ```
 
-We can do something similar with `POST` requests, we can utilize the `req` parameter to access details of our request body:
+The resulting response might look something like this (note that we sent the output as JSON above; requests are sent in the same manner):
+
+```json copy showLineNumbers
+{
+  "purchase": {
+    "id": 123,
+    "product": "ACM Hack Hoodie",
+    "price": 30.99,
+    "quantity": 2,
+    "timestamp": "2023-09-24T10:00:00Z"
+  }
+}
+```
+
+We can do something similar with `POST` requests—we can utilize the `req` parameter to access details of our request body.
+
+Sample request:
+
+```json copy showLineNumbers
+{
+  "purchase": {
+    "name": "ACM Bucket Hat",
+    "description": "ACM's very first bucket hat, in 3 stunning colors",
+    "color": "Blue",
+    "price": 25.99,
+    "quantity": 3,
+    "timestamp": "2023-09-24T14:30:00Z",
+  }
+}
+```
+
 
 ```javascript copy showLineNumbers
 router.post('/purchases', async (req, res) => {
@@ -161,7 +200,7 @@ router.post('/purchases', async (req, res) => {
     res.status(200).json({ purchase });
 });
 ```
-
+> Don't forget that a robust API can include some middleware. [Check out how to add functionality to your Express API's middleware](https://expressjs.com/en/guide/using-middleware.html). 
 ## Testing our API with Postman
 
 It's always important to test APIs, just as you would test any software you build. Check out our section on testing with Postman!
