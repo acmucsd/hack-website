@@ -1,13 +1,14 @@
 .about {
     width: 100%;
     border-bottom: 1px solid black;
-    padding: 80px;
+    margin: 0 auto;
+    max-width: 90%;
   }
   
 .title {
   font-size: 3.5rem;
   font-weight: 700;
-  text-align: left;
+  text-align: center;
   overflow-wrap: break-word;
   word-wrap: normal;
 }
@@ -20,7 +21,8 @@
 }
 
 .mainImage, .hackschoolImage, .projectImage {
-  padding: 20px; 
+  /* padding: 20px;  */
+  margin: 0 auto;
   gap: 0.5rem;
   margin: auto;
 }
