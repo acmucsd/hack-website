@@ -1,38 +1,38 @@
 /* Landing Card Background */
 .hero {
-    background-color: #f9a857;
-    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: calc(100vh - 4.75rem);
+    background-color: var(--docs-accent-color);
+    color: #fff;
     overflow: hidden;
 }
 
 .backdrop {
-    display: flex;
+    flex-grow: 1;
+    display: grid;
+    grid-template-columns: 2fr 3fr 1.25fr;
+    column-gap: 1rem;
     align-items: center;
+    max-width: 100%;
     text-align: center;
-    height: 37em;
-    max-height: 75vh;
 }
 
 /* Landing Card Icons */
 
-.backdrop_left {
-    z-index: 0;
-    max-width: 35%;
-    margin-top: 5em;
-}
-
-.backdrop_right {
-    z-index: 0;
-    max-width: 25%;
+.backdrop_left, .backdrop_right {
+    object-fit: contain;
+    width: 100%;
 }
 
 /* Landing Card Text */
 
 .landing_text {
-    z-index: 1;
-    flex-grow: 1;
-    margin-left: 4em;
-    padding-bottom: 8em;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1.25fr;
+    position: relative;
 }
 
 .landing_title {
@@ -43,11 +43,11 @@
 /* Landing Card Scroll Down */
 
 .arrow {
-    z-index: 2;
     margin-bottom: 1em;
     text-align: center;
     font-size: 1.5em;
     font-weight: 700;
+    color: #fff;
 }
 
 .arrow:hover {
@@ -63,20 +63,57 @@
 
 @media screen and (max-width: 768px) {
     .hero {
-        font-size: 4px;
+        font-size: 10px;
     }
     .backdrop {
-        max-height: 25vh;
+        grid-template-columns: minmax(18em, 1fr);
+        max-width: 95%;
+    }
+    .backdrop_left{
+        justify-self: center;
+        width: 70%;
+    }
+    .backdrop_right {
+        display: none;
+    }
+    .landing_text {
+        align-self: start;
     }
 }
 
 /* Font size and layout for tablet*/
 
 @media screen and (min-device-width : 768px) and (max-device-width : 1024px) {
-    .hero {
-        font-size: 10px;
-    }
     .backdrop {
-        max-height: 60vh;
+        grid-template-columns: 1fr 2fr;
+        max-width: 95%;
     }
+    .backdrop_left{
+        width: 100%;
+    }
+    .backdrop_right {
+        display: none;
+    }
+    .landing_text {
+        align-self: center;
+    }
+}
+
+/* Dark Mode */
+
+html[class~='dark'] .hero {
+    background-color: rgba(17,17,17,var(--tw-bg-opacity));
+    color: var(--docs-accent-color);
+}
+/* It's hard to color svg files in image tag*/
+html[class~='dark'] .backdrop_left, html[class~='dark'] .backdrop_right {
+    filter: brightness(85%);
+}
+
+html[class~='dark'] .landing_title {
+    filter: brightness(85%);
+}
+
+html[class~='dark'] .arrow {
+    filter: brightness(85%);
 }

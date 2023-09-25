@@ -1,0 +1,589 @@
+# Week 1: HTML
+
+## What is HTML?
+
+Before we start, we would like to mention that this section is indeed long, and contains a lot of information. However, 
+we hope that the example
+
+**HTML** or **Hyper Text Markup Language**, is the standard "language" used for creating websites (note: it
+is not actually a programming language, it is a markup language). It is the foundation of web
+development, and allows you to include text, and media such as images, videos, links, etc to your
+website. It is often paired up with CSS and JavaScript to add styles and functionality respectively.
+The job of your HTML code is to describe the appearance of your web page.
+
+To achieve this, HTML code comprises of "html elements". These denote the structural semantics for
+your text such as headings, paragraphs, lists, images and more. Tags are enclosed in angle brackets
+(`< >`) and come in pairs: an opening tag and a closing tag. The content between the opening and
+closing tags defines the element.
+
+---
+
+## Text formatting and Hyperlinks in HTML
+
+### Fundamentals of HTML Text
+
+Maintaining the structural hierarchy of the content is essential when creating an HTML website.
+Different HTML tags tell the browser how to distinguish between various elements such as 
+paragraphs and headings.
+More interestingly, search engines take into account the headings as keywords, when indexing pages!
+In addition, for easily styling content using CSS and/or to add functionality using JavaScript,
+ structuring things properly is essential -- this is because your content must 
+be wrapped around the correct HTML tag to apply the appropriate property of interest. 
+
+| Code               | Description                                    |
+| ----------------- | ---------------------------------------------- |
+| `<h1>` ... `<h6>` | Headings with decreasing levels of importance. |
+| `<p>`             | Paragraphs of text.                            |
+| `<code>`          | Inline code snippets.                          |
+| `<pre>`           | Preformatted text, maintaining whitespace.     |
+| `<blockquote>`    | Block-level quotation from another source.     |
+| `<cite>`          | Citation of the title of a work.               |
+| `<abbr>`          | Abbreviation or acronym with explanation.      |
+| `<mark>`          | Highlighted or marked text.                    |
+| `<q>`             | Inline quotation.                              |
+| `<var>`           | Variable or placeholder text.                  |
+| `<kbd>`           | Keyboard input or user action.                 |
+| `<samp>`          | Sample output or data.                         |
+
+We reccomened you try these examples on your own!
+
+```javascript copy showLineNumbers
+   <h1>Large Heading</h1>
+   <h2>Not so large Heading</h2>
+   <h3>Smaller Heading</h3>
+   <h4> Small Heading</h4>
+   <h5> Smaller Heading</h5>
+   <h6> Tiny Heading</h6>
+   <blockquote> Hi! I am a blockquote.</blockquote>
+   <pre>
+      I am the pre tag, and I maintain whitespaces! 
+      For instance, here is a binary search tree diagram! 
+
+      33
+      /    \  
+     16        57
+   /  \      /   \
+  8    21   42    66
+   </pre>
+   <mark> Look at me! I am highlighted!</mark>
+   <p> Press <kbd>Ctrl</kbd> + <kbd>C</kbd> to copy this code!</p>
+```
+
+These will be displayed as:
+
+![text-formatting-example](pages/hack-school/HTML_images/text-formatting-example.png)
+
+
+### Text Formatting
+
+There are various HTML tags that can be used to format text. Here are some of the important ones:
+
+| Code                                       | Description     |
+| -------------------------------------------| --------------- |
+| `<strong> ... </strong>` or `<b> ... </b>` |Bold Text        |
+| `<em>...</em>` or `<i>...</i>`             | Italic Text     |
+| `<u>...</u>`                               | Underlined Text |
+|`<s> ...</s>` or `<del>...</del>`           | Strikethrough   |
+| `<sup>...</sup>`                           |Superscript      |
+| `<sub>...</sub>`                           |Subscript        |
+
+### Hyperlinks
+
+Hyperlinks play a significant role in enabling users to move seamlessly between different web pages. To
+achieve this, we make use of a tool known as the "anchor tag." While this tag is commonly employed
+to create connections to external websites and resources, it also allows you to navigate within the
+same webpage. Here is how you can implement a hyperlink:
+
+```javascript copy showLineNumbers
+<a href="https://en.wikipedia.org/wiki/Cat">Cat Wiki</a>
+```
+
+Here, `href` stands for Hypertext Reference or target, and contains the web address you wish to
+direct to. You can also make images "clickable". To do this, you will need:
+
+```javascript copy showLineNumbers
+<a href="https://www.somewebsite.com">
+   <img src="kitten_image.jpg" alt="cat photo">
+</a>
+```
+
+### Lists
+
+You will often feel the need to list items. There are two kinds of lists you can make in HTML --
+ordered or unordered.
+
+**Unordered List**
+
+```javascript copy showLineNumbers
+<ul>
+  <li>Siamese Cat</li>
+  <li>Persian Cat</li>
+  <li>American Shorthair</li>
+  <li>Bongo cat</li>
+</ul>
+```
+
+As you can see in the image below, we get bullet points with no specific ordering:
+
+![unordered-list](pages/hack-school/HTML_images/unordered-list.png)
+
+**Ordered List**
+
+```javascript copy showLineNumbers
+<ol>
+  <li>American Pitbull Terrier</li>
+  <li>Great Dane</li>
+  <li>Rottweiler</li>
+  <li>Dobermann</li>
+</ol>
+```
+
+However, often times an order is important. This is why HTML provides ordered lists as well. You can include an ordered list by 
+including the list elements in between the `<ol> <\ol>` tags:
+
+This is displayed as:
+
+![ordered-list](pages/hack-school/HTML_images/ordered-list.png)
+
+### Images
+
+You can embed your images in your webpage with a `<img>` tag. Elements whose tags don't have a closing tag,
+are called *void elements*. An example is the `<img>` tag. If your image is saved in the same directory as your HTML page, then you
+can include it as follows:
+
+```javascript copy showLineNumbers
+<img src="pow.jpg" alt="Pow Pow" />
+```
+
+However, if your image is not in the same directory as your HTML file, then you will have to include
+its path in the src field. Let's suppose I have a photo of a kitten in my cats folder. I can include
+it by:
+
+```javascript copy showLineNumbers
+<img src="cats/kitten.png" alt="Meow" />
+```
+
+![cat](pages/hack-school/HTML_images/ojew.jpg)
+
+The alt text is supposed to be a textual description of the image. It is used when the image cannot
+be properly rendered due to external problems. When including images in your HTML page, always make
+sure you own the image, or have permission to use it. Most images released under a permissive
+license, such as MIT, BSD, or a suitable Creative Commons (CC) license can be used freely.
+
+### Tables
+
+Tables are always a great way to organize content. Luckily, HTML allows one to arrange text, images, links etc. in 
+a tabular format. 
+
+- `<table>...</table>` is wraps the entire table 
+- `<tr>...</tr>` is the table row. 
+- `<td>...</td>` is the table cell. 
+- `<th>...</th>` is the table header. 
+-  The `border = 1` attribute controls the width of your table's border
+
+HTML table row elements contain the cell elements. The table header tags are nested inside the first HTML table row element. 
+Here is a basic example:
+
+```javascript copy showLineNumbers
+<table border="1">
+        <tr>
+            <th>Cat Breed</th> <! -- Heading column 1 -->
+            <th>Location of origin </th> <! -- Heading column 2 -->
+         </tr>
+         <tr>
+            <td> British Shorthair </td>  <! -- Row 2, column 1 -->
+            <td>the United Kingdom</td>  <! -- Row 2, column 2 -->
+         </tr>
+         <tr>
+            <td>Chartreux</td> <! -- Row 3, column 1 -->
+            <td>France</td> 
+         </tr>
+         <tr>
+            <td>Siberian </td>
+            <td>Russia, Ukraine</td> 
+         </tr>
+</table>
+```
+
+This is what it would render as: 
+
+![table example 1](pages/hack-school/HTML_images/tables_example1.png)
+
+
+**Colspan and Rowspan**
+
+You can use the `colspan` attribute if you want to merge two or more columns into one. Furthermore, you can use 
+the `rowspan` attribute if you want to merge two or more rows into one. 
+
+**Cellpadding and Cellspacing**
+The `cellspacing` attribute defines space between table cells while 
+the `cellpadding` represents the distance between cell borders and the content within a cell. 
+
+Let's add some of these properties to our table! 
+
+```javascript copy showLineNumbers
+<table border="1" cellpadding = "5" cellspacing = "5" >
+        <tr>
+            <th>Region</th> 
+            <th>Cat Breed</th> 
+            <th>Location of origin </th> 
+         </tr>
+         <tr>
+            <td rowspan = "3"> Europe</td>
+            <td> British Shorthair </td>  
+            <td>the United Kingdom</td>  
+         </tr>
+         <tr>
+            <td>Chartreux</td> 
+            <td>France</td> 
+         </tr>
+         <tr>
+            <td>Africa</td>
+            <td>Sokoke </td>
+            <td>Kenya</td> 
+         </tr>
+</table>
+```
+This is what it would render as:
+
+![table example 1](pages/hack-school/HTML_images/tables_example1.png)
+---
+
+## Attributes
+
+All HTML elements *can* have attributes. They dont need to, but attributes tend to give the elements some personality. 
+HTML attributes contain additional information about an element and appear inside the opening tag to control the element's behaviour.
+HTML attributes are a modifier of an HTML element type. In addition, they always appear as name value pairs. 
+
+For instance when using `<img src="cats/kitten.png" alt="Meow" />` to include an image on our webpage, we have that `src` is an attribute of the 
+image tag. Another example is when we made an HTML table using, `<table border="1" cellpadding = "5" cellspacing = "5" > ...</table>`. Here, the `border`, `cellpadding` and `cellspacing` are all attributes of the HTML table element. 
+
+There are three main types of attributes -- required, standard and event attributes. There are a *lot* of HTML attributes, but we 
+will be going over the most important ones. 
+
+### Required Attributes
+
+Required attribues are essential for the element to have a valid and meaningful representation on a web page. Without these, 
+certain elements do not work. Here is a list of some of the important ones:
+
+| Attribute | Description                                         | Common Tags                 |
+|-----------|-----------------------------------------------------|--------------------------------|
+| `src`     | Specifies the source URL for media elements.       | `<img>`, `<source>`, `<track>` |
+| `href`    | Specifies the URL for hyperlinks.                  | `<a>`, `<area>`, `<link>`      |
+| `alt`     | Provides alternative text for media elements.      | `<img>`, `<area>`              |
+
+
+### Standard Attributes
+
+Standard Attributes are also sometimes refered to as "Global Attrbutes". These attribues should work with most HTML elements. Following is a table 
+of some common, useful HTML attributes and the HTML tags that they can be used with:
+
+
+| Attribute     | Description                                           | Common Tags                              |
+|---------------|-------------------------------------------------------|------------------------------------------|
+| `class`       | Used for classifying elements. Can have multiple classnames. Can match elements by class for styling purposes. | All HTML elements  |
+| `id`          | Specifies a document-wide unique identifier for an element. Can be used as a CSS selector.      | All HTML elements     |
+| `style`       | Applies inline CSS styles to an element.            | All HTML elements                       |
+| `width`       | Sets the width of an element (e.g., images).       | `<img>`, `<table>`, `<canvas>`           |
+| `height`      | Sets the height of an element (e.g., images).      | `<img>`, `<table>`, `<canvas>`           |
+| `colspan`     | Specifies the number of columns an element spans.  | `<td>`, `<th>` (table cells)            |
+| `rowspan`     | Specifies the number of rows an element spans.     | `<td>`, `<th>` (table cells)            |
+| `disabled`    | Disables user interaction with an element.         | `<input>`, `<button>`, `<select>`       |
+| `readonly`    | Makes input elements read-only.                   | `<input>`, `<textarea>`                 |
+| `checked`     | Pre-selects checkboxes or radio buttons.          | `<input type="checkbox">`, `<input type="radio">` |
+| `selected`    | Pre-selects an option in a dropdown.              | `<option>` (within `<select>`)          |
+| `placeholder` | Provides a hint to users in input fields.         | `<input>`, `<textarea>`                 |
+| `required`    | Marks input fields as mandatory.                 | `<input>`, `<select>`, `<textarea>`     |
+| `aria-label`  | Adds accessibility labels for screen readers.      | All HTML elements                       |
+| `data-*`      | Custom data attributes for storing data.            | All HTML elements                       |
+| `target`      | Specifies where a link should open (e.g., `_blank`). | `<a>`, `<base>`                        |
+| `rel`         | Describes the relationship between linked documents. | `<a>`, `<link>`                        |
+
+
+Note: Keep the `class` and `id` in mind since these are heavily used in the CSS section!
+
+### Event Attributes 
+The standard attributes include the "event handler attributes", and enable you to 
+associate JavaScript code with specific events that occur on an HTML element. These could be "events" such as 
+hovering over an element, clicking an element, keyboard inputs, dragging things and more. Some important event 
+attributes include `onclick` , `onclick` , `onload`, `onsubmit`  etc. 
+
+For example, if you have an HTML button element, and you wanted to do something when the button is clicked, you could 
+do something as follows: 
+
+```javascript copy showLineNumbers
+<button onclick="doSomethingFunction()">Click Here!</button>
+```
+
+So in this case when you click the button, the `doSomethingFunction()` gets triggered. This could be implemented in 
+a separate JavaScript file, or within a `style` tag.
+
+
+---
+
+### `<div> <\div>` and `<span> <\span>`
+
+The div (division) element is a generic block-level element. You should use this to organize your content into 
+distingushable blocks. These are also useful when you want to apply a specific style to a chunk of content. In that case, 
+you can simply wrap the content of interest around the div tag. 
+
+```javascript copy showLineNumbers
+<div id=“important_info”>
+    <p>Notion is the best way to take notes.</p>
+    <p>Notion helps you be organized.</p>
+    <p>We <3 Notion</p>    
+</div>
+```
+
+Similarly (but not so similarly), `span` is a generic inline element. Just like the `div` tag, `span` supports all global attributes in HTML. 
+This means that you can add classnames and ids to these HTML elements to control and modify them. For example, if I want to make only one word in 
+a sentence appear brown, I can do something like this:
+
+```javascript copy showLineNumbers
+<p> My golden retriever has <span style="color:brown">brown</span> eyes.</p>
+```
+
+This would render as follows: 
+
+![inline-styling](pages/hack-school/HTML_images/in-line-style.png)
+
+The important thing to note here is that although `div` and `span` have similar functions, they give us a different 
+degree of control over the content of our HTML page. 
+
+---
+
+## Getting User Input 
+
+### HTML Form Element 
+An HTML form element can be used to allow the user to input data, which can then be sent to the server for doing other things. 
+
+```javascript copy showLineNumbers
+<form>...</form>
+```
+
+The form element is a **container** for different input elements. 
+
+### HTML Input Element 
+The `<input>` element represents a typed data field, usually with a form control to allow the user to edit the data.
+This element has a `type` attribute, which helps us determine what kind of data the form takes. This, for instance, could be 
+anything from text, images, pdfs etc. Here are some of the important ones:
+
+| Type                    | Description                                                    |
+|-------------------------|----------------------------------------------------------------|
+| `<input type="text">`   | A single-line text input field where users can enter text or data. |
+| `<input type="radio">`  | A radio button that allows users to select one option from a group of choices. Only one radio button in a group can be selected at a time. |
+| `<input type="checkbox">`|A  checkbox that allows users to select >= 0 options from a group of choices. Users can select multiple checkboxes. |
+| `<input type="submit">`  |A submit button within a form, which, when clicked, sends the form data to a server for processing. Typically used to submit forms. |
+| `<input type="button">`  |A clickable button that can trigger JavaScript functions or perform other actions defined by the developer. It's not associated with form submission by default. |
+
+
+### HTML Button Element 
+Instead of having an `input` element of type button, you can also just have an HTML button element. 
+Although the button element has a lot of different global and event attributes, it is reccomened to specify the button type. 
+Here are some examples:
+
+```javascript copy showLineNumbers
+<button type="button">I'm a regular button.</button>
+<button type="reset">I'm a reset button.</button>
+<button type="submit">I'm a submit button.</button>
+```
+
+Some important *global* button attributes include:
+
+| Attribute             | Description                                                                                      |
+|-----------------------|--------------------------------------------------------------------------------------------------|
+| `accesskey`           | Specifies a keyboard shortcut to activate or focus the button.                                 |
+| `autofocus`           | Specifies that the button should automatically have focus when the page loads.                 |
+| `disabled`            | Disables the button, preventing user interaction.                                               |
+| `form`                | Associates the button with a specific `<form>` element.                                         |
+| `formaction`          | Overrides the `<form>` element's action URL for form submission.                               | 
+| `formenctype`         | Specifies the encoding type for form data when submitting.                                     | 
+| `formmethod`          | Specifies the HTTP method to use when submitting the form.                                     | 
+| `formnovalidate`      | Disables form validation when the button is clicked.                                           | 
+| `formtarget`          | Specifies where to display the response after form submission.                                 | 
+| `name`                | Specifies a name for the button, used when submitting form data.                               | 
+| `type`                | Specifies the type of button (e.g., "submit", "reset", "button").                               | 
+| `value`               | Specifies an initial value for the button (used in form submissions).                          | 
+
+
+In addition, some important *event* button attributes include:
+
+| Attribute             | Description                                                                                      |
+|-----------------------|--------------------------------------------------------------------------------------------------|
+| `onclick`             | Defines a JavaScript function to be executed when the button is clicked.                        | Event     |
+| `ondblclick`          | Defines a JavaScript function to be executed when the button is double-clicked.                 | Event     |
+| `onmousedown`         | Defines a JavaScript function to be executed when the button is pressed down.                   | Event     |
+| `onmouseup`           | Defines a JavaScript function to be executed when the button is released.                       | Event     |
+| `onmouseenter`        | Defines a JavaScript function to be executed when the mouse enters the button's area.           | Event     |
+| `onmouseleave`        | Defines a JavaScript function to be executed when the mouse leaves the button's area.           | Event     |
+| `onkeydown`           | Defines a JavaScript function to be executed when a key is pressed down while the button is focused. | Event |
+| `onkeyup`             | Defines a JavaScript function to be executed when a key is released while the button is focused.   | Event |
+| `onfocus`             | Defines a JavaScript function to be executed when the button receives focus.                    | Event     |
+| `onblur`              | Defines a JavaScript function to be executed when the button loses focus.                        | Event     |
+
+---
+
+### Dropdown Menus
+
+You can use the `<select>` element to create a dropdown menu. The `<select>` element wraps around multiple 
+`option` elements, which represent an option in the dropdown menu. The value attribute defines the value 
+realted to a given option. Most global attributes such as `class` and `id` can be used with the `select` tag. 
+
+You can also use boolean attributes such as `disabled` to display an option, but not allow the users to use it.
+Here is an example of a a drop down menu:
+
+```javascript copy showLineNumbers
+<select name="cats" id="cats">
+  <option value="doggo" disabled>woof</option>
+  <option value="bengal_cat">Bengal Cat</option>
+  <option value="minskin_cat">Minskin Cat</option>
+  <option value="persian_cat" selected>Persian Cat</option>
+</select>
+```
+
+As you can see, the `selected` value is the "Persian Cat", therefore, we see that it is the value that appears even when 
+the dropdown menu is closed. 
+
+![dropdown-menu-closed](pages/hack-school/HTML_images/dropdown-menu-closed.png)
+
+Moreover, the `disabled` option, "woof" appears gray. 
+
+![dropdown-menu-opened](pages/hack-school/HTML_images/dropdown-menu-opened.png)
+
+---
+
+## Website Structure 
+
+Most web pages tend to share some standard components such as headers, navigation bars, sidebars, main content etc. 
+It is a good practice to organize and implement sections of your code depending on the functionality. To implement such 
+semantic markup, html has a variety of HTML layout tags. We will be going over some of them in detail. 
+
+### Header 
+The `<header>` element represents a container for introductory content or a set of navigational links.
+
+```javascript copy showLineNumbers
+<header>
+  <h1> 10 Reasons to get a Cat </h1>
+  <h2>1. Cats are superior. </h2>
+      <p>blah blah blah <\p>
+</header>
+```
+You can wrap the header around an `<article>` tag. This tag is used to separate out a block of related content.
+
+### Navigation Bar 
+It is often a good idea to put all important links in one portion of the page so that it is easy for the users to navigate within a page. 
+To achieve this, you can utilize the HTML `<nav>` tag. Typically, you would want to use this as a "table of contents", and 
+should only put major links here. Overcrowding the navbar can defeat the purpose of having it in the first place.
+
+Here is a basic example of a navbar with an **unordered list**:
+
+```javascript copy showLineNumbers
+<nav class="cat-list">
+  <ul>
+    <li><a href="#">Cat Breeds</a></li>
+    <li><a href="#">Cat Food</a></li>
+    <li><a href="#">Memes</a></li>
+  </ul>
+</nav>
+```
+
+
+```javascript copy showLineNumbers
+<nav class="dog-list">
+  <ol>
+    <li class="crumb"><a href="#">Potential Pup Names</a></li>
+    <li class="crumb"><a href="#">Dog Treats</a></li>
+    <li class="crumb">Sweaters</li>
+  </ol>
+</nav>
+```
+
+
+
+### Main Content
+The `<main>` tag is used for content unique to the current page. 
+It is used only once in an HTML document, and is found directly inside the `<body>` tag.
+
+The `<section>` HTML element represents a generic standalone section of a document. 
+It does nto really have any other semantic meaning, other than just being a section of an HTML document. This typically contains a heading 
+inside it.
+
+
+### Footer
+If you wish to include a footer in your webpage, you can use the `footer` tag as follows:
+
+```javascript copy showLineNumbers
+<footer>
+    <p> Author: Someone at ACM</p>
+    <p>Contact us: contact@acmucsd.org </p>
+    <p>Medium: <a href="https://medium.com/acmucsd"> Medium Link</a> </p>
+    <p>Instagram: @acm.ucsd </p>
+  </footer>
+```
+
+![footer](pages/hack-school/HTML_images/footer.png)
+
+---
+## Metadata
+
+We will now be combining everything that we have learned so far into one HTML document! Here is
+where you can start:
+
+```javascript copy showLineNumbers
+<!doctype html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8" />
+    <title> ACM Hack School</title>
+  </head>
+  <body>
+    <p> Welcome to Hack School 2023 </p>
+  </body>
+</html>
+```
+
+The doctype is a historical artifact that needs to be included for everything else to work right.
+The `<html></html>` tags wrap all the other content on our page! The `<meta>` element contains all
+our "metadata" . This is basically all other data like `<base>`, `<link>`, `<script>`, `<style> `or
+`<title>`, which you cannot directly put/represent in your HTML document. The "charset" attribute
+specifies the character encoding for your document as UTF-8, and contains most characters you will
+ever need. The `<body> <\body>` tags contain all the rest of our content! :)
+
+---
+
+## Bonus: TeX on HTML
+
+Congratulations! You have made it through the HTML section! Here is an additional bonus section to learn how to include 
+math equations to your HTML Page. Note that this is a completely optional section.
+
+We encourage you  to stop using screenshots and images to display equations on HTML documents. Instead, use `MathJax`.
+
+MathJax is a JavaScript library that renders LaTeX math expressions on your web page. Note that you will need to have some 
+familiarity with laTeX to make the most out of this. You can look at this [wikipedia page](https://en.wikipedia.org/wiki/List_of_mathematical_symbols_by_subject)
+to look up relevant symbols. 
+
+First, you need to include the MathJax library in the `<head>` as follows:
+
+```javascript copy showLineNumbers
+<head>
+  <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+</head>
+```
+
+Then, everytime you want an **inline equation**, wrap the LaTeX expression around `\(` and `\)`. If you want to display an equation in the middle of the page, use `$$`
+
+```javascript copy showLineNumbers
+<body>
+  <p>This is an inline equation: \(\Phi_{P_i}(x) = x^{2}+ x^{3}+ x^{5} + x^{7} + x^{11} + ... \)</p>
+  
+  <p>This is a display equation:</p>
+  $$
+  [x^n] \Phi_{S}(x) =  [x^n] \sum\limits_{j=0}^{2j- n} \binom{2j-n}{j} x^{n+k} 
+  $$
+</body>
+```
+This would render as:
+
+![latexexample](pages/hack-school/HTML_images/latex.png)
+
+
