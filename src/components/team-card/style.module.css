@@ -1,22 +1,25 @@
 .team {
-    display: flex;
+    display: grid;
+    /* grid-template-columns: 19% 19% 19% 19% 19%; */
+    grid-template-columns: repeat(5, 1fr);
     justify-content: center;
     gap: 0.5rem;
-    overflow-x: auto;
     padding-left: 0.5rem;
     padding-right: 0.5rem;
   }
-  
+    
   .card {
     text-align: center;
-    display: flex;
-    flex-direction: column;
-    flex: 1;
   }
-  
+
+  .cardOutline {
+    border: 2px solid #f9a857;
+    padding: 16px;
+    border-radius: 10px;
+  }
+
   .card h4 {
     font-weight: bold;
-    font-size: 1.2em;
     margin-top: 10px;
   }
   
@@ -32,26 +35,14 @@
     fill: #f9a857;
   }
   
-  .cardOutline {
-    border: 2px solid #f9a857;
-    padding: 16px;
-    text-align: center;
-    border-radius: 10px;
-  }
-  
   .card img {
-    max-width: 100%;
-    height: auto;
     border-radius: 50%;
-    display: inline-block;
   }
-  
-  /*
-  @media screen and (max-width: 999px) {
-    .card h4,
-    .card h5 {
-      font-size: 0.9em !important;
+
+  @media screen and (max-width: 810px) {
+    .team {
+      grid-template-columns: repeat(3, 1fr);
+      gap: 0.3rem; 
     }
   }
-  */
   
