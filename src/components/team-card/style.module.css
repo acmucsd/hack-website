@@ -45,4 +45,10 @@
       gap: 0.3rem; 
     }
   }
+  @media screen and (max-width: 600px) {
+    .team {
+      grid-template-columns: 50%;
+      gap: 0.3rem; 
+    }
+  }
   
