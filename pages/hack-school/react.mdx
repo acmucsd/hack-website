@@ -2,11 +2,11 @@
 
 ## What is React?
 
-React is a JavaScript library for building user interfaces. It allows you to to create interactive, complex, and dynamic user interfaces by breaking them down into small, isolated pieces of code called components. The name "React" is derived from its ability to synchronize changes in the user interface with changes in data reactively. This means that when your data changes, React updates the corresponding parts of the user interface without the need for manual intervention, resulting in a highly responsive and efficient application.
+React is a JavaScript library for building user interfaces. It allows you to to create interactive, complex, and dynamic user interfaces by breaking them down into small, isolated pieces of code called <ins>**components**</ins>. The name "React" is derived from its ability to synchronize changes in the user interface with changes in data reactively. This means that when your data changes, React updates the corresponding parts of the user interface without the need for manual intervention, resulting in a highly responsive and efficient application.
 
 ## JSX
 
-JSX (JavaScript XML) is a syntax extension for JavaScript used in React. It allows you to write HTML-like code within your JavaScript files to describe the structure of your UI. JSX provides several added functionalities that make it a powerful tool for building dynamic user interfaces:
+JSX (JavaScript XML) is a syntax extension for JavaScript used in React. It allows you to write HTML-like code within your JavaScript files to describe the structure of your UI. JSX provides several added functionalities that make it a powerful tool for building dynamic user interfaces. You can learn more about it [here](https://legacy.reactjs.org/docs/introducing-jsx.html)
 
 * **Curly Braces for Variables:**
     You can use curly braces `{}` in JSX to embed variables and JavaScript expressions directly within your HTML-like code. This allows you to dynamically render content based on variables. For example:
@@ -51,13 +51,15 @@ JSX (JavaScript XML) is a syntax extension for JavaScript used in React. It allo
 
 ## Components
 
-In React, components are the fundamental building blocks of user interfaces. They are independant and reusable pieces of UI and can range from small, simple elements like buttons or input fields to entire complex sections of a web page. React applications are composed of many components as shown in the picture below:
+In React, components are the fundamental building blocks of user interfaces. They are independant and reusable pieces of the UI and can range from small, simple elements like buttons or input fields to entire complex sections of a web page. React applications are composed of many components as shown in the picture below:
 
 ![components web page](pages/hack-school/images/components1.PNG)
+Source: Dennis Ivy's React Tutorial
 
-Each component can hold other components to make more complex sturcutres as show below:
+Each component can hold other components to make more complex structures as show below:
 
 ![components nested](pages/hack-school/images/components2.PNG)
+Source: Dennis Ivy's React Tutorial
 
 ## Class Components
 
@@ -110,6 +112,12 @@ class Actions extends Component {
 
 export default Tweets;
 ```
+ 
+import { Callout } from 'nextra/components'
+ 
+<Callout type="error" emoji="⚠️">
+  React will throw an error if the render function returns more than one component. To avoid this create a wrapper component with all your components nested in it (look at line 16).
+</Callout>
 
 ## Functional Components
 
@@ -153,13 +161,15 @@ function Actions() {
 export default Tweets;
 ```
 
+Learn more about components [here](https://legacy.reactjs.org/docs/components-and-props.html)
+
 ## Props
 
-Props (short for properties) allow you to pass data from a parent component to a child component. They are a way to make your components dynamic and reusable by enabling you to customize a component's behavior and appearance by providing it with data from its parent component.
+Props (short for properties) allow you to pass data from a parent component to a child component. They are a way to make your components dynamic and reusable by enabling you to customize a component's behavior and appearance by providing it with data from its parent component. 
 
 ![components web page](pages/hack-school/images/props-removebg-preview.png)
 
-Consider the tweet example above but where we pass in data through props from the partent component which is `Tweets` to the child component `Tweet`:
+Consider the tweet example above but where we pass in data through props from the parent component which is `Tweets` to the child component `Tweet`:
 
 ```jsx copy showLineNumbers
 import React from 'react';
@@ -221,7 +231,7 @@ React Hooks are functions that enable functional components to manage state and 
 Some common React Hooks include `useState`, `useEffect`, `useContext`, `useMemo`, `useReducer`, and [more](https://react.dev/reference/react). 
 
 
-## Use State
+## useState
 
 `useState` is a React Hook that allows functional components to manage state. It lets you add state to your functional components, making them capable of handling dynamic data and re-rendering when that data changes.
 
@@ -283,8 +293,45 @@ In this example:
 * We use the `useState` hook to create and initialize a state variable called `tweets`, which is an array of tweet objects.
 * The `addTweet` function is used to add a new tweet to the list of tweets. It creates a new tweet object and uses the spread operator to update the state with the new tweet.
 * The `Tweets` component renders a button to add a new tweet and maps over the `tweets` array to render each tweet using the `Tweet` component.
+* Note that in React you must provide a unique key in this case `tweet.id` to each element in the list. This helps React keep identify and keep track of all elements in the list.
 * The `Tweet` component receives a single `tweet` prop and displays the author, content, and likes of each tweet.
 
+## useEffect
+
+The `useEffect` hook is another commonly used hook in React that allows functional components to perform side effects in a declarative way. Side effects can include data fetching, manual DOM manipulations, subscriptions, and more. `useEffect` is designed to handle these side effects and keep your components in sync with the current state of your application.
+
+Basic usage of `useEffect`:
+
+```jsx copy showLineNumbers
+import React, { useState, useEffect } from 'react';
+
+function ExampleComponent() {
+  // State initialization
+  const [count, setCount] = useState(0);
+
+  // Effect declaration
+  useEffect(() => {
+    // Code to run after component renders
+
+    // Return a cleanup function (optional)
+    return () => {
+      // Code to run before component unmounts (cleanup)
+    };
+  }, [dependencies]);
+
+  // Rest of the component code
+}
+```
+
+Here's what each part does:
+
+* The first argument to useEffect is a function that contains the code to run after the component renders. This is where you put your side-effect logic (line 9).
+
+* The second argument to useEffect is an optional array of dependencies (line 15). It specifies values from the component's scope that the effect relies on. When any of these values change, the effect will be re-executed. If you omit the second argument, the effect will run after every render.
+
+* Inside the effect function, you can perform asynchronous tasks, interact with the DOM, or update component state. It's essential to handle asynchronous operations properly to avoid issues like memory leaks.
+
+* If the effect needs cleanup (e.g., canceling subscriptions or removing event listeners), you can return a cleanup function from the effect. This function will be executed before the component unmounts and before the effect runs again. Cleanup functions are essential for resource management and preventing memory leaks.
 
 
 ## What is Next.js?
