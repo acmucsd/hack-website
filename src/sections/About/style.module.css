@@ -14,18 +14,17 @@
   display: grid;
   grid-template-columns: 1fr 1fr;
   align-items: center;
+  gap: 1rem;
 }
 
 .mainImage, .hackschoolImage, .projectImage {
   padding: 20px; 
-  /* display: flex; */
+  gap: 0.5rem;
   margin: auto;
-  justify-content: center; 
-  align-items: center; 
 }
 
 .mainImage, .hackschoolImage, .projectImage {
-  border-radius: 8px;
+  border-radius: 50px;
   max-width: 100%;
   height: auto; 
 }
