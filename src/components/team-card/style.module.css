@@ -1,0 +1,25 @@
+.team {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+  
+.card {
+    margin: 10px;
+    text-align: center;
+}
+  
+.cardOutline {
+    border: 2px solid #333;
+    padding: 16px;
+    text-align: center;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+}
+
+.card img {
+    width: 250px;
+    height: 250px;
+    border-radius: 50%;
+    display: inline-block;
+}
