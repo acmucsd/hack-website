@@ -16,6 +16,7 @@
     border: 2px solid #f9a857;
     padding: 16px;
     border-radius: 10px;
+    height: 100%;
   }
 
   .card h4 {
