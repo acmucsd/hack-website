@@ -52,16 +52,12 @@ const TeamCard: React.FC = () => {
             <h4>{member.name}</h4>
             <h5>{member.position}</h5>
             <div className={styles.icons}>
-              {(
-                <a href={`mailto:${member.email}`} target="_blank" rel="noopener noreferrer">
-                  <EmailIcon/>
-                </a>
-              )}
-              {(
-                <a href={member.linkedinLink} target="_blank" rel="noopener noreferrer">
-                  <LinkedInIcon/>
-                </a>
-              )}
+              <a href={`mailto:${member.email}`} target="_blank" rel="noopener noreferrer">
+                <EmailIcon />
+              </a>
+              <a href={member.linkedinLink} target="_blank" rel="noopener noreferrer">
+                <LinkedInIcon />
+              </a>
             </div>
           </div>
         </div>
