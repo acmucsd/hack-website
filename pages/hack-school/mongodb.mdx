@@ -1,0 +1,264 @@
+# Week 5: Databases and MongoDB
+
+## What is a Database?
+A database is an organized collection of data or information. It allows people to store information between sessions on a website.
+Data in a database is organized in a way to make it easy to write, manage, and update the data.
+
+## SQL
+![sql](pages/hack-school/images/sql.png)
+
+One type of database is a SQL (**S**tructured **Q**uery **L**anguage) database. SQL is a programming language to store and process information
+in a relational database. A relational database uses tables to store information, using rows and columns. It looks similar to popular spreadsheet programs
+like Google Sheets and Microsoft Excel. Popular database management platforms that uses SQL are PostgreSQL and MySQL.
+
+**Some popular SQL commands include:** 
+| Command    | Use |
+| -------- | ------- |
+| SELECT  | extracts data from database    |
+| UPDATE | updates data in database     |
+| DELETE    | deletes data from database    |
+| INSERT INTO   | inserts data into database    |
+| CREATE DATABASE   | creates new database    |
+| CREATE TABLE   | creates new table   |
+
+
+## NoSQL
+``` js copy
+// Example of a document with user information
+{
+     "_id": 1,
+     "first_name": "Angela",
+     "college": "Marshall",
+     "year": "2nd year",
+     "likes": [
+        "food",
+        "kpop",
+        "ACM"
+     ]
+}
+```
+The main type of database that this chapter focuses on is a NoSQL (non-SQL) database. Instead of storing data in
+a tabular format, NoSQL databases usually order data using **documents**. Documents store data in key-value pairs.
+The values can be strings, numbers, arrays, or objects while the keys are unique identifiers (usually strings) for the values.
+These documents are typically stored as JSON, BSON, or XML files. JSON (JavaScript Object Notation) is a text-based format
+for structured data which is based on JavaScript object syntax. Some other kinds of NoSQL databases are key value, wide column, vector, and graph
+databases.
+
+## [MongoDB](https://www.mongodb.com/)
+MongoDB is a free and open-source NoSQL database management program with data in collections of documents. 
+It uses BSON which is a binary encoded JSON-like documents. However, it runs locally on the user's device
+which means that the user has to set up, manage, and deploy the database. 
+
+## MongoDB Atlas
+MongdoDB Atlas is a cloud database service that deploys and manages a database for you.
+
+### Creating MongoDB Atlas Database
+1. Create an account on [MongoDB](https://account.mongodb.com/account/login)
+2. Once logged in, navigate to the **Database Deployments** page and click on the **Build a Database** button 
+3. Choose the M0 (free) option and customize name for the cluster
+4. Authenticate the connection with a username and password and add your IP address to whitelist it
+5. Connect to the database with the Node.js driver and copy the connection string
+
+### Creating an Environment Variables File
+To protect sensitive information such as passwords and API credentials, it's good to create a .env file
+which configures your information into variables that can be used in the code. This hides your information
+from the public when you push your code to a platform like Github.
+1. Use npm to install the dotenv library
+```bash copy showLineNumbers
+npm install dotenv
+```
+2. In your code environment, create a new file and name it *.env*
+3. Add any secret information into variables
+```js copy showLineNumbers
+KEY=1593ad25grb98324
+PASSWORD=123456789a
+```
+4. Create a folder named *config* and add a JavaScript file with following code snippet
+```js copy showLineNumbers
+require('dotenv').config()
+
+const config = {
+    key: process.env.KEY,
+    password: process.env.PASSWORD
+}
+
+module.exports = config;
+```
+5. To use a variable from your .env file, you can access it from the config object
+```js copy showLineNumbers
+// 1593ad25grb98324
+config.key
+// 123456789a
+config.password
+```
+6. In your .gitignore file, make sure to add your .env file so it isn't pushed to your Github repo!
+
+### Connecting to MongoDB Atlas Database
+1. After you copy the connection string, add it to an .env file
+```js copy showLineNumbers
+DATABASE_URL=connectionstringurl
+```
+2. In a JavaScript file, add the following code snippet
+```js copy showLineNumbers
+const mongoose = require('mongoose');
+
+mongoose.connect(config.databaseUrl, {
+    useNewUrlParser: true,
+    useUnifiedTopology: true }).then(() => {
+  console.log('Connected to MongoDB database');
+});
+```
+Learn more at [Get Started With Atlas](https://www.mongodb.com/docs/atlas/getting-started/) on MongoDB!
+
+## Mongoose
+```bash copy showLineNumbers
+npm install mongoose
+```
+Mongoose is a ODM (Object Data Modeling/Object Document Mapping) JavaScript library that wraps MongoDB with a schema-based approach. Schemas are blueprints for
+the data. Using these schemas, we can create models which help us create and read documents. Install
+the library with npm. 
+
+## Defining Schemas
+```js copy showLineNumbers
+const mongoose = require('mongoose');
+
+const userSchema = new Schema({
+  id: {
+    type: mongoose.ObjectId,
+  },
+  email: {
+    type: String,
+    required: true // Throws error if email is missing
+  },
+  password: {
+    type: String,
+    required: true // Throws error if password is missing
+  },
+  username: {
+    type: String,
+    required: true, // Throws error if username is missing
+    unique: true // Error is thrown for duplicate usernames
+  },
+  college: {
+    type: String
+  },
+  year: {
+    type: Number
+  },
+  likes: {
+    type: [[String]] // Array of strings
+  },
+  createdAt: {
+    type: Date,
+    default: Date.now // Sets default value as current date
+  }
+});
+
+const User = mongoose.model('User', userSchema);
+```
+To create a schema, Mongoose uses keys with configuration objects called SchemaTypes. These SchemaTypes dictate
+the type, getters/setters, and valid values for that key. 
+
+**Valid SchemaTypes include:**
+| Type    | Example |
+| -------- | ------- |
+| String | "Henry" | 
+| Number | 24 | 
+| Date | "2023-12-09" |
+| Boolean | true |
+| ObjectId | "5e1a0651741b255ddda996c4" |
+| Array | [2, 4, 6, 8] |
+
+**Common Validators include:**
+| Validator | Use |
+| -------- | ------- |
+| min | Specifies minimum values for numbers and dates |
+| max | Specifies maximum values for numbers and dates |
+| minlength | Specifies minimum length for strings | 
+| maxlength | Specifies maximum length for strings | 
+| required | Ensures field is not empty or undefined |
+| unique | Ensures field value if unique across documents in collection | 
+| default | Provides default value if not provided | 
+| enum | Restricts field to predefined set of values |
+| match | Validates a field against a regex expression | 
+
+
+Explore more types on this Mongoose documentation [page](https://mongoosejs.com/docs/schematypes.html)!
+
+## CRUD Operations
+CRUD (**C**reate **R**ead **U**pdate **D**elete) Operations are four basic operations for any application with a database.
+
+### Create
+```js copy showLineNumbers
+// Create a new user from the given object
+const newUser = {
+    "_id": 2,
+    "email": "acmhack@gmail.com",
+    "password": "strONgestpasswOrdever!",
+    "username": "acmlovesyou",
+    "college": "Sixth",
+    "year": 2027,
+    "likes": [
+      "HTML/CSS",
+      "JavaScript",
+      "React"
+    ]
+};
+User.create(newUser);
+```
+Create operations add a new document to the database. Let's add a new user using the User schema!
+
+### Read
+```js copy showLineNumbers
+// Find all users
+User.find().exec();
+
+// Find a user by id
+User.findById(id).exec();
+
+// Find first user whose college is Marshall, else return "null"
+User.findOne({ college: 'Marshall' }).exec();
+```
+Read operations allow us to get data from the database. They can also filter based on queries. The three
+most common operations are shown above: find, findById, and findOne. 
+
+### Update
+```js copy showLineNumbers
+// Update a user with specified username to have a new college 
+User.updateOne({username: "acmlovesyou"},
+    {$set: {college: "Revelle"}});
+
+// Update all users with Warren as their college to have raccoon in their likes
+User.updateMany({college: "Warren"},
+    {$push: {likes: "racoon"}});
+
+// Create a new user if one with specified condition doesn't exist
+// It should have all required keys from the database
+User.updateOne({username: "yay"},
+    {$set: {email: "example@gmail.com", password: "yay123", year: 2025}}, {upsert: true});
+```
+Update operations are similar to create operations, but modify existing documents. As shown above, updateOne modifies
+only one user document while updateMany modifies all documents in a collection. 
+
+**Common Update Operations include:**
+
+| Operation | Use |
+| -------- | ------- |
+| $set | Sets value of one or more field |
+| $inc | Increment value of numeric field by specified amount | 
+| $push | Add element to an array field |
+| $pull | Removes element from an array field |
+| $upsert | If true, creates new document when one isn't found |
+
+### Delete
+```js copy showLineNumbers
+// delete user with username ihatehack in the database
+User.deleteOne({username: 'ihatehack'});
+
+// delete all users with Eighth as their college
+User.deleteMany({college: 'Eighth'});
+```
+Delete operations remove documents from the database. As shown above, deleteOne deletes only one user document
+while deleteMany deletes all documents with that condition in the collection.
+
+Learn more about Mongoose queries [here](https://mongoosejs.com/docs/api/query.html)!
