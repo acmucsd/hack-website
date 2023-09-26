@@ -6,6 +6,7 @@
   }
   
 .title {
+  padding-top: 2rem;
   font-size: 3.5rem;
   font-weight: 700;
   text-align: center;
@@ -29,7 +30,7 @@
 
 .mainImage, .hackschoolImage, .projectImage {
   border-radius: 50px;
-  max-width: 100%;
+  max-width: 80%;
   height: auto; 
 }
 
@@ -47,5 +48,8 @@
   }
 }
 
+.projects {
+  padding-bottom: 2rem;
+}
 
 
