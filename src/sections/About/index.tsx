@@ -34,10 +34,15 @@ const About: React.FC = () => {
             <a href="https://acmurl.com/apply-hackschool" target="_blank" rel="noopener noreferrer">
               acmurl.com/apply-hackschool!
             </a>
-            . All Hack School content is open source and hosted on this website under <a href="https://hack.acmucsd.com/hack-school" target="_blank" rel="noopener noreferrer">
+            . All Hack School content is open source and hosted on this website under{' '}
+            <a
+              href="https://hack.acmucsd.com/hack-school"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               Hack School
-            </a>, so feel free to
-            check it out and learn something new!
+            </a>
+            , so feel free to check it out and learn something new!
           </p>
         </div>
       </div>
@@ -45,10 +50,11 @@ const About: React.FC = () => {
       <div className={styles.projects}>
         <div className={styles.projects_desc}>
           <p>
-            Interested in hands-on software engineering experience? ACM Hack hosts project
-            teams under ACM Projects! Our project teams are a great way to gain relevant experience
-            for your resume, learn new technologies, and work with a team. We&apos;ll provide the mentorship and
-            guidance, so don&apos;t worry about having any prior experience. Learn more and apply at{' '}
+            Interested in hands-on software engineering experience? ACM Hack hosts project teams
+            under ACM Projects! Our project teams are a great way to gain relevant experience for
+            your resume, learn new technologies, and work with a team. We&apos;ll provide the
+            mentorship and guidance, so don&apos;t worry about having any prior experience. Learn
+            more and apply at{' '}
             <a href="https://projects.acmucsd.com" target="_blank" rel="noopener noreferrer">
               projects.acmucsd.com
             </a>
