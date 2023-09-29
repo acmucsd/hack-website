@@ -16,7 +16,7 @@
   
 .main, .hackschool, .projects {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(24rem, 1fr));
+  grid-template-columns: repeat(2, 1fr);
   align-items: center;
   gap: 1rem;
   margin-top: 1rem;
@@ -41,12 +41,16 @@
 }
 
 @media screen and (max-width: 768px) {
-  .hackschool_desc {
-    order: 0;
-    text-align: center;
+  .main, .hackschool, .projects {
+    grid-template-columns: 1fr;
   }
   .hackschoolImage {
     order: 1;
+    text-align: center;
+  } 
+  .hackschool_desc {
+    order: 0;
+    text-align: center;
   }
 }
 
