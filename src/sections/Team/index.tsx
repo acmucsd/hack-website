@@ -4,7 +4,7 @@ import TeamCard from '../../components/team-card/index';
 const Team: React.FC = () => {
   return (
     <div>
-      <h3 className={styles.team}>Team Section</h3>
+      <h1 className={styles.h1}>Meet the Team!</h1>
       <TeamCard />
     </div>
   );
