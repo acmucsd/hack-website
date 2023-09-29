@@ -4,5 +4,8 @@
   "git-github": "Git/GitHub",
   "html": "Week 1: HTML",
   "css": "Week 1: CSS",
-  "js": "Week 2: JavaScript"
+  "js": "Week 2: JavaScript",
+  "react": "Week 3: React",
+  "express": "Week 4: Building APIs with Express",
+  "mongodb": "Week 5: Databases & MongoDB"
 }

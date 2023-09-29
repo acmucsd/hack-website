@@ -19,6 +19,8 @@
   grid-template-columns: repeat(auto-fit, minmax(24rem, 1fr));
   align-items: center;
   gap: 1rem;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
 }
 
 .mainImage, .hackschoolImage, .projectImage {
