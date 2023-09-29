@@ -13,10 +13,10 @@ const config: DocsThemeConfig = {
     const url = `https://hack.acmucsd.com${
       defaultLocale === locale ? asPath : `/${locale}${asPath}`
     }`;
-    const title = frontMatter.title || 'ACM Hack at UCSD';
+    const title = frontMatter.title || 'ACM Hack at UC San Diego';
     const description =
       frontMatter.description ||
-      "ACM Hack at UCSD is a community focused on software engineering and exploring what's possible through code!";
+      "ACM Hack at UC San Diego is a community focused on software engineering and exploring what's possible through code!";
 
     return (
       <>
@@ -33,7 +33,7 @@ const config: DocsThemeConfig = {
         {/* type of content */}
         <meta property="og:type" content="website" />
         {/* actual website title */}
-        <meta property="og:site_name" content="ACM Hack at UCSD" />
+        <meta property="og:site_name" content="ACM Hack at UC San Diego" />
         {/* title to display for the specific link being shared */}
         <meta property="og:title" content={title} />
         {/* preview description text */}
