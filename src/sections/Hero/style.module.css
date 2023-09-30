@@ -7,6 +7,7 @@
     background-color: var(--docs-accent-color);
     color: #fff;
     overflow: hidden;
+    transition: all 0.5s ease-in-out;
 }
 
 .backdrop {
@@ -24,6 +25,7 @@
 .backdrop_left, .backdrop_right {
     object-fit: contain;
     width: 100%;
+    height: 100%;
 }
 
 /* Landing Card Text */
@@ -43,6 +45,7 @@
 /* Landing Card Scroll Down */
 
 .arrow {
+    margin-top: auto;
     margin-bottom: 1em;
     text-align: center;
     font-size: 1.5em;
@@ -67,11 +70,13 @@
     }
     .backdrop {
         grid-template-columns: minmax(18em, 1fr);
+        grid-template-rows: minmax(0, 0.7fr);
         max-width: 95%;
     }
     .backdrop_left{
         justify-self: center;
-        width: 70%;
+        max-width: 70%;
+        max-height: 100%;
     }
     .backdrop_right {
         display: none;
@@ -86,10 +91,11 @@
 @media screen and (min-device-width : 768px) and (max-device-width : 1024px) {
     .backdrop {
         grid-template-columns: 1fr 2fr;
+        grid-template-rows: 1fr;
         max-width: 95%;
     }
     .backdrop_left{
-        width: 100%;
+        max-width: 100%;
     }
     .backdrop_right {
         display: none;

@@ -1,9 +1,31 @@
-.events {
+.container {
     display: flex;
-    justify-content: center;
+    flex-direction: column;
     align-items: center;
-    width: 100%;
-    height: 30vh;
-    max-height: 100vh;
-    border-bottom: 1px solid black;
+}
+.events {
+    display: grid;
+    margin: 0 auto;
+    grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
+    row-gap: 2rem;
+    column-gap: 2rem; 
+    max-width: 90%;
+    text-align: center;
+}
+
+.header {
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+    text-align: center;
+    font-weight: 700;
+}
+
+.title {
+    font-size: 2rem;
+}
+
+.event_type {
+    margin-top: 1rem;
+    border: 2px solid;
+    border-radius: 4px;
 }
