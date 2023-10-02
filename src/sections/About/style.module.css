@@ -1,13 +1,12 @@
 .about {
     width: 100%;
-    border-bottom: 1px solid black;
     margin: 0 auto;
     max-width: 90%;
   }
   
 .title {
   padding-top: 2rem;
-  font-size: 3.5rem;
+  font-size: 3rem;
   font-weight: 700;
   text-align: center;
   overflow-wrap: break-word;
@@ -38,6 +37,10 @@
 
 .main_desc, .projects_desc, .hackschool_desc {
   font-size: 1.15rem;
+}
+
+.link {
+  color: var(--docs-accent-color);
 }
 
 @media screen and (max-width: 768px) {

@@ -31,11 +31,17 @@ const About: React.FC = () => {
             We&apos;re proud to host Hack School: a series of 6 workshops designed to teach students
             the fundamentals of full-stack development and software engineering. We host Hack School
             in-person every fall, and the Fall 2023 application is live at{' '}
-            <a href="https://acmurl.com/apply-hackschool" target="_blank" rel="noopener noreferrer">
-              acmurl.com/apply-hackschool!
-            </a>
-            . All Hack School content is open source and hosted on this website under{' '}
             <a
+              className={styles.link}
+              href="https://acmurl.com/apply-hackschool"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              acmurl.com/apply-hackschool
+            </a>
+            ! All Hack School content is open source and hosted on this website under{' '}
+            <a
+              className={styles.link}
               href="https://hack.acmucsd.com/hack-school"
               target="_blank"
               rel="noopener noreferrer"
