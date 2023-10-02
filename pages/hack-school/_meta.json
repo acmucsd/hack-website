@@ -2,11 +2,25 @@
   "index": "Welcome to ACM Hack School!",
   "logistics": "Hack School Logistics",
   "git-github": "Git/GitHub",
-  "html": "Week 1: HTML",
-  "css": "Week 1: CSS",
-  "js": "Week 2: JavaScript",
-  "react": "Week 3: React",
-  "express": "Week 4: Building APIs with Express",
-  "mongodb": "Week 5: Databases & MongoDB",
-  "deployment": "Week 6: Deployment"
+  "html": {
+    "display": "hidden"
+  },
+  "css": {
+    "display": "hidden"
+  },
+  "js": {
+    "display": "hidden"
+  },
+  "react": {
+    "display": "hidden"
+  },
+  "express": {
+    "display": "hidden"
+  },
+  "mongodb": {
+    "display": "hidden"
+  },
+  "deployment": {
+    "display": "hidden"
+  }
 }
