@@ -2,6 +2,7 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    margin-bottom: 4rem;
 }
 .events {
     display: grid;
@@ -21,11 +22,16 @@
 }
 
 .title {
-    font-size: 2rem;
+    font-size: 3rem;
 }
 
 .event_type {
     margin-top: 1rem;
     border: 2px solid;
     border-radius: 4px;
+}
+
+.event_select {
+    width: 100%;
+    text-align: center;
 }
