@@ -1,6 +1,7 @@
 {
   "index": "Welcome to ACM Hack School!",
   "logistics": "Hack School Logistics",
+  "tools": "Developer Tools",
   "git-github": "Git/GitHub",
   "html": {
     "display": "hidden"
