@@ -8,7 +8,7 @@ const TeamCard: React.FC = () => {
   const teamMembers = [
     {
       name: 'Nikhil Dange',
-      position: 'Hack Technical Lead',
+      position: 'Hack President',
       email: 'nikhil@acmucsd.org',
       linkedinLink: 'https://www.linkedin.com/in/nsdange/',
       imageUrl: 'assets/nikhil.JPG',

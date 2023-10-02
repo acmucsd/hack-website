@@ -61,7 +61,12 @@ const About: React.FC = () => {
             your resume, learn new technologies, and work with a team. We&apos;ll provide the
             mentorship and guidance, so don&apos;t worry about having any prior experience. Learn
             more and apply at{' '}
-            <a href="https://projects.acmucsd.com" target="_blank" rel="noopener noreferrer">
+            <a
+              className={styles.link}
+              href="https://projects.acmucsd.com"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               projects.acmucsd.com
             </a>
             !
