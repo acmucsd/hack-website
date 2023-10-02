@@ -28,7 +28,11 @@ const Events: React.FC<{ past_events: EventsArray; future_events: EventsArray }>
       <div className={styles.header}>
         <h1 className={styles.title}>Events</h1>
         <div className={styles.event_type}>
-          <select onChange={handleOptionChange} value={selectedOption}>
+          <select
+            className={styles.event_select}
+            onChange={handleOptionChange}
+            value={selectedOption}
+          >
             <option value="Upcoming">Upcoming</option>
             <option value="Past">Past</option>
           </select>

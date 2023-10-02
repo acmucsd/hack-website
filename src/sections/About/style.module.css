@@ -1,9 +1,64 @@
 .about {
-    display: flex;
-    justify-content: center;
-    align-items: center;
     width: 100%;
-    height: 30vh;
-    max-height: 100vh;
-    border-bottom: 1px solid black;
+    margin: 0 auto;
+    max-width: 90%;
+  }
+  
+.title {
+  padding-top: 2rem;
+  font-size: 3rem;
+  font-weight: 700;
+  text-align: center;
+  overflow-wrap: break-word;
+  word-wrap: normal;
 }
+  
+.main, .hackschool, .projects {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  align-items: center;
+  gap: 1rem;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+
+.mainImage, .hackschoolImage, .projectImage {
+  /* padding: 20px;  */
+  margin: 0 auto;
+  gap: 0.5rem;
+  margin: auto;
+}
+
+.mainImage, .hackschoolImage, .projectImage {
+  border-radius: 50px;
+  max-width: 80%;
+  height: auto; 
+}
+
+.main_desc, .projects_desc, .hackschool_desc {
+  font-size: 1.15rem;
+}
+
+.link {
+  color: var(--docs-accent-color);
+}
+
+@media screen and (max-width: 768px) {
+  .main, .hackschool, .projects {
+    grid-template-columns: 1fr;
+  }
+  .hackschoolImage {
+    order: 1;
+    text-align: center;
+  } 
+  .hackschool_desc {
+    order: 0;
+    text-align: center;
+  }
+}
+
+.projects {
+  padding-bottom: 2rem;
+}
+
+

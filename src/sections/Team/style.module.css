@@ -1,18 +1,19 @@
+.container {
+    margin-bottom: 2rem;
+}
 .team {
     display: flex;
     justify-content: center;
     align-items: center;
     height: 30vh;
     max-height: 100vh;
-    border-bottom: 1px solid black;
 }
 
 .h1 {
-    font-size: x-large;
+    font-size: 3rem;
     text-align: center;
     font-weight: bold;
-    margin-top: 1rem;
-    margin-bottom: 0.5rem;
-    font-size: 2rem;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
 }
 
