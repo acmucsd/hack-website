@@ -7,9 +7,10 @@
 .events {
     display: grid;
     margin: 0 auto;
-    grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(20rem, 0.5fr));
     row-gap: 2rem;
     column-gap: 2rem; 
+    justify-content: center;
     max-width: 90%;
     text-align: center;
 }
