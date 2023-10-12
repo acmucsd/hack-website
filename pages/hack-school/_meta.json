@@ -3,12 +3,8 @@
   "logistics": "Hack School Logistics",
   "tools": "Developer Tools",
   "git-github": "Git/GitHub",
-  "html": {
-    "display": "hidden"
-  },
-  "css": {
-    "display": "hidden"
-  },
+  "html": "Week 1: HTML",
+  "css": "Week 1: CSS",
   "js": {
     "display": "hidden"
   },
