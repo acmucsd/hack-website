@@ -3,21 +3,11 @@
   "logistics": "Hack School Logistics",
   "tools": "Developer Tools",
   "git-github": "Git/GitHub",
-  "html": {
-    "display": "hidden"
-  },
-  "css": {
-    "display": "hidden"
-  },
-  "js": {
-    "display": "hidden"
-  },
-  "react": {
-    "display": "hidden"
-  },
-  "express": {
-    "display": "hidden"
-  },
+  "html": "Week 1: HTML",
+  "css": "Week 1: CSS",
+  "js": "Week 2: JavaScript",
+  "react": "Week 3: React",
+  "express": "Week 4: Express",
   "mongodb": {
     "display": "hidden"
   },
