@@ -7,9 +7,7 @@
   "css": "Week 1: CSS",
   "js": "Week 2: JavaScript",
   "react": "Week 3: React",
-  "express": {
-    "display": "hidden"
-  },
+  "express": "Week 4: Express",
   "mongodb": {
     "display": "hidden"
   },
