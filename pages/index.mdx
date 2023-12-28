@@ -3,7 +3,7 @@ import { useSSG } from 'nextra/ssg';
 import { getAllHackEvents, getHackEvent } from '../src/api/events_api';
 
 export async function getStaticProps() {
-  const uuids = ["e3913d1c-360d-4935-8ed9-ab988c139f13", "590ad9f9-2dff-4372-979d-6bb540e02138"]
+  const uuids = ["1668587f-5816-45cc-8b5e-1a4825dff9e4", "2ba9e5ed-614e-4c19-9d7c-ab2cfd57e140", "73fc61ef-b3db-46c4-a5bf-71aba152e2f6", "3b922d84-9c57-4f2a-9e76-19e4e9130fe2", "6124d23b-ab77-481f-9248-920565ac07f3", "fdd1c33f-f31b-4421-abc9-0887158147cc"]
   const promises = uuids.map(uuid => getHackEvent(uuid))
   const past_events = await Promise.all(promises);
   const future_events = await getAllHackEvents('future');

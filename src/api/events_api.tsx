@@ -1,5 +1,5 @@
 // Modified from https://github.com/acmucsd/main-website/blob/main/src/api/EventsAPI.ts
-const EVENT_API = 'https://testing.api.acmucsd.com/api/v2/event';
+const EVENT_API = 'https://api.acmucsd.com/api/v2/event';
 
 export type EventObject = {
   uuid: string;
