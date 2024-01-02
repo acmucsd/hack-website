@@ -18,8 +18,8 @@
   grid-template-columns: repeat(2, 1fr);
   align-items: center;
   gap: 1rem;
-  margin-top: 1rem;
-  margin-bottom: 1rem;
+  margin-top: 4rem;
+  margin-bottom: 4rem;
 }
 
 .mainImage, .hackschoolImage, .projectImage {
@@ -37,6 +37,13 @@
 
 .main_desc, .projects_desc, .hackschool_desc {
   font-size: 1.15rem;
+}
+
+.main_header, .projects_header, .hackschool_header {
+  text-align: center;
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+  text-decoration: underline;
 }
 
 .link {
