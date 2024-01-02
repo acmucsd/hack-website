@@ -1,28 +1,32 @@
-import { useState, useEffect } from 'react';
+import { motion } from 'framer-motion';
 import styles from './style.module.css';
 
 interface TypewriterProps {
   text: string;
-  delay: number;
 }
 
-const Typewriter: React.FC<TypewriterProps> = ({ text, delay }) => {
-  const [currentText, setCurrentText] = useState('');
-  const [currentIndex, setCurrentIndex] = useState(0);
+const Typewriter: React.FC<TypewriterProps> = ({ text }) => {
+  const chars = text.split('');
 
-  useEffect(() => {
-    if (currentIndex < text.length) {
-      const timeout = setTimeout(() => {
-        setCurrentText(prevText => prevText + text[currentIndex]);
-        setCurrentIndex(prevIndex => prevIndex + 1);
-      }, delay);
-
-      return () => clearTimeout(timeout);
-    }
-    return undefined;
-  }, [currentIndex, delay, text]);
-
-  return <h6 className={styles.landing_caption}>{currentText}</h6>;
+  return (
+    <div className={styles.landing_title}>
+      {chars.map((el, i) => (
+        <motion.span
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{
+            ease: 'easeIn',
+            duration: 1.25,
+            delay: i / 10,
+          }}
+          // eslint-disable-next-line react/no-array-index-key
+          key={i}
+        >
+          {el}
+        </motion.span>
+      ))}
+    </div>
+  );
 };
 
 export default Typewriter;

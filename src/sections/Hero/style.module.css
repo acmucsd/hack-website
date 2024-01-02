@@ -13,8 +13,7 @@
 .backdrop {
     flex-grow: 1;
     display: grid;
-    grid-template-columns: 2fr 3fr 1.25fr;
-    column-gap: 1rem;
+    grid-template-columns: 1fr 2fr 1fr;
     align-items: center;
     max-width: 100%;
     text-align: center;
@@ -37,9 +36,11 @@
     position: relative;
 }
 
-.landing_title {
-    font-weight: 900;
-    font-size: 5em;
+.landing_caption {
+    position: absolute;
+    top: 40%;
+    width: 100%;
+    font-size: 2em;
 }
 
 /* Landing Card Scroll Down */
@@ -75,8 +76,6 @@
     }
     .backdrop_left{
         justify-self: center;
-        max-width: 70%;
-        max-height: 100%;
     }
     .backdrop_right {
         display: none;
@@ -93,9 +92,6 @@
         grid-template-columns: 1fr 2fr;
         grid-template-rows: 1fr;
         max-width: 95%;
-    }
-    .backdrop_left{
-        max-width: 100%;
     }
     .backdrop_right {
         display: none;
