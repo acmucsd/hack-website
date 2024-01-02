@@ -10,19 +10,19 @@ const Typewriter: React.FC<TypewriterProps> = ({ text }) => {
 
   return (
     <div className={styles.landing_title}>
-      {chars.map((el, i) => (
+      {chars.map((letter, i) => (
         <motion.span
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{
             ease: 'easeIn',
-            duration: 1.25,
+            duration: 0.5,
             delay: i / 10,
           }}
           // eslint-disable-next-line react/no-array-index-key
           key={i}
         >
-          {el}
+          {letter}
         </motion.span>
       ))}
     </div>
