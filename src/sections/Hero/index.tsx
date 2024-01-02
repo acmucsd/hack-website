@@ -19,7 +19,7 @@ const Hero: React.FC = () => {
   return (
     <div className={styles.hero}>
       <div className={styles.backdrop}>
-        <Image src={leftside} className={styles.backdrop_left} alt="backdrop" />
+        <Image src={leftside} className={styles.backdrop_left} alt="backdrop" priority />
         <div className={styles.landing_text}>
           <Typewriter text="ACM Hack" />
           <h4 className={styles.landing_caption}>
@@ -27,7 +27,7 @@ const Hero: React.FC = () => {
             like to code.
           </h4>
         </div>
-        <Image src={rightside} className={styles.backdrop_right} alt="backdrop" />
+        <Image src={rightside} className={styles.backdrop_right} alt="backdrop" priority />
       </div>
       <div className={styles.arrow} role="presentation" onClick={scrollToInfo}>
         <h6>Learn More</h6>
