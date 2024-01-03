@@ -19,6 +19,7 @@
   },
   "homepage": "https://github.com/acmucsd/hack-website#readme",
   "dependencies": {
+    "framer-motion": "^10.16.16",
     "next": "^13.0.6",
     "nextra": "latest",
     "nextra-theme-docs": "latest",
