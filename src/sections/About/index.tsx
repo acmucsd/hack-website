@@ -7,6 +7,9 @@ const About: React.FC = () => {
       <br />
       <div className={styles.main}>
         <div className={styles.main_desc}>
+          <div className={styles.main_header}>
+            <h2>About Us</h2>
+          </div>
           <p>
             ACM Hack is a community dedicated to software engineering and exploring what&apos;s
             possible through code. Our name comes from hackathons&mdash;events where the power of
@@ -27,6 +30,9 @@ const About: React.FC = () => {
           alt="A Hack School event"
         />
         <div className={styles.hackschool_desc}>
+          <div className={styles.hackschool_header}>
+            <h2>Hack School</h2>
+          </div>
           <p>
             We&apos;re proud to host Hack School: a series of 6 workshops designed to teach students
             the fundamentals of full-stack development and software engineering. We host Hack School
@@ -55,6 +61,9 @@ const About: React.FC = () => {
 
       <div className={styles.projects}>
         <div className={styles.projects_desc}>
+          <div className={styles.projects_header}>
+            <h2>ACM Projects</h2>
+          </div>
           <p>
             Interested in hands-on software engineering experience? ACM Hack hosts project teams
             under ACM Projects! Our project teams are a great way to gain relevant experience for
