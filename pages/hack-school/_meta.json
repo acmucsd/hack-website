@@ -1,13 +1,13 @@
 {
-  "index": "Welcome to ACM Hack School!",
-  "logistics": "Hack School Logistics",
-  "tools": "Developer Tools",
-  "git-github": "Git/GitHub",
-  "html": "Week 1: HTML",
-  "css": "Week 1: CSS",
-  "js": "Week 2: JavaScript",
-  "react": "Week 3: React",
-  "express": "Week 4: Express",
-  "mongodb": "Week 5: MongoDB",
-  "deployment": "Week 6: Deployment"
+    "index": "Welcome to ACM Hack School!",
+    "logistics": "Hack School Logistics",
+    "before-hack": "What You Need to Know Before Hack School",
+    "html": "Week 1: HTML",
+    "css": "Week 1: CSS",
+    "js": "Week 2: JavaScript",
+    "react": "Week 3: React",
+    "express": "Week 4: Express",
+    "mongodb": "Week 5: MongoDB",
+    "deployment": "Week 6: Deployment"
 }
+  

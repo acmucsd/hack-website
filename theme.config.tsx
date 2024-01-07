@@ -56,7 +56,7 @@ const config: DocsThemeConfig = {
     text: 'Made with 🧡 by ACM Hack!',
   },
   search: {
-    placeholder: 'Search',
+    component: null,
   },
   sidebar: {
     toggleButton: true,
