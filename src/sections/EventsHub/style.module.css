@@ -1,0 +1,31 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 4rem;
+    margin: 4rem;
+}
+
+.header {
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+    text-align: center;
+    font-weight: 700;
+}
+
+.title {
+    font-size: 3rem;
+}
+
+.event_type {
+    margin-top: 1rem;
+    border: 1.5px solid #333;
+    border-radius: 8px;
+    padding: 2px;
+}
+
+.event_select {
+    width: 100%;
+    text-align: center;
+    padding: 5px;
+}

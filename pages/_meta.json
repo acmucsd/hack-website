@@ -9,5 +9,10 @@
   "hack-school": {
     "title": "Hack School",
     "type": "page"
+  },
+
+  "events-hub": {
+    "title": "Events Hub",
+    "type": "page"
   }
 }
