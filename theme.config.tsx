@@ -56,10 +56,16 @@ const config: DocsThemeConfig = {
     text: 'Made with 🧡 by ACM Hack!',
   },
   search: {
-    placeholder: 'Search',
+    component: null,
   },
   sidebar: {
     toggleButton: true,
+    titleComponent({ title, type }) {
+      if (type === 'separator') {
+        return <div style={{ fontSize: '1.25rem' }}>{title}</div>;
+      }
+      return <div style={{ fontSize: '0.9rem' }}> {title} </div>;
+    },
   },
   docsRepositoryBase: 'https://github.com/acmucsd/hack-website/blob/main',
 };
