@@ -7,10 +7,10 @@
 .events {
     display: grid;
     margin: 0 auto;
-    grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(14rem, 1fr));
     row-gap: 2rem;
     column-gap: 2rem; 
-    max-width: 90%;
+    max-width: 65%;
     text-align: center;
 }
 
@@ -33,5 +33,4 @@
 
 .event_select {
     width: 100%;
-    text-align: center;
 }
