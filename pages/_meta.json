@@ -8,41 +8,6 @@
   },
   "hack-school": {
     "title": "Hack School",
-    "type": "menu",
-    "items": {
-      "index": {
-        "title": "Welcome to ACM Hack School!"
-      },
-      "logistics": {
-        "title": "Hack School Logistics"
-      },
-      "before-hack": { 
-        "title": "What You Need to Know Before Hack School"
-      },
-      "html": {
-        "title": "Week 1: HTML"
-      },
-      "css": {
-        "title": "Week 1: CSS"
-      },
-      "js": {
-        "title": "Week 2: JavaScript"
-      },
-      "react": {
-        "title": "Week 3: React"
-      },
-      "express": {
-        "title": "Week 4: Express"
-      },
-      "mongodb": {
-        "title": "Week 5: MongoDB"
-      },
-      "deployment": {
-        "title": "Week 6: Deployment"
-      }
-    },
-    "theme": {
-      "sidebar": false
-    }
+    "type": "page"
   }
 }
