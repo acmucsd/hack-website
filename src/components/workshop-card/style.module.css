@@ -17,7 +17,6 @@
     border-radius: 20px;
     position: relative;
     padding: 1rem;
-    cursor: pointer;
     margin-bottom: 1rem;
 }
 
@@ -56,7 +55,7 @@
     object-fit: contain;
   }
 
-  .icons img {
+.icons img {
     width: 3rem;
     height: 3rem; 
 }
@@ -65,4 +64,8 @@
     object-fit: contain;
     width: 50%;
     height: 4rem;
+}
+
+html[class~='light'] .github {
+    filter: invert(100%);
 }

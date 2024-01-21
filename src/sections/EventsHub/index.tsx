@@ -3,13 +3,14 @@ import styles from './style.module.css';
 import WorkshopCards from '../../components/workshop-card/';
 import { EventObject, getAllHackEvents } from '../../api/events_api';
 
-const EventsHub: React.FC = () => {
+const EventsHub: React.FC<{latest_events: EventObject[]}> = ({}) => {
   const [selectedYear, setSelectedYear] = useState<string | null>('2023');
   const [hackEvents, setHackEvents] = useState<EventObject[] | undefined>(undefined);
 
   const handleYearChange = async (event: React.ChangeEvent<HTMLSelectElement>) => {
+    
     setSelectedYear(event.target.value);
-
+    
     try {
       const events = await getAllHackEvents('');
       setHackEvents(events);
@@ -19,7 +20,7 @@ const EventsHub: React.FC = () => {
   };
 
 
-  
+
     return (
       <div className={styles.container}>
         <div className={styles.header}>
@@ -29,7 +30,7 @@ const EventsHub: React.FC = () => {
                 className={styles.event_select}
                 id="year" 
                 onChange={handleYearChange} 
-                value={selectedYear || 'All'}
+                value={selectedYear || '2023'}
               >
                 <option value='2023'>Hack School 2023</option>
                 <option value='2022'>Hack School 2022</option>

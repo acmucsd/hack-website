@@ -29,3 +29,7 @@
     text-align: center;
     padding: 5px;
 }
+
+html[class~='dark'] .github {
+    filter: invert(100%);
+}
