@@ -25,6 +25,7 @@
     font-size: 1.5rem;
     margin-bottom: 1rem;
     text-align: center;
+    flex-grow: 1;
 }
 
 .card_info {
@@ -33,7 +34,7 @@
 }
 
 .card_cover {
-    flex-grow: 1;
+    /* flex-grow: 1; */
     width: 100%;
     text-align: center; 
 }
@@ -68,4 +69,30 @@
 
 html[class~='light'] .github {
     filter: invert(100%);
+}
+
+.modalOverlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: rgba(0, 0, 0, 0.5)
+  }
+  
+  .modalContent {
+    background: black;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    border: 1.75px solid #333;
+    border-radius: 20px;
+    text-align: center;
+    width: 35rem;
+  }
+
+html[class~='light'] .modalContent {
+    background: white;
 }

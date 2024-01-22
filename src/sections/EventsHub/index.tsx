@@ -29,6 +29,7 @@ const EventsHub: React.FC<{latest_events: EventObject[]}> = ({}) => {
               <select
                 className={styles.event_select}
                 id="year" 
+                onFocus={handleYearChange}
                 onChange={handleYearChange} 
                 value={selectedYear || '2023'}
               >
