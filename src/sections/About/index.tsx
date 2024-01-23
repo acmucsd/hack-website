@@ -15,15 +15,15 @@ const About: React.FC = () => {
   useEffect(() => {
     const mainInterval = setInterval(() => {
       setMainImageIndex(prevIndex => (prevIndex + 1) % mainImages.length);
-    }, 5000);
+    }, 6000);
 
     const hackschoolInterval = setInterval(() => {
       setHackschoolImageIndex(prevIndex => (prevIndex + 1) % hackschoolImages.length);
-    }, 5000);
+    }, 6000);
 
     const projectInterval = setInterval(() => {
       setProjectImageIndex(prevIndex => (prevIndex + 1) % projectImages.length);
-    }, 5000);
+    }, 6000);
 
     return () => {
       clearInterval(mainInterval);
