@@ -55,7 +55,6 @@ const TeamCard: React.FC = () => {
       linkedinLink: 'https://www.linkedin.com/in/nathan-wang-100b1a212/',
       imageUrl: 'assets/nathan.jpeg',
     },
-
   ];
 
   return (

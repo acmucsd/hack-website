@@ -7,31 +7,31 @@ const About: React.FC = () => {
   const [projectImageIndex, setProjectImageIndex] = useState(0);
 
   const mainImages = [
-    "assets/hackimage.JPG",
-    "assets/hackimage2.jpg",
+    'assets/hackimage.JPG',
+    'assets/hackimage2.jpg',
   ];
 
   const hackschoolImages = [
-    "assets/hackschool.jpg",
-    "assets/hackschool2.png",
+    'assets/hackschool.jpg',
+    'assets/hackschool2.png',
   ];
 
   const projectImages = [
-    "assets/projects.JPG",
-    "assets/projects2.jpg",
+    'assets/projects.JPG',
+    'assets/projects2.jpg',
   ];
 
   useEffect(() => {
     const mainInterval = setInterval(() => {
-      setMainImageIndex((prevIndex) => (prevIndex + 1) % mainImages.length);
+      setMainImageIndex(prevIndex => (prevIndex + 1) % mainImages.length);
     }, 5000);
 
     const hackschoolInterval = setInterval(() => {
-      setHackschoolImageIndex((prevIndex) => (prevIndex + 1) % hackschoolImages.length);
+      setHackschoolImageIndex(prevIndex => (prevIndex + 1) % hackschoolImages.length);
     }, 5000);
 
     const projectInterval = setInterval(() => {
-      setProjectImageIndex((prevIndex) => (prevIndex + 1) % projectImages.length);
+      setProjectImageIndex(prevIndex => (prevIndex + 1) % projectImages.length);
     }, 5000);
 
     return () => {
@@ -51,7 +51,7 @@ const About: React.FC = () => {
             <h2>About Us</h2>
           </div>
           <p>
-            ACM Hack is a community dedicated to industry-relevant software engineering. Whether you're a
+            ACM Hack is a community dedicated to industry-relevant software engineering. Whether you&apos;re a
             seasoned developer or just starting out, ACM Hack has a community for you! We host a number of
             workshops throughout the year on software engineering tools and technologies, which are open
             to all skill levels. You can check out all of our upcoming workshops below!
@@ -75,7 +75,7 @@ const About: React.FC = () => {
             <h2>Hack School</h2>
           </div>
           <p>
-            We're proud to host Hack School: a quarter-long bootcamp teaching students the fundamentals of
+            We&apos;re proud to host Hack School: a quarter-long bootcamp teaching students the fundamentals of 
             full-stack development and software engineering. Hack School runs in-person every fall!
             All Hack School content is open source and hosted online under{' '}
             <a
@@ -99,7 +99,7 @@ const About: React.FC = () => {
           <p>
             Interested in hands-on software engineering experience? ACM Hack hosts project teams under ACM Projects!
             Projects are a great way to gain relevant experience, learn new technologies, and work with a team.
-            We'll provide the mentorship and guidance, so don't worry about having any prior experience.
+            We&apos;ll provide the mentorship and guidance, so don&apos;t worry about having any prior experience.
             Learn more and apply at{' '}
             <a
               className={styles.link}
