@@ -1,7 +1,6 @@
 .team {
-  display: grid;
-  margin: 0 auto;
-  grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
+  display: flex;
+  flex-wrap: wrap;
   row-gap: 2rem;
   column-gap: 2rem;
   max-width: 90%;
@@ -9,12 +8,13 @@
   justify-content: center;
   margin-bottom: 2rem;
   margin-top: 1rem;
-  margin-left: 17%; /* Adjust the left margin */
-  margin-right: 17%; /* Adjust the right margin */
+  margin-left: 13%; 
+  margin-right: 13%; 
 }
     
   .card {
     text-align: center;
+    flex-basis: 20%;
   }
 
   .cardOutline {
@@ -45,16 +45,30 @@
     border-radius: 50%;
   }
 
+  @media screen and (max-width: 1100px) {
+    .card {
+      text-align: center;
+      flex-basis: 28%;
+    }
+  }
+
   @media screen and (max-width: 810px) {
     .team {
-      grid-template-columns: repeat(3, 1fr);
-      gap: 0.3rem; 
+      margin-left: 5%;
+      margin-right: 5%;
+    }
+    .card {
+      text-align: center;
+      flex-basis: 33%;
     }
   }
   @media screen and (max-width: 600px) {
     .team {
+      display: grid;
       grid-template-columns: 50%;
       gap: 0.3rem; 
+      margin-left: 5%;
+      margin-right: 5%;
     }
   }
   
