@@ -206,63 +206,62 @@ const WorkshopCard: React.FC<{ workshops: EventObject[], year: string }> =({
     };
   
   return (
-      <div className={styles.container}>
-        {filteredWorkshops.map((workshopItem, index) => (
-          <div key={index} className={styles.card} onClick={() => openModal(workshopItem)}>
-            <div className={styles.card_header}>
-              <h1 className={styles.card_title}>
-                <b>Workshop: {workshopItem.title}</b>
-              </h1>
-            </div>
-            <div className={styles.card_cover}>
-              <img className={styles.card_image} src={workshopItem.cover} alt='Event cover' />
-            </div>
-            <div className={styles.icons}>
-                <a href={workshopItem.slides}>
-                  <img className={styles.link} src={slides} alt='Slides Logo' />
-                </a>
-                <div className={styles.github}>
-                  <a href={workshopItem.github}>
-                    <img className={styles.link} src={github} alt='GitHub Logo' />
-                  </a>
-                </div>
-                <a href={workshopItem.recording}>
-                  <img className={styles.link} src={youtube} alt='YouTube Logo' />
+    <div className={styles.container}>
+      {filteredWorkshops.map((workshopItem, index) => (
+        <div key={index} className={styles.card} onClick={() => openModal(workshopItem)}>
+          <div className={styles.card_header}>
+            <h1 className={styles.card_title}>
+              <b>Workshop: {workshopItem.title}</b>
+            </h1>
+          </div>
+          <div className={styles.card_cover}>
+            <img className={styles.card_image} src={workshopItem.cover} alt='Event cover' />
+          </div>
+          <div className={styles.icons}>
+              <a href={workshopItem.slides}>
+                <img className={styles.link} src={slides} alt='Slides Logo' />
+              </a>
+              <div className={styles.github}>
+                <a href={workshopItem.github}>
+                  <img className={styles.link} src={github} alt='GitHub Logo' />
                 </a>
               </div>
-          </div>
-        ))}
+              <a href={workshopItem.recording}>
+                <img className={styles.link} src={youtube} alt='YouTube Logo' />
+              </a>
+            </div>
+        </div>
+      ))}
 
-        {showModal && selectedWorkshop && (
-          <div className={styles.modalOverlay} onClick={closeModal}>
-            <div className={styles.modalContent} onClick={(e) => e.stopPropagation()}>
-              <div className={styles.card_cover}>
-              <img className={styles.card_image} src={selectedWorkshop.cover} alt='Event cover' />
-            </div>
-            <div className = {styles.card_info}>
-              <h3>
-                <b>Description: </b>
-                {selectedWorkshop.description}
-              </h3>
-            </div>
-              <div className={styles.icons}>
-                <a href={selectedWorkshop.slides}>
-                  <img className={styles.link} src={slides} alt='Slides Logo' />
-                </a>
-                <div className={styles.github}>
-                  <a href={selectedWorkshop.github}>
-                    <img className={styles.link} src={github} alt='GitHub Logo' />
-                  </a>
-                </div>
-                <a href={selectedWorkshop.recording}>
-                  <img className={styles.link} src={youtube} alt='YouTube Logo' />
+      {showModal && selectedWorkshop && (
+        <div className={styles.modalOverlay} onClick={closeModal} onKeyDown={closeModal}>
+          <div className={styles.modalContent} onClick={(e) => e.stopPropagation()}>
+            <div className={styles.card_cover}>
+            <img className={styles.card_image} src={selectedWorkshop.cover} alt='Event cover' />
+          </div>
+          <div className = {styles.card_info}>
+            <h3>
+              <b>Description: </b>
+              {selectedWorkshop.description}
+            </h3>
+          </div>
+            <div className={styles.icons}>
+              <a href={selectedWorkshop.slides}>
+                <img className={styles.link} src={slides} alt='Slides Logo' />
+              </a>
+              <div className={styles.github}>
+                <a href={selectedWorkshop.github}>
+                  <img className={styles.link} src={github} alt='GitHub Logo' />
                 </a>
               </div>
+              <a href={selectedWorkshop.recording}>
+                <img className={styles.link} src={youtube} alt='YouTube Logo' />
+              </a>
             </div>
           </div>
-        )}
-      </div>
-    );
-  };
-    
+        </div>
+      )}
+    </div>
+  );
+};
 export default WorkshopCard;
