@@ -6,17 +6,11 @@ const About: React.FC = () => {
   const [hackschoolImageIndex, setHackschoolImageIndex] = useState(0);
   const [projectImageIndex, setProjectImageIndex] = useState(0);
 
-  const mainImages = [
-    'assets/hackimage.JPG', 'assets/hackimage2.jpg',
-  ];
+  const mainImages = ['assets/hackimage.JPG', 'assets/hackimage2.jpg'];
 
-  const hackschoolImages = [
-    'assets/hackschool.jpg', 'assets/hackschool2.png',
-  ];
+  const hackschoolImages = ['assets/hackschool.jpg', 'assets/hackschool2.png'];
 
-  const projectImages = [
-    'assets/projects.JPG', 'assets/projects2.jpg',
-  ];
+  const projectImages = ['assets/projects.JPG', 'assets/projects2.jpg'];
 
   useEffect(() => {
     const mainInterval = setInterval(() => {
