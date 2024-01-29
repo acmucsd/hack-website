@@ -24,10 +24,10 @@ const EventsHub: React.FC<{ latest_events: EventObject[] }> = () => {
         <h1 className={styles.title}>Events Hub</h1>
         <div className={styles.event_type}>
           <select
-          className={styles.event_select}
-          id="year" 
-          onChange={handleYearChange} 
-          value={selectedYear || '2023'}
+            className={styles.event_select}
+            id="year" 
+            onChange={handleYearChange} 
+            value={selectedYear || '2023'}
           >
             <option value="2023">Hack School 2023</option>
             <option value="2022">Hack School 2022</option>
@@ -42,4 +42,5 @@ const EventsHub: React.FC<{ latest_events: EventObject[] }> = () => {
     </div>
   );
 };
+
 export default EventsHub;

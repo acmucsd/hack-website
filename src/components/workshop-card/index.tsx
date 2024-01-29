@@ -8,10 +8,10 @@ const youtube = '/assets/youtube.png';
 
 const WorkshopCard: React.FC<{ workshops: EventObject[]; year: string }> = ({
   workshops,
-  year
+  year,
 }) => {
   const workshop_links = [
-  // Hack School 2023
+    // Hack School 2023
     {
       uuid: 'f24161df-4f55-4d20-b2b8-6277b679daaf',
       slides: 'https://acmurl.com/hackschool-1-slides',
@@ -48,7 +48,7 @@ const WorkshopCard: React.FC<{ workshops: EventObject[]; year: string }> = ({
       github: 'https://github.com/acmucsd/hackschool-fa23/tree/part6',
       recording: 'https://acmurl.com/hackschool-6-video',
     },
-  // Hack School 2022
+    // Hack School 2022
     {
       uuid: '8b22ac73-0d91-46e6-94c7-5e48e1e20791',
       slides: 'https://acmurl.com/hackschool-0-slides',
@@ -85,7 +85,7 @@ const WorkshopCard: React.FC<{ workshops: EventObject[]; year: string }> = ({
       github: 'https://github.com/acmucsd/hackschool-fa22/tree/part5',
       recording: 'https://acmurl.com/hackschool-5-video',
     },
-  //Hack School 2021
+    // Hack School 2021
     {
       uuid: '54d2485b-8761-40b5-ba88-a286e44a20c1',
       slides: 'https://acmurl.com/hackschool-fa21-1',
@@ -100,12 +100,13 @@ const WorkshopCard: React.FC<{ workshops: EventObject[]; year: string }> = ({
     },
     {
       uuid: '3f2e2f87-5ac8-4a2c-bdeb-dc38c43a3c52',
-      slides: 'https://docs.google.com/presentation/d/1KnvW7uHVTGBCs_716pzR6W_rVXZ69Qp5h1LbWmjkuGU/edit?usp=drive_link',
-      github: '', //has wrong link in the slides
+      slides:
+       'https://docs.google.com/presentation/d/1KnvW7uHVTGBCs_716pzR6W_rVXZ69Qp5h1LbWmjkuGU/edit?usp=drive_link',
+      github: '', // has wrong link in the slides
       recording: '',
     },
     // React workshop
-    // { 
+    // {
     //   'uuid': 'dff34061-c021-4a5c-a747-9215f90759b2',
     //   'slides': '',
     //   'github': '',
@@ -123,7 +124,7 @@ const WorkshopCard: React.FC<{ workshops: EventObject[]; year: string }> = ({
       github: 'http://acmurl.com/beat-maker-starter',
       recording: '',
     },
-  //Hack School 2020
+    // Hack School 2020
     {
       uuid: 'e6461437-5343-41dc-9323-bd2e9e6f14e6',
       slides: 'https://acmurl.com/hackschool-fa20-1',
@@ -161,7 +162,7 @@ const WorkshopCard: React.FC<{ workshops: EventObject[]; year: string }> = ({
       recording: '',
     },
   ];
-    
+
   const filteredEvents = workshops.filter(event => event.committee.includes('Hack'));
 
   const getWorkshopData = (workshop: EventObject, workshopLinks: Array<any>) => {
@@ -178,24 +179,21 @@ const WorkshopCard: React.FC<{ workshops: EventObject[]; year: string }> = ({
       recording: link.recording,
     }));
     return workshopData;
-  }
+  };
 
   const allWorkshopData = workshops.reduce((acc, workshop) => {
     const workshopData = getWorkshopData(workshop, workshop_links);
     return acc.concat(workshopData);
   }, []);
-    
+
   const filteredWorkshops = year
-    ? allWorkshopData.filter((workshop) => workshop.year === year)
+    ? allWorkshopData.filter(workshop => workshop.year === year)
     : allWorkshopData;
 
-  console.log('Hack school events', filteredEvents);
-  console.log(filteredWorkshops);
-    
   const [showModal, setShowModal] = useState(false);
   const [selectedWorkshop, setSelectedWorkshop] = useState(null);
 
-  const openModal = (workshop) => {
+  const openModal = workshop => {
     setSelectedWorkshop(workshop);
     setShowModal(true);
   };
@@ -204,7 +202,7 @@ const WorkshopCard: React.FC<{ workshops: EventObject[]; year: string }> = ({
     setSelectedWorkshop(null);
     setShowModal(false);
   };
-  
+
   return (
     <div className={styles.container}>
       {filteredWorkshops.map((workshopItem, index) => (
@@ -215,7 +213,7 @@ const WorkshopCard: React.FC<{ workshops: EventObject[]; year: string }> = ({
             </h1>
           </div>
           <div className={styles.card_cover}>
-            <img className={styles.card_image} src={workshopItem.cover} alt='Event cover' />
+            <img className={styles.card_image} src={workshopItem.cover} alt="Event cover" />
           </div>
           <div className={styles.icons}>
             {workshopItem.slides && (
@@ -240,17 +238,17 @@ const WorkshopCard: React.FC<{ workshops: EventObject[]; year: string }> = ({
       ))}
 
       {showModal && selectedWorkshop && (
-        <div className={styles.modalOverlay} onClick={closeModal} onKeyDown={closeModal}>
+        <div className={styles.modalOverlay} onClick={closeModal}>
           <div className={styles.modalContent} onClick={(e) => e.stopPropagation()}>
             <div className={styles.card_cover}>
-            <img className={styles.card_image} src={selectedWorkshop.cover} alt='Event cover' />
-          </div>
-          <div className = {styles.card_info}>
-            <h3>
-              <b>Description: </b>
-              {selectedWorkshop.description}
-            </h3>
-          </div>
+              <img className={styles.card_image} src={selectedWorkshop.cover} alt='Event cover' />
+            </div>
+            <div className = {styles.card_info}>
+              <h3>
+                <b>Description: </b>
+                {selectedWorkshop.description}
+              </h3>
+            </div>
             <div className={styles.icons}>
               {selectedWorkshop.slides && (
                 <a href={selectedWorkshop.slides}>
@@ -276,4 +274,5 @@ const WorkshopCard: React.FC<{ workshops: EventObject[]; year: string }> = ({
     </div>
   );
 };
+
 export default WorkshopCard;
