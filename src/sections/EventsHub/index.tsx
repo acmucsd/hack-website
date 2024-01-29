@@ -14,7 +14,7 @@ const EventsHub: React.FC<{ latest_events: EventObject[] }> = () => {
       const events = await getAllHackEvents('');
       setHackEvents(events);
     } catch (error) {
-      console.log('Error fetching hack events:', error);
+      //console.log('Error fetching hack events:', error);
     }
   };
 
@@ -25,8 +25,8 @@ const EventsHub: React.FC<{ latest_events: EventObject[] }> = () => {
         <div className={styles.event_type}>
           <select
             className={styles.event_select}
-            id="year" 
-            onChange={handleYearChange} 
+            id="year"
+            onChange={handleYearChange}
             value={selectedYear || '2023'}
           >
             <option value="2023">Hack School 2023</option>

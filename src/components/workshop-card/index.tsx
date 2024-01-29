@@ -101,7 +101,7 @@ const WorkshopCard: React.FC<{ workshops: EventObject[]; year: string }> = ({
     {
       uuid: '3f2e2f87-5ac8-4a2c-bdeb-dc38c43a3c52',
       slides:
-       'https://docs.google.com/presentation/d/1KnvW7uHVTGBCs_716pzR6W_rVXZ69Qp5h1LbWmjkuGU/edit?usp=drive_link',
+        'https://docs.google.com/presentation/d/1KnvW7uHVTGBCs_716pzR6W_rVXZ69Qp5h1LbWmjkuGU/edit?usp=drive_link',
       github: '', // has wrong link in the slides
       recording: '',
     },
@@ -238,12 +238,16 @@ const WorkshopCard: React.FC<{ workshops: EventObject[]; year: string }> = ({
       ))}
 
       {showModal && selectedWorkshop && (
-        <div className={styles.modalOverlay} onClick={closeModal}>
-          <div className={styles.modalContent} onClick={(e) => e.stopPropagation()}>
+        <div className={styles.modalOverlay} 
+          onClick={closeModal}
+          role="presentation">
+          <div className={styles.modalContent} 
+            onClick={e=>e.stopPropagation()}
+            role="presentation">
             <div className={styles.card_cover}>
-              <img className={styles.card_image} src={selectedWorkshop.cover} alt='Event cover' />
+              <img className={styles.card_image} src={selectedWorkshop.cover} alt="Event cover" />
             </div>
-            <div className = {styles.card_info}>
+            <div className={styles.card_info}>
               <h3>
                 <b>Description: </b>
                 {selectedWorkshop.description}
