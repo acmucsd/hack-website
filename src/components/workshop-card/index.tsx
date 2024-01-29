@@ -163,8 +163,6 @@ const WorkshopCard: React.FC<{ workshops: EventObject[]; year: string }> = ({
     },
   ];
 
-  const filteredEvents = workshops.filter(event => event.committee.includes('Hack'));
-
   const getWorkshopData = (workshop: EventObject, workshopLinks: Array<any>) => {
     const workshopUuid = workshop.uuid;
     const matchingLinks = workshopLinks.filter(link => link.uuid === workshopUuid);
@@ -206,7 +204,12 @@ const WorkshopCard: React.FC<{ workshops: EventObject[]; year: string }> = ({
   return (
     <div className={styles.container}>
       {filteredWorkshops.map((workshopItem, index) => (
-        <div key={index} className={styles.card} onClick={() => openModal(workshopItem)}>
+        <div
+          key={index}
+          className={styles.card}
+          onClick={() => openModal(workshopItem)}
+          role="presentation"
+        >
           <div className={styles.card_header}>
             <h1 className={styles.card_title}>
               <b>Workshop: {workshopItem.title}</b>
@@ -238,12 +241,12 @@ const WorkshopCard: React.FC<{ workshops: EventObject[]; year: string }> = ({
       ))}
 
       {showModal && selectedWorkshop && (
-        <div className={styles.modalOverlay} 
-          onClick={closeModal}
-          role="presentation">
-          <div className={styles.modalContent} 
-            onClick={e=>e.stopPropagation()}
-            role="presentation">
+        <div className={styles.modalOverlay} onClick={closeModal} role="presentation">
+          <div
+            className={styles.modalContent}
+            onClick={e => e.stopPropagation()}
+            role="presentation"
+          >
             <div className={styles.card_cover}>
               <img className={styles.card_image} src={selectedWorkshop.cover} alt="Event cover" />
             </div>

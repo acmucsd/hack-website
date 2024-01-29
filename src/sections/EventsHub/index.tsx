@@ -14,7 +14,7 @@ const EventsHub: React.FC<{ latest_events: EventObject[] }> = () => {
       const events = await getAllHackEvents('');
       setHackEvents(events);
     } catch (error) {
-      //console.log('Error fetching hack events:', error);
+      // console.log('Error fetching hack events:', error);
     }
   };
 
