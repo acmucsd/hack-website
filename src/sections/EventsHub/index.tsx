@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import styles from './style.module.css';
 import WorkshopCards from '../../components/workshop-card';
 import { EventObject, getAllHackEvents } from '../../api/events_api';
@@ -17,6 +17,12 @@ const EventsHub: React.FC<{ latest_events: EventObject[] }> = () => {
       // console.log('Error fetching hack events:', error);
     }
   };
+
+  useEffect(() => {
+    if (selectedYear) {
+      handleYearChange({ target: { value: selectedYear } } as React.ChangeEvent<HTMLSelectElement>);
+    }
+  }, [selectedYear]);
 
   return (
     <div className={styles.container}>

@@ -203,9 +203,9 @@ const WorkshopCard: React.FC<{ workshops: EventObject[]; year: string }> = ({
 
   return (
     <div className={styles.container}>
-      {filteredWorkshops.map((workshopItem, index) => (
+      {filteredWorkshops.map(workshopItem => (
         <div
-          key={index}
+          key={workshopItem.uuid}
           className={styles.card}
           onClick={() => openModal(workshopItem)}
           role="presentation"
