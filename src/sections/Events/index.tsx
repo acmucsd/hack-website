@@ -39,7 +39,7 @@ const Events: React.FC<{ past_events: EventsArray; future_events: EventsArray }>
         </div>
       </div>
       <div className={styles.events}>
-        {!filteredEvents ? (
+        {filteredEvents.length === 0 ? (
           <h3>No upcoming events. Check again later!</h3>
         ) : (
           filteredEvents.map(event => <EventsCard key={event.uuid} event={event} />)
