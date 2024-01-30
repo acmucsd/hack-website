@@ -1,37 +1,7 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import styles from './style.module.css';
 
 const About: React.FC = () => {
-  const [mainImageIndex, setMainImageIndex] = useState(0);
-  const [hackschoolImageIndex, setHackschoolImageIndex] = useState(0);
-  const [projectImageIndex, setProjectImageIndex] = useState(0);
-
-  const mainImages = ['assets/hackimage.JPG', 'assets/hackimage2.jpg'];
-
-  const hackschoolImages = ['assets/hackschool.jpg', 'assets/hackschool2.png'];
-
-  const projectImages = ['assets/projects.JPG', 'assets/projects2.jpg'];
-
-  useEffect(() => {
-    const mainInterval = setInterval(() => {
-      setMainImageIndex(prevIndex => (prevIndex + 1) % mainImages.length);
-    }, 6000);
-
-    const hackschoolInterval = setInterval(() => {
-      setHackschoolImageIndex(prevIndex => (prevIndex + 1) % hackschoolImages.length);
-    }, 6000);
-
-    const projectInterval = setInterval(() => {
-      setProjectImageIndex(prevIndex => (prevIndex + 1) % projectImages.length);
-    }, 6000);
-
-    return () => {
-      clearInterval(mainInterval);
-      clearInterval(hackschoolInterval);
-      clearInterval(projectInterval);
-    };
-  }, [mainImages.length, hackschoolImages.length, projectImages.length]);
-
   return (
     <div className={styles.about}>
       <h2 className={styles.title}>Welcome to ACM Hack!</h2>
@@ -49,17 +19,13 @@ const About: React.FC = () => {
             workshops below!
           </p>
         </div>
-        <img
-          className={styles.mainImage}
-          src={mainImages[mainImageIndex]}
-          alt="Hack School Fall 2022"
-        />
+        <img className={styles.mainImage} src="assets/hackimage2.jpg" alt="Hack community" />
       </div>
 
       <div className={styles.hackschool}>
         <img
           className={styles.hackschoolImage}
-          src={hackschoolImages[hackschoolImageIndex]}
+          src="assets/hackschool2.png"
           alt="A Hack School event"
         />
         <div className={styles.hackschool_desc}>
@@ -106,7 +72,7 @@ const About: React.FC = () => {
         </div>
         <img
           className={styles.projectImage}
-          src={projectImages[projectImageIndex]}
+          src="assets/projects2.jpg"
           alt="An ACM Hack Project Team"
         />
       </div>

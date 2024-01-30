@@ -11,6 +11,8 @@
   text-align: center;
   overflow-wrap: break-word;
   word-wrap: normal;
+  max-width: 90%;
+  margin: 0 auto;
 }
   
 .main, .hackschool, .projects {
