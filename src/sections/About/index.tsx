@@ -1,3 +1,4 @@
+import React from 'react';
 import styles from './style.module.css';
 
 const About: React.FC = () => {
@@ -7,39 +8,34 @@ const About: React.FC = () => {
       <br />
       <div className={styles.main}>
         <div className={styles.main_desc}>
+          <div className={styles.main_header}>
+            <h2>About Us</h2>
+          </div>
           <p>
-            ACM Hack is a community dedicated to software engineering and exploring what&apos;s
-            possible through code. Our name comes from hackathons&mdash;events where the power of
-            coding results in cool pieces of technology. Whether you&apos;re a seasoned developer or
-            just starting out, ACM Hack has a community of like-minded software engineers and events
-            for you! We host a number of workshops throughout the year on industry-relevant tools
-            and technologies, all of which are open to all skill levels and don&apos;t have
-            prerequisites. You can check out all of our upcoming workshops below!
+            ACM Hack is a community dedicated to industry-relevant software engineering. Whether
+            you&apos;re a seasoned developer or just starting out, ACM Hack has a community for you!
+            We host a number of workshops throughout the year on software engineering tools and
+            technologies, which are open to all skill levels. You can check out all of our upcoming
+            workshops below!
           </p>
         </div>
-        <img className={styles.mainImage} src="assets/hackimage.JPG" alt="Hack School Fall 2022" />
+        <img className={styles.mainImage} src="assets/hackimage2.jpg" alt="Hack community" />
       </div>
 
       <div className={styles.hackschool}>
         <img
           className={styles.hackschoolImage}
-          src="assets/hackschool.jpg"
+          src="assets/hackschool2.png"
           alt="A Hack School event"
         />
         <div className={styles.hackschool_desc}>
+          <div className={styles.hackschool_header}>
+            <h2>Hack School</h2>
+          </div>
           <p>
-            We&apos;re proud to host Hack School: a series of 6 workshops designed to teach students
-            the fundamentals of full-stack development and software engineering. We host Hack School
-            in-person every fall, and the Fall 2023 application is live at{' '}
-            <a
-              className={styles.link}
-              href="https://acmurl.com/apply-hackschool"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              acmurl.com/apply-hackschool
-            </a>
-            ! All Hack School content is open source and hosted on this website under{' '}
+            We&apos;re proud to host Hack School: a quarter-long bootcamp teaching students the
+            fundamentals of full-stack development and software engineering. Hack School runs
+            in-person every fall! All Hack School content is open source and hosted online under{' '}
             <a
               className={styles.link}
               href="https://hack.acmucsd.com/hack-school"
@@ -55,12 +51,14 @@ const About: React.FC = () => {
 
       <div className={styles.projects}>
         <div className={styles.projects_desc}>
+          <div className={styles.projects_header}>
+            <h2>ACM Projects</h2>
+          </div>
           <p>
             Interested in hands-on software engineering experience? ACM Hack hosts project teams
-            under ACM Projects! Our project teams are a great way to gain relevant experience for
-            your resume, learn new technologies, and work with a team. We&apos;ll provide the
-            mentorship and guidance, so don&apos;t worry about having any prior experience. Learn
-            more and apply at{' '}
+            under ACM Projects! Projects are a great way to gain relevant experience, learn new
+            technologies, and work with a team. We&apos;ll provide the mentorship and guidance, so
+            don&apos;t worry about having any prior experience. Learn more and apply at{' '}
             <a
               className={styles.link}
               href="https://projects.acmucsd.com"
@@ -74,7 +72,7 @@ const About: React.FC = () => {
         </div>
         <img
           className={styles.projectImage}
-          src="assets/projects.JPG"
+          src="assets/projects2.jpg"
           alt="An ACM Hack Project Team"
         />
       </div>

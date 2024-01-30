@@ -41,6 +41,20 @@ const TeamCard: React.FC = () => {
       linkedinLink: 'https://www.linkedin.com/in/avergnet/',
       imageUrl: 'assets/alexis.jpeg',
     },
+    {
+      name: 'Uliyaah Dionisio',
+      position: 'Hack Diamond Staff',
+      email: 'uliyaah@acmucsd.org',
+      linkedinLink: 'https://www.linkedin.com/in/uliyaah-dionisio-246695233/',
+      imageUrl: 'assets/uliyaah.jpg',
+    },
+    {
+      name: 'Nathan Wang',
+      position: 'Hack Diamond Staff',
+      email: 'nathan@acmucsd.org',
+      linkedinLink: 'https://www.linkedin.com/in/nathan-wang-100b1a212/',
+      imageUrl: 'assets/nathan.jpeg',
+    },
   ];
 
   return (
