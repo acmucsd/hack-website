@@ -19,16 +19,15 @@ const Hero: React.FC = () => {
   return (
     <div className={styles.hero}>
       <div className={styles.backdrop}>
-        <Image src={leftside} className={styles.backdrop_left} alt="backdrop" />
+        <Image src={leftside} className={styles.backdrop_left} alt="backdrop" priority />
         <div className={styles.landing_text}>
-          <h1 className={styles.landing_title}>ACM Hack</h1>
-          <Typewriter
-            text="Empowering our community of software engineers. Building cool things with code. Yes, we
-            like to code."
-            delay={60}
-          />
+          <Typewriter text="ACM Hack" />
+          <h4 className={styles.landing_caption}>
+            Empowering our community of software engineers. Building cool things with code. Yes, we
+            like to code.
+          </h4>
         </div>
-        <Image src={rightside} className={styles.backdrop_right} alt="backdrop" />
+        <Image src={rightside} className={styles.backdrop_right} alt="backdrop" priority />
       </div>
       <div className={styles.arrow} role="presentation" onClick={scrollToInfo}>
         <h6>Learn More</h6>
