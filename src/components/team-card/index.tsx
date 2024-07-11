@@ -23,7 +23,7 @@ const TeamCard: React.FC = () => {
       name: 'Nathan Wang',
       position: 'Hack Technical Event Director',
       email: 'nathan@acmucsd.org',
-      linkedinLink: 'http://www.linkedin.com/in/pateljkhushi',
+      linkedinLink: 'https://www.linkedin.com/in/nathan-wang-100b1a212/',
       imageUrl: '/assets/board/nathan.png',
     },
     {
