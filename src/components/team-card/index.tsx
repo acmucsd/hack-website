@@ -1,64 +1,76 @@
-import React from 'react';
-import styles from './style.module.css';
-
+import Image from 'next/image';
 import EmailIcon from './email';
 import LinkedInIcon from './linkedin';
+import styles from './style.module.css';
 
 const TeamCard: React.FC = () => {
   const teamMembers = [
     {
-      name: 'Nikhil Dange',
-      position: 'Hack President',
-      email: 'nikhil@acmucsd.org',
-      linkedinLink: 'https://www.linkedin.com/in/nsdange/',
-      imageUrl: 'assets/nikhil.JPG',
-    },
-    {
       name: 'Angela Hu',
-      position: 'Hack Technical Event Director',
+      position: 'Hack President',
       email: 'angelahu@acmucsd.org',
       linkedinLink: 'https://www.linkedin.com/in/angelahu925/',
-      imageUrl: 'assets/angela.jpeg',
+      imageUrl: '/assets/board/angela.jpeg',
     },
     {
-      name: 'Khushi Patel',
+      name: 'Kevin Lu',
       position: 'Hack Technical Event Director',
-      email: 'khushi@acmucsd.org',
-      linkedinLink: 'http://www.linkedin.com/in/pateljkhushi',
-      imageUrl: 'assets/khushi.jpeg',
+      email: 'kevinlu@acmucsd.org',
+      linkedinLink: 'https://www.linkedin.com/in/kevin-lu-92b026245/',
+      imageUrl: '/assets/board/kevin.png',
     },
     {
-      name: 'Charvi Shukla',
+      name: 'Nathan Wang',
       position: 'Hack Technical Event Director',
-      email: 'charvi@acmucsd.org',
-      linkedinLink: 'https://www.linkedin.com/in/charvi-shukla-439b681b2/',
-      imageUrl: 'assets/charvi.jpeg',
+      email: 'nathan@acmucsd.org',
+      linkedinLink: 'https://www.linkedin.com/in/nathan-wang-100b1a212/',
+      imageUrl: '/assets/board/nathan.png',
     },
     {
-      name: 'Alexis Vergnet',
+      name: 'Pansy Kuang',
       position: 'Hack Technical Event Director',
-      email: 'alexis@acmucsd.org',
-      linkedinLink: 'https://www.linkedin.com/in/avergnet/',
-      imageUrl: 'assets/alexis.jpeg',
+      email: 'pansy@acmucsd.org',
+      linkedinLink: 'http://www.linkedin.com/in/pansykuang',
+      imageUrl: '/assets/board/pansy.jpeg',
+    },
+    {
+      name: 'Shreya Nagunuri',
+      position: 'Hack Technical Event Director',
+      email: 'shreya@acmucsd.org',
+      linkedinLink: 'https://www.linkedin.com/in/shreya-nagunuri/',
+      imageUrl: '/assets/board/shreya.png',
+    },
+    {
+      name: 'Uliyaah Dionisio',
+      position: 'Hack Technical Event Director',
+      email: 'uliyaah@acmucsd.org',
+      linkedinLink: 'https://www.linkedin.com/in/uliyaah-dionisio-246695233/',
+      imageUrl: '/assets/board/uliyaah.png',
     },
   ];
 
   return (
     <div className={styles.team}>
-      {teamMembers.map((member, index) => (
+      {teamMembers.map(member => (
         <div key={member.name} className={styles.card}>
-          <div className={styles.cardOutline}>
-            <img src={member.imageUrl} alt={member.name} />
-            <h4>{member.name}</h4>
-            <h5>{member.position}</h5>
-            <div className={styles.icons}>
-              <a href={`mailto:${member.email}`} target="_blank" rel="noopener noreferrer">
-                <EmailIcon />
-              </a>
-              <a href={member.linkedinLink} target="_blank" rel="noopener noreferrer">
-                <LinkedInIcon />
-              </a>
-            </div>
+          <div className={styles.imageCropper}>
+            <Image
+              className={styles.cardImage}
+              src={member.imageUrl}
+              alt={member.name}
+              width={100}
+              height={100}
+            />
+          </div>
+          <h4>{member.name}</h4>
+          <h5>{member.position}</h5>
+          <div className={styles.icons}>
+            <a href={`mailto:${member.email}`} target="_blank" rel="noopener noreferrer">
+              <EmailIcon />
+            </a>
+            <a href={member.linkedinLink} target="_blank" rel="noopener noreferrer">
+              <LinkedInIcon />
+            </a>
           </div>
         </div>
       ))}
