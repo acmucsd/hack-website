@@ -44,7 +44,9 @@ const getAllHackEvents = async (
   try {
     const response: Response = await fetch(api_url);
     const result: EventsResponse = await handleErrors(response);
-    const filteredEvents = result.events.filter(event => event.committee === 'Hack');
+    const filteredEvents = result.events.filter(
+      event => event.committee === 'Hack' || event.title.includes('Hack School')
+    );
     return filteredEvents;
   } catch (error) {
     return undefined;
