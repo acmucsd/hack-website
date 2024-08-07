@@ -18,7 +18,7 @@ This method is handy for making quick style changes to specific elements, but it
 not recommended for extensive styling due to its lack of separation between content and presentation.
 
 ```html copy showLineNumbers
-<h2 style="color: red; text-align: center;">Come to Hack School next week!</h2>
+<h2 style="color: orange; text-align: center;">Come to Hack School Next Week!</h2>
 ```
 
 ### Internal CSS
@@ -30,13 +30,13 @@ It allows you to define CSS rules that apply only to the specific HTML document.
 <head>
   <style>
     h2 {
-      color: red;
+      color: orange;
       text-align: center;
     }
   </style>
 </head>
 
-<h2>Come to Hack School next week!</h2>
+<h2>Come to Hack School Next Week!</h2>
 ```
 
 ### External CSS
@@ -48,7 +48,7 @@ and maintainability, as you can reuse the same stylesheet across multiple HTML f
 styles.css:
 ```css copy showLineNumbers
 h2 {
-    color: red;
+    color: orange;
     text-align: center;
 }
 ```
@@ -59,7 +59,7 @@ index.html:
     <link rel="stylesheet" href="styles.css">
 </head>
 
-<h2>Come to Hack School next week!</h2>
+<h2>Come to Hack School Next Week!</h2>
 ```
 
 ### Selectors
@@ -83,6 +83,10 @@ index.html:
     <h3> The padding of this div is also 32 px!</p>
 </div>
 ```
+
+This is how it would look like:
+
+![padding_div_example](pages/hack-school/CSS_images/padding_div_example.png)
 
 * Class Selector: Selects HTML elements by their class attribute. Class selectors start with a dot `.`, 
 followed by the class name. For example, the .important selector targets all elements with the class "important."
@@ -116,36 +120,50 @@ index.html:
 
 - **Color**: `color` - Changing the text color, background color, or border color of elements.
 ```html copy showLineNumbers
-<p style="color: blue;">Text with blue color</p>
+<p style="color: orange;">Text with orange color</p>
 ```
+![orange_color_text](pages/hack-school/CSS_images/orange_color_text.png)
+
 - **Font**: `font-family`, `font-size`, `font-weight`, `font-style`, etc. - Modifying the font family, size, weight, style, and other typography-related properties.
 ```html copy showLineNumbers
 <p style="font-family: Arial, sans-serif; font-size: 16px; font-weight: bold;">Bold Arial 16px text</p>
 ```
+![bold_arial_text](pages/hack-school/CSS_images/bold_arial_text.png)
+
 - **Margins**: `margin` - Adjusting the space around an element, controlling the gap between elements.
 ```html copy showLineNumbers
 <div style="margin: 20px;">Content with a 20px margin</div>
 ```
+![margin_text](pages/hack-school/CSS_images/margin_text.png)
+
 - **Padding**: `padding` - Adding space inside an element's boundaries, creating space between content and borders.
 ```html copy showLineNumbers
 <div style="padding: 10px;">Content with 10px padding</div>
 ```
+![tenpx_margin_text](pages/hack-school/CSS_images/tenpx_margin_text.png)
+
 - **Borders**: `border`, `border-width`, `border-style`, `border-color` - Styling borders around elements, controlling their width, style (solid, dashed, dotted, etc.), and color.
 ```html copy showLineNumbers
 <div style="border: 1px solid black; width: 100px; height: 50px;">Box with black 1px solid border</div>
 ```
+![box_with_border](pages/hack-school/CSS_images/box_with_border.png)
+
 - **Width and Height**: `width`, `height` - Specifying the dimensions of an element, allowing control over its size.
 ```html copy showLineNumbers
-<div style="width: 200px; height: 100px; background-color: lightgray;"></div>
+<div style="width: 200px; height: 100px; background-color: lightgray;""></div>
 ```
 - **Background**: `background-image`, `background-color`, `background-position`, etc. - Setting background images, colors, and positioning for elements.
 ```html copy showLineNumbers
 <div style="width: 200px; height: 100px; background-color: lightgray;"></div>
 ```
+![orange_box](pages/hack-school/CSS_images/orange_box.png)
+
 - **Text**: `text-align`, `text-decoration`, `text-transform` - Controlling text alignment, text decoration (underline, overline, etc.), and text transformation (uppercase, lowercase, capitalize).
 ```html copy showLineNumbers
 <p style="text-align: center; text-decoration: underline; text-transform: uppercase;">Centered, underlined, uppercase text</p>
 ```
+![centered_underlined_uppercase_text](pages/hack-school/CSS_images/centered_underlined_uppercase_text.png)
+
 - **Display**: `display` - Changing how elements are displayed (block, inline, flex, grid, etc.) and how they interact with other elements.
 ```html copy showLineNumbers
 <div style="display: flex; justify-content: space-between;">
@@ -153,26 +171,39 @@ index.html:
   <div>Item 2</div>
 </div>
 ```
+![indexed_splits](pages/hack-school/CSS_images/indexed_splits.png)
+
 - **Positioning**: `position`, `top`, `bottom`, `left`, `right` - Controlling the positioning of elements on the page using properties like position, top, bottom, left, right, etc.
 ```html copy showLineNumbers
 <div style="position: absolute; top: 50px; left: 100px;">Positioned at 50px from top and 100px from left</div>
 ```
+![left_centered_text](pages/hack-school/CSS_images/left_centered_text.png)
+
 - **Float**: `float` - Floating elements to either the left or right side of their container.
 ```html copy showLineNumbers
 <img src="image.jpg" style="float: left; margin-right: 10px;" alt="Floating image">
 ```
+![floating_image](pages/hack-school/CSS_images/floating_image.png)
+
 - **Opacity**: `opacity` - Adjusting the transparency of elements and their content.
 ```html copy showLineNumbers
 <div style="opacity: 0.7;">Semi-transparent content</div>
 ```
+![semi_transparent_text](pages/hack-school/CSS_images/semi_transparent_text.png)
+
 - **Transitions and Animations**: `transition`, `animation` - Applying smooth transitions and animations to elements.
 ```html copy showLineNumbers
 <button style="transition: background-color 0.3s ease;">Hover me</button>
 ```
+![hover_button](pages/hack-school/CSS_images/hover_button.png)
+
 - **Shadows**: `box-shadow`, `text-shadow` - Adding box shadows or text shadows to elements for visual effects.
 ```html copy showLineNumbers
 <div style="box-shadow: 2px 2px 5px gray; text-shadow: 1px 1px 2px black;">Shadowed box and text</div>
 ```
+![shadowed_box](pages/hack-school/CSS_images/shadowed_box.png)
+
+
 - **List Styles**: `list-style-type`, `list-style-image`, `list-style-position` 
 ```html copy showLineNumbers
 <ul style="list-style-type: square;">
@@ -180,6 +211,8 @@ index.html:
   <li>Item 2</li>
 </ul>
 ```
+![indexed_list](pages/hack-school/CSS_images/indexed_list.png)
+
 - **Flexbox and Grid**: `display: flex`, `display: grid`, etc. - Utilizing CSS layout systems like Flexbox and Grid to create responsive and flexible layouts (see section below).
 
 
