@@ -16,8 +16,8 @@ console.log("Hello, world!");
 
 ## Semicolons
 In JavaScript, semicolons are used to terminate statements. 
-While JavaScript has automatic semicolon insertion, it's good practice to include 
-semicolons explicitly to avoid unexpected behavior.
+Unlike most programming languages, adding semicolons is optional — however, it's good practice to include 
+them in your code.
 
 ## Comments
 Comments in JavaScript provide explanatory notes within the code. 
@@ -41,18 +41,13 @@ There are three ways to declare variables: `let`, `const`, and `var`.
 2. `const` is used for constants
 3. `var` is used to declare variables before ES6 (newer version)
 
+In general, only use `let` and `const` in your code.
+
 ```javascript copy showLineNumbers
 let age = 25;
 const name = "Alice";
 var count = 10;
 ```
-
-|           |   let     |   const   |   var     |
-|:---------:|:---------:|:---------:|:---------:|
-|scope      |   Block   |   Block   |globally/locally|
-|updated    |   ✅      |   ❌     |   ✅      |
-|redeclared |   ❌      |   ❌     |   ✅      |
-
 
 ### let
 Let is block scoped, can be updated but not redeclared
@@ -89,26 +84,6 @@ const greet = {
 greet.message = "hello!";
 ```
 
-### var
-Var is globally/locally scoped and can be redeclared and updated
-
-```javascript copy showLineNumbers
-var greeter = "hey"; //gloablly scoped
-
-frunction newFucntion(){
-    var hello = "hello"; //locally scoped
-}
-
-console.log(hello); // error: hello is not defined
-console.log(greeter); // hey
-
-var greety = "hi";
-console.log(greety); // hi
-
-greety = "hey again";
-console.log(greety); // hey again
-```
-
 ## Data Types
 JavaScript has various data types, including numbers, strings, booleans, arrays, and objects. 
 The language uses dynamic typing, allowing variables to change their type during runtime.
@@ -127,64 +102,16 @@ let x = true;
 let y = false;
 
 // Object:
-const person = {firstName: "John", lastName: "Doe"};
+let person = {firstName: "John", lastName: "Doe"};
 
 // Array object
-const communites = ["Hack", "AI", "Cyber", "Design"];
-
-// Date object:
-const date = new Date("10-18-2023");
-```
-
-## Operators
-Operators in JavaScript perform actions on values and variables. 
-These include arithmetic, comparison, logical, and assignment operators.
-
-```javascript copy showLineNumbers
-let x = 4;
-let y = 2;
-let a = 5;
-let b = 3;
-```
-
-Basic arithmetic operations:
-```javascript copy showLineNumbers
-test1 = x + y; // 6
-test2 = x - y; // 2
-test3 = x * y; // 8
-test4 = x / y; // 2
-test5 = a / b; // 1.6666666666666667
-test6 = x % y; // 0
-test7 = a % b; // 2
-test8 = x**y;  // 16
-```
-
-Logical operations:
-```javascript copy showLineNumbers
-console.log('++x = ', ++x)  // x is now 5
-console.log('x++ = ', x++)  // prints 5 and then increased to 6
-console.log('x = ', x)      // x is now 6
-
-console.log('--x = ', --x)  // x is now 5
-console.log('x-- = ', x--)  // prints 5 and then decreased to 4
-console.log('x = ', x)      // x is now 4
-```
-
-Operations with different data types:
-```javascript copy showLineNumbers
-test1 = 8 + 5;          // 13
-test2 = 8 + '2';        // 82
-test3 = 8 + 5 + 'x';    // 13x
-test4 = 8 + 'x' + 5;    // 8x5
-test5 = 2 - '1.5';      // 0.5
-test6 = 8 * '-2';       // -16
-test7 = 5 + true;       // 6
+let communites = ["Hack", "AI", "Cyber", "Design"];
 ```
 
 ## Equality
-JavaScript offers strict equality (===) and loose equality (==) operators for comparison. 
-It's recommended to use strict equality to avoid unexpected type conversions. Strict equaltiy checks for both
-value and type while loose equality checks only value
+JavaScript offers loose equality (==) and strict equality (===) operators for comparison. 
+It's recommended to always use strict equality to avoid unexpected type conversions. Strict equaltiy checks for both
+value and type while loose equality checks only value.
 
 Example:
 ```javascript copy showLineNumbers
@@ -198,7 +125,7 @@ console.log(5 === '5'); // false
 Creating an object:
 ```javascript copy showLineNumbers
 const organization = {
-    name: "ACM UCSD",
+    name: "ACM UCSD", 
     age: 5,
     hackschool: () => {
         console.log("JavaScript Workshop");
@@ -210,13 +137,13 @@ const organization = {
 Accessing properties (dot notation):
 ```javascript copy showLineNumbers
 const myName = organization.name;
-console.log(myName);; // prints "ACM UCSD"
+console.log(myName); // prints "ACM UCSD"
 ```
 
 Accessing properties (bracket notation):
 ```javascript copy showLineNumbers
 const myName = organization[age];
-console.log(myName);; // prints 5
+console.log(myName); // prints 5
 ```
 
 **Similarly we can modify properties using both the dot and bracket notation**
@@ -224,13 +151,13 @@ console.log(myName);; // prints 5
 Modifying properties (dot notation):
 ```javascript copy showLineNumbers
 organization.name = "HACK";
-console.log(organization.name);; // prints "HACK"
+console.log(organization.name); // prints "HACK"
 ```
 
 Modifying properties (bracket notation):
 ```javascript copy showLineNumbers
 organization[age] = 6;
-console.log(organization[age]);; // prints 6
+console.log(organization[age]); // prints 6
 ```
 
 **To call methods stored in an object use dot notation**
@@ -240,7 +167,7 @@ organization.hackschool(); // prints "JavaScript Workshop"
 
 
 ## Loops
-Loops allow you to execute a block of code repeatedly. Common loop types are `while`and `for` loops.
+Loops allow you to execute a block of code repeatedly. Common loop types are `while` and `for` loops.
 
 **While Loop:**
 ```javascript copy showLineNumbers
@@ -359,7 +286,7 @@ console.log(numColleges);
 ```
 
 ## Arrow functions
-Arrow functions provide a concise way to write functions in JavaScript. They are considred anonymous functions and allows fucntion to refer to the object that defined it.
+Arrow functions provide a concise way to write functions in JavaScript. They are considred anonymous functions and allows the function to refer to the object that defined it.
 
 Syntax:
 ```javascript copy showLineNumbers /arg1/ /arg2/ /const myFunction/
@@ -368,8 +295,8 @@ const myFunction = (arg1, arg2) => {
 };
 ```
 * `const myFunction` declares a constant named "myFunction"
-* `=` assigns the fucntion to myFunction
-* `arg1` and `arg2` specify the argumetns the function accepts
+* `=` assigns the function to myFunction
+* `arg1` and `arg2` specify the arguments the function accepts
 
 Difference:
 ```javascript copy showLineNumbers /arg1/ /arg2/ /const myFunction/
@@ -427,9 +354,13 @@ greet('Nikhil', callMe);
 // Call me back!
 ```
 ## Promises
-Promises are used to handle asynchronous operations in JavaScript. They provide a structured way to handle success and error cases.
+Promises are used to handle asynchronous operations in JavaScript. They provide a structured way to handle success and error cases. \
+A promise has a parameter that is known as the Executor function. This function takes in two parameters: `resolve` and `reject`. 
 
-Example:
+`resolve`: This function is called when the asynchronous operation completes successfully. It accepts a single argument, which is the value the promise will be resolved with.
+
+`reject`: This function is called when the asynchronous operation fails. It accepts a single argument, which is the reason (error) for the rejection.
+
 ```javascript copy showLineNumbers
 let checkLength = new Promise((resolve, reject) => {
   let sentence = "Hack is the best";
@@ -444,22 +375,26 @@ let checkLength = new Promise((resolve, reject) => {
 });
 ```
 ## Async/Await
-`async` and `await` are used to simplify asynchronous programming in JavaScript, async functions return promises
+An async function always returns a promise. 
+If the function returns a value, the promise will be resolved with that value. 
+If the function throws an error, the promise will be rejected with that error.
 
 Example:
 ```javascript copy showLineNumbers
-async function fetchUser() {
-  let search = new Promise((resolve, reject) => {
-    // calls function after 1000 milliseconds
-    setTimeout(() => resolve("found"), 1000);
-  });
 
-  // await makes the function wait til the promise is resolved
-  let isFound = await search;
-  console.log(isFound);
+async function fetchData() {
+  // Start an asynchronous fetch request to the given URL
+  let response = await fetch('https://examplewebsite.com/data');
+
+  // Wait for the response and parse it
+  let data = await response.json();
+
+  // Log the parsed data to the console
+  console.log(data);
 }
 
-fetchUser();
+// Call the async function to execute the fetch operation
+fetchData();
 ```
 
 ## Then/Catch
@@ -468,17 +403,17 @@ where the `catch()` is used to handle errors that occur during Promise execution
 
 Example:
 ```javascript copy showLineNumbers
-function findUser() {
+function checkRandomNumber() {
   return new Promise((resolve, reject) => {
     // Math.random returns a random number [0, 1)
     const randomNum = Math.random();
-    // Resolves user data
+
     if (randomNum < 0.5) {
-      resolve({ name: "Charvi", age: 20 });
+      resolve(randomNum);
     }
     // Rejects with error
     else {
-      reject(new Error("Error: Unable to find user."));
+      reject(new Error("Error: The random number is too high."));
     }
   });
 }
@@ -486,12 +421,9 @@ function findUser() {
 Using then and catch which can also be chained for successive events
 ```javascript copy showLineNumbers
 findUser()
-  .then((userData) => {
-    console.log("Username:", userData.name);
-    return userData.age;
-  })
-  .then((age) => {
-    console.log("Age:", age + 5);
+  .then((data) => {
+    console.log("Our number:", data);
+    return data;
   })
   .catch((error) => console.error("Error:", error.message));
 ```
