@@ -1,3 +1,5 @@
+import ToggleCodeBlock from './blurred_component';
+
 # Week 2: JavaScript
 
 ## What is JavaScript?
@@ -136,6 +138,18 @@ const communites = ["Hack", "AI", "Cyber", "Design"];
 const date = new Date("10-18-2023");
 ```
 
+## Exercise 1: Javascript Syntax Quiz
+Create a variable called firstName, that has your first name as it's value. 
+Then, create a variable called lastName, that has your last name as it's value.
+Using the console.log() function, print the two variables together.
+<ToggleCodeBlock>
+```javascript copy showLineNumbers
+let firstName = "Nishant"
+let lastName = "Balaji"
+console.log(firstName + " " + lastName) // Nishant Balaji
+```
+</ToggleCodeBlock>
+
 ## Operators
 Operators in JavaScript perform actions on values and variables. 
 These include arithmetic, comparison, logical, and assignment operators.
@@ -238,7 +252,24 @@ console.log(organization[age]);; // prints 6
 organization.hackschool(); // prints "JavaScript Workshop"
 ```
 
+## Exercise 2: Creating and Manipulating Objects
+Create an object representing a UCSD student. Include properties such as name, college, year, and favorite subject.
+Then, write a function that updates the student's favorite subject.
 
+<ToggleCodeBlock>
+```javascript copy showLineNumbers
+let student = {
+  name: "Billy",
+  college: "Sixth",
+  year: "Freshman",
+  favoriteSubject: "Math",
+}
+
+function updateFavoriteSubject(student, subject) {
+  student.favoriteSubject = subject
+}
+```
+</ToggleCodeBlock>
 ## Loops
 Loops allow you to execute a block of code repeatedly. Common loop types are `while`and `for` loops.
 
@@ -404,6 +435,28 @@ obj.hello();
 obj.greeting();
 // prints window
 ```
+
+## Exercise 3: Creating Functions
+Create your own array of food items.
+Then, write a function findFood() that takes in the array and a food item.
+It will loop through the array and return true if the item exists in the array, and false otherwise. 
+<ToggleCodeBlock>
+```javascript copy showLineNumbers
+let foodList = ["banana", "apple", "peach", "orange"]
+
+function findFood(foodList, food){
+  for (item in foodList){
+    if (item === food){
+      return true
+    }
+  }
+  return false
+}
+
+console.log(findFood(foodList, "apple")) // true
+console.log(findFood(foodList, "kiwi")) // false
+```
+</ToggleCodeBlock>
 
 ## Callbacks
 Callbacks are functions passed as arguments to other functions. They are commonly used for asynchronous programming and event handling.
