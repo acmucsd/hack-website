@@ -12,6 +12,7 @@ const ToggleCodeBlock = ({ children }) => {
   return (
     <div>
       <button
+        type="button"
         onClick={toggleVisibility}
         style={{
           backgroundColor: 'blue',
@@ -19,9 +20,7 @@ const ToggleCodeBlock = ({ children }) => {
       >
         {isVisible ? 'Hide Code' : 'Show Code'}
       </button>
-      {isVisible && (
-          <code>{children}</code>
-      )}
+      {isVisible && <code>{children}</code>}
     </div>
   );
 };
