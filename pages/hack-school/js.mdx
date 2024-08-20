@@ -59,7 +59,7 @@ let greeting = "say Hello instead";
 if (true) {
     let greeting = "say Hello instead";
     console.log(greeting); // "say Hello instead"
-    //no error because differet scope
+    //no error because different scope
 }
 
 console.log(greeting); // "say Hi"
@@ -132,7 +132,7 @@ const organization = {
     }
 }
 ```
-**We can acess properties of an object either through the dot notaion or the bracket notation**
+**We can access properties of an object either through the dot notation or the bracket notation**
 
 Accessing properties (dot notation):
 ```javascript copy showLineNumbers
@@ -360,6 +360,8 @@ A promise has a parameter that is known as the Executor function. This function 
 `resolve`: This function is called when the asynchronous operation completes successfully. It accepts a single argument, which is the value the promise will be resolved with.
 
 `reject`: This function is called when the asynchronous operation fails. It accepts a single argument, which is the reason (error) for the rejection.
+
+![text-formatting-example](pages/hack-school/images/promises.png)
 
 ```javascript copy showLineNumbers
 let checkLength = new Promise((resolve, reject) => {

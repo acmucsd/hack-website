@@ -1,12 +1,17 @@
 // to do: styling
 
-import React, { useState } from 'react';
 
-const ToggleCodeBlock = ({ children }) => {
+import { useState, ReactNode, FC } from 'react';
+
+interface ToggleCodeBlockProps {
+  children: ReactNode;
+}
+
+const ToggleCodeBlock: FC<ToggleCodeBlockProps> = ({ children }) => {
   const [isVisible, setIsVisible] = useState(false);
 
   const toggleVisibility = () => {
-    setIsVisible(!isVisible);
+   setIsVisible((isVisible) => !isVisible);
   };
 
   return (
