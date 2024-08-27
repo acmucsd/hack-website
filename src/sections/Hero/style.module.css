@@ -13,7 +13,7 @@
 .backdrop {
     flex-grow: 1;
     display: grid;
-    grid-template-columns: 1fr 2fr 1fr;
+    grid-template-columns: 1fr 2fr;
     align-items: center;
     max-width: 100%;
     text-align: center;
@@ -30,15 +30,19 @@
 /* Landing Card Text */
 
 .landing_text {
-    display: grid;
-    grid-template-columns: 1fr;
-    grid-template-rows: 1fr 1.25fr;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2em;
     position: relative;
 }
 
+.landing_title {
+    font-size: 5em;
+    font-weight: 600;
+}
+
 .landing_caption {
-    position: absolute;
-    top: 40%;
     width: 100%;
     font-size: 2em;
 }
@@ -77,27 +81,8 @@
     .backdrop_left{
         justify-self: center;
     }
-    .backdrop_right {
-        display: none;
-    }
     .landing_text {
         align-self: start;
-    }
-}
-
-/* Font size and layout for tablet*/
-
-@media screen and (min-device-width : 768px) and (max-device-width : 1024px) {
-    .backdrop {
-        grid-template-columns: 1fr 2fr;
-        grid-template-rows: 1fr;
-        max-width: 95%;
-    }
-    .backdrop_right {
-        display: none;
-    }
-    .landing_text {
-        align-self: center;
     }
 }
 

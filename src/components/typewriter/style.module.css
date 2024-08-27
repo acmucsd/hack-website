@@ -1,4 +1,10 @@
-.landing_title {
-    font-weight: 900;
-    font-size: 5em;
+.landing_caption::after {
+  content: '|';
+  animation: blink 0.75s step-start infinite;
+}
+
+@keyframes blink {
+  50% {
+    opacity: 0;
+  }
 }
