@@ -74,15 +74,22 @@
         font-size: 10px;
     }
     .backdrop {
-        grid-template-columns: minmax(18em, 1fr);
-        grid-template-rows: minmax(0, 0.7fr);
+        grid-template-columns: 1fr; 
+        grid-template-rows: auto; 
         max-width: 95%;
     }
-    .backdrop_left{
+    
+    .backdrop_left {
         justify-self: center;
     }
-    .landing_text {
-        align-self: start;
+    .landing_title{
+        margin-bottom: 1rem;
+    }
+    .landing_text{
+        margin-top: 1rem;
+        margin-bottom: 1rem;
+        margin-right: 2rem;
+        margin-left: 2rem;
     }
 }
 
