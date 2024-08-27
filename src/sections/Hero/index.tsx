@@ -2,7 +2,6 @@ import { FaChevronDown } from 'react-icons/fa6';
 import Image from 'next/image';
 import TypeAnimation from '../../components/type-animation';
 import leftside from '../../../public/assets/left_diamonds.svg';
-import rightside from '../../../public/assets/right_diamonds.svg';
 import styles from './style.module.css';
 import aboutStyles from '../About/style.module.css';
 
@@ -24,7 +23,8 @@ const Hero: React.FC = () => {
           <div className={styles.landing_message}>
             <h1 className={styles.landing_title}>ACM Hack</h1>
             <h4 className={styles.landing_caption}>
-              Empowering our community of software engineers. <br /> Developing cool things with code.
+              Empowering our community of software engineers. <br /> Developing cool things with
+              code.
             </h4>
           </div>
           <TypeAnimation />
