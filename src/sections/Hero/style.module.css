@@ -21,7 +21,7 @@
 
 /* Landing Card Icons */
 
-.backdrop_left, .backdrop_right {
+.backdrop_left {
     object-fit: contain;
     width: 100%;
     height: 100%;
@@ -74,22 +74,15 @@
         font-size: 10px;
     }
     .backdrop {
-        grid-template-columns: 1fr; 
-        grid-template-rows: auto; 
+        grid-template-columns: minmax(18em, 1fr);
+        grid-template-rows: minmax(0, 0.7fr);
         max-width: 95%;
     }
-    
     .backdrop_left {
         justify-self: center;
     }
-    .landing_title{
-        margin-bottom: 1rem;
-    }
     .landing_text{
-        margin-top: 1rem;
-        margin-bottom: 1rem;
-        margin-right: 2rem;
-        margin-left: 2rem;
+        align-self: start;
     }
 }
 

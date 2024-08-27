@@ -18,7 +18,7 @@ const TypeAnimation: React.FC = () => {
   }, []);
 
   return (
-    <div className={styles.landing_title}>
+    <div className={styles.word_container}>
       {currentWord === 'build' && <Typewriter text={currentWord} />}
       {currentWord === 'break' && <span className={styles.break}>{currentWord}</span>}
       {currentWord === 'innovate' && <span className={styles.innovate}>{currentWord}</span>}
