@@ -69,18 +69,18 @@ index.html:
 
 styles.css:
 ```css copy showLineNumbers
-div {
-    padding: 32px;
+* {
+    padding: 4px;
 }
 ```
 
 index.html:
 ```html copy showLineNumbers
 <div>
-    <p> The padding of this div is 32 px!</p>
+    <p> The padding of this div is 4 px!</p>
 </div>
 <div>
-    <h3> The padding of this div is also 32 px!</p>
+    <h3> The padding of this div is also 4 px!</p>
 </div>
 ```
 
@@ -148,6 +148,10 @@ index.html:
 ```
 ![box_with_border](pages/hack-school/CSS_images/box_with_border.png)
 
+*This is how margins, padding, and borders all come together!*
+
+![css_box_model](pages/hack-school/CSS_images/css_box_model.png)
+
 - **Width and Height**: `width`, `height` - Specifying the dimensions of an element, allowing control over its size.
 ```html copy showLineNumbers
 <div style="width: 200px; height: 100px; background-color: lightgray;""></div>
@@ -191,27 +195,11 @@ index.html:
 ```
 ![semi_transparent_text](pages/hack-school/CSS_images/semi_transparent_text.png)
 
-- **Transitions and Animations**: `transition`, `animation` - Applying smooth transitions and animations to elements.
-```html copy showLineNumbers
-<button style="transition: background-color 0.3s ease;">Hover me</button>
-```
-![hover_button](pages/hack-school/CSS_images/hover_button.png)
-
 - **Shadows**: `box-shadow`, `text-shadow` - Adding box shadows or text shadows to elements for visual effects.
 ```html copy showLineNumbers
 <div style="box-shadow: 2px 2px 5px gray; text-shadow: 1px 1px 2px black;">Shadowed box and text</div>
 ```
 ![shadowed_box](pages/hack-school/CSS_images/shadowed_box.png)
-
-
-- **List Styles**: `list-style-type`, `list-style-image`, `list-style-position` 
-```html copy showLineNumbers
-<ul style="list-style-type: square;">
-  <li>Item 1</li>
-  <li>Item 2</li>
-</ul>
-```
-![indexed_list](pages/hack-school/CSS_images/indexed_list.png)
 
 - **Flexbox and Grid**: `display: flex`, `display: grid`, etc. - Utilizing CSS layout systems like Flexbox and Grid to create responsive and flexible layouts (see section below).
 
@@ -350,6 +338,8 @@ These properties are collectively known as the "flex shorthand." They control th
 
 The `order` property allows you to change the order in which Flex Items appear within the 
 Flex Container without changing their source order in the HTML.
+
+![css_flex_box](pages/hack-school/CSS_images/css_flex_box.png)
 
 ### Games to Learn Flexbox:
 
