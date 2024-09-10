@@ -1,6 +1,5 @@
 // to do: styling
 
-
 import { useState, ReactNode, FC } from 'react';
 
 interface ToggleCodeBlockProps {
@@ -11,7 +10,7 @@ const ToggleCodeBlock: FC<ToggleCodeBlockProps> = ({ children }) => {
   const [isVisible, setIsVisible] = useState(false);
 
   const toggleVisibility = () => {
-   setIsVisible((isVisible) => !isVisible);
+    setIsVisible(isVisible => !isVisible);
   };
 
   return (
