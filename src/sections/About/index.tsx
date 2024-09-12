@@ -5,7 +5,6 @@ const About: React.FC = () => {
   return (
     <div className={styles.about}>
       <h2 className={styles.title}>Welcome to ACM Hack!</h2>
-      <br />
       <div className={styles.main}>
         <div className={styles.main_desc}>
           <div className={styles.main_header}>
