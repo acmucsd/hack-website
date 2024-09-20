@@ -1,21 +1,18 @@
-// to do: styling
+import { useState, FC, ReactNode } from 'react';
 
-import React, { useState } from 'react';
-
-const ToggleCodeBlock = ({ children }) => {
+const ToggleCodeBlock: FC<{ children: ReactNode }> = ({ children }) => {
   const [isVisible, setIsVisible] = useState(false);
-
-  const toggleVisibility = () => {
-    setIsVisible(!isVisible);
-  };
 
   return (
     <div>
       <button
         type="button"
-        onClick={toggleVisibility}
+        onClick={() => setIsVisible(!isVisible)}
         style={{
-          backgroundColor: 'blue',
+          backgroundColor: '#494D5F',
+          borderRadius: '4px',
+          padding: '0.5rem',
+          margin: '0.5rem',
         }}
       >
         {isVisible ? 'Hide Code' : 'Show Code'}

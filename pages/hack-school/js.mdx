@@ -548,3 +548,34 @@ findUser()
   })
   .catch((error) => console.error("Error:", error.message));
 ```
+
+## Exercise 4: Async await practice
+
+Create an async function fetchData that simulates an API call to fetch user data. The function should return a promise that resolves after 2 seconds with a user object containing name and email.
+
+Then, write another async function displayUser that uses await to call fetchData and logs the user's information to the console.
+
+<ToggleCodeBlock> 
+```javascript copy showLineNumbers 
+// Simulate API call using a Promise that resolves after 2 seconds 
+async function fetchData() { 
+  return new Promise((resolve) => { 
+    setTimeout(() => { 
+      resolve({ name: "John Doe", email: "john.doe@example.com" }); 
+    }, 2000); 
+  }); 
+}
+
+// Use async/await to fetch and display user data
+async function displayUser() { 
+  try { 
+    const user = await fetchData(); 
+    console.log("User Name:", user.name); 
+    console.log("User Email:", user.email); 
+  } catch (error) { 
+    console.error("Error:", error.message); 
+  } 
+}
+// Call the displayUser function displayUser();
+```
+</ToggleCodeBlock>
