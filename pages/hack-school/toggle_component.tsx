@@ -7,7 +7,7 @@ const ToggleCodeBlock: FC<{ children: ReactNode }> = ({ children }) => {
     <div>
       <button
         type="button"
-        onClick={() => setIsVisible((isVisible) => !isVisible)}
+        onClick={() => setIsVisible(isVisible => !isVisible)}
         style={{
           backgroundColor: 'hsl(var(--nextra-primary-hue) 100% 70% / var(--tw-bg-opacity))',
           borderRadius: '4px',
