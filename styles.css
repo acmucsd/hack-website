@@ -105,13 +105,6 @@ html[class~='dark'] h4 {
 
 /* Link
     ------------------------ */
-p a,
-p li a {
-  text-decoration: underline;
-  text-decoration-thickness: 1px;
-  text-underline-offset: 0.01em;
-  text-decoration-color: var(--docs-accent-color-opacity);
-}
 
 p a:hover,
 p li a:hover {

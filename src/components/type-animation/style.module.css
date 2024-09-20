@@ -1,0 +1,64 @@
+.word_container {
+  background-color: var(--docs-dark-bg);
+  width: 60%;
+  padding: 0.5rem;
+  border-radius: 10px;
+  font-size: 3em;
+  font-weight: 200;
+}
+
+/* Breaking apart animation for "break" */
+.break {
+  animation: breakApart 2.5s ease-in-out forwards;
+}
+
+@keyframes breakApart {
+  0% {
+    letter-spacing: 0;
+    transform: rotate(0deg);
+    opacity: 1;
+  }
+  50% {
+    letter-spacing: 0.2rem;
+    transform: rotate(-5deg);
+    opacity: 1;
+  }
+  100% {
+    letter-spacing: 0.5rem;
+    transform: rotate(-10deg) translateY(-50%);
+    opacity: 0;
+  }
+}
+
+/* Light up animation for "innovate" */
+.innovate {
+  animation: fadeIn 1s ease-in-out forwards;
+}
+
+.innovate::after {
+  content: '💡';
+  margin-right: 0.5rem;
+  opacity: 0;
+  animation: lightUp 1.25s ease-in-out infinite;
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes lightUp {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}

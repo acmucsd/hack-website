@@ -3,10 +3,9 @@ import styles from './style.module.css';
 
 interface TypewriterProps {
   text: string;
-  delay: number;
 }
 
-const Typewriter: React.FC<TypewriterProps> = ({ text, delay }) => {
+const Typewriter: React.FC<TypewriterProps> = ({ text }) => {
   const [currentText, setCurrentText] = useState('');
   const [currentIndex, setCurrentIndex] = useState(0);
 
@@ -15,12 +14,12 @@ const Typewriter: React.FC<TypewriterProps> = ({ text, delay }) => {
       const timeout = setTimeout(() => {
         setCurrentText(prevText => prevText + text[currentIndex]);
         setCurrentIndex(prevIndex => prevIndex + 1);
-      }, delay);
+      }, 180);
 
       return () => clearTimeout(timeout);
     }
     return undefined;
-  }, [currentIndex, delay, text]);
+  }, [currentIndex, text]);
 
   return <h6 className={styles.landing_caption}>{currentText}</h6>;
 };
