@@ -3,6 +3,7 @@ import React from 'react';
 import { DocsThemeConfig, useConfig } from 'nextra-theme-docs';
 import { useRouter } from 'next/router';
 import Logo from './public/Logo';
+import Navbar from './src/components/navbar';
 
 const config: DocsThemeConfig = {
   logo: <Logo />,
@@ -25,6 +26,8 @@ const config: DocsThemeConfig = {
         <title>{title}</title>
         <meta name="description" content={description} />
         <link rel="shortcut icon" href="/favicon.ico" />
+
+        <Navbar />
 
         {/* link sharing data */}
 

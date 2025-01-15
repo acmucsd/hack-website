@@ -3,7 +3,8 @@
     "title": "ACM Hack",
     "type": "page",
     "theme": {
-      "layout": "raw"
+      "layout": "raw",
+      "navbar": false
     }
   },
   "hack-school": {
