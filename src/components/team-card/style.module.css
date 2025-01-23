@@ -12,6 +12,7 @@
 .card {
   display: flex;
   flex-direction: column;
+  justify-content: center;
   width: 250px;
   height: 325px;
   min-height: 100%;
