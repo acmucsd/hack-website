@@ -47,6 +47,27 @@ const TeamCard: React.FC = () => {
       linkedinLink: 'https://www.linkedin.com/in/uliyaah-dionisio-246695233/',
       imageUrl: '/assets/board/uliyaah.png',
     },
+    {
+      name: 'Sarah Li',
+      position: 'Diamond Staff',
+      email: 'sarah@acmucsd.org',
+      linkedinLink: 'https://www.linkedin.com/in/sarah-li-448b90218/',
+      imageUrl: '/assets/board/sarah.png',
+    },
+    {
+      name: 'Prerana Gowda',
+      position: 'Diamond Staff',
+      email: 'prerana@acmucsd.org',
+      linkedinLink: 'https://www.linkedin.com/in/prerana-gowda/',
+      imageUrl: '/assets/board/prerana.png',
+    },
+    {
+      name: 'Tyler Hoang',
+      position: 'Diamond Staff',
+      email: 'tylerhoang@acmucsd.org',
+      linkedinLink: 'https://www.linkedin.com/in/tyler-hoang-8079ab246/',
+      imageUrl: '/assets/board/tyler.jpeg',
+    },
   ];
 
   return (
