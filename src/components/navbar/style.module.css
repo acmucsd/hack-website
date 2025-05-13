@@ -1,37 +1,16 @@
 .navbar {
   width: 100%;
-  padding: 1rem 2rem; /* Adjust padding as needed */
+  padding: 0.5rem 2rem; /* Adjust padding as needed */
   border-top: 3px solid transparent; /* Placeholder for gradient */
-  border-bottom: 3px solid transparent; /* Placeholder for gradient */
-  /* TODO: Add gradient borders */
-  background-color: #fff; /* Assuming white background */
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Optional shadow */
+  border-bottom: 3px solid hsl(var(--nextra-primary-hue)); /* Placeholder for gradient */
+  margin-bottom: 0.5rem;
 }
 
 .navbarContent {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  max-width: 1200px; /* Adjust max-width as needed */
   margin: 0 auto;
-}
-
-.logoContainer {
-  display: flex;
-  align-items: center;
-}
-
-.logoPlaceholder {
-  /* TODO: Replace with actual logo styles */
-  width: 40px; /* Adjust size */
-  height: 40px; /* Adjust size */
-  border: 2px solid #ccc; /* Placeholder border */
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin-right: 0.5rem;
-  border-radius: 8px; /* Rounded corners like the image */
-  font-weight: bold;
 }
 
 .logoText {
@@ -53,8 +32,7 @@
 
 .navLinks a {
   text-decoration: none;
-  color: #333;
-  font-weight: 500;
+  font-weight: 700;
   transition: color 0.3s ease;
 }
 

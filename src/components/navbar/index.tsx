@@ -1,5 +1,6 @@
-import Link from 'next/link'; // Assuming Next.js for routing
+import Link from 'next/link';
 import styles from './style.module.css';
+import Logo from '../../../public/Logo';
 
 const NAV_LINKS = [
   { name: 'Home', href: '/' },
@@ -7,18 +8,14 @@ const NAV_LINKS = [
   { name: 'Events', href: '/events' },
   { name: 'Team', href: '/team' },
   { name: 'Contact', href: '/contact' },
-  { name: 'Hack School', href: '/hack-school' }, // Added Hack School
+  { name: 'Hack School', href: '/hack-school' },
 ];
 
 const Navbar: React.FC = () => {
   return (
     <nav className={styles.navbar}>
       <div className={styles.navbarContent}>
-        <div className={styles.logoContainer}>
-          {/* TODO: Replace with actual ACM logo */}
-          <div className={styles.logoPlaceholder}>acm</div>
-          <span className={styles.logoText}>at UC San Diego</span>
-        </div>
+        <Logo />
         <ul className={styles.navLinks}>
           {NAV_LINKS.map(link => (
             <li key={link.name}>
@@ -26,9 +23,6 @@ const Navbar: React.FC = () => {
             </li>
           ))}
         </ul>
-        <button type="button" className={styles.loginButton}>
-          Member Login
-        </button>
       </div>
     </nav>
   );
