@@ -1,0 +1,78 @@
+.navbar {
+  width: 100%;
+  padding: 1rem 2rem; /* Adjust padding as needed */
+  border-top: 3px solid transparent; /* Placeholder for gradient */
+  border-bottom: 3px solid transparent; /* Placeholder for gradient */
+  /* TODO: Add gradient borders */
+  background-color: #fff; /* Assuming white background */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Optional shadow */
+}
+
+.navbarContent {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 1200px; /* Adjust max-width as needed */
+  margin: 0 auto;
+}
+
+.logoContainer {
+  display: flex;
+  align-items: center;
+}
+
+.logoPlaceholder {
+  /* TODO: Replace with actual logo styles */
+  width: 40px; /* Adjust size */
+  height: 40px; /* Adjust size */
+  border: 2px solid #ccc; /* Placeholder border */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 0.5rem;
+  border-radius: 8px; /* Rounded corners like the image */
+  font-weight: bold;
+}
+
+.logoText {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #333;
+}
+
+.navLinks {
+  list-style: none;
+  display: flex;
+  padding: 0;
+  margin: 0;
+}
+
+.navLinks li {
+  margin-left: 2rem; /* Adjust spacing between links */
+}
+
+.navLinks a {
+  text-decoration: none;
+  color: #333;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+.navLinks a:hover {
+  color: #007bff; /* Example hover color */
+}
+
+.loginButton {
+  background-color: #333; /* Dark background like the image */
+  color: #fff;
+  border: none;
+  padding: 0.6rem 1.2rem;
+  border-radius: 20px; /* Rounded corners */
+  cursor: pointer;
+  font-weight: 500;
+  transition: background-color 0.3s ease;
+}
+
+.loginButton:hover {
+  background-color: #555; /* Slightly lighter on hover */
+}
