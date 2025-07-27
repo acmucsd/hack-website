@@ -1,6 +1,9 @@
+'use client';
 import Link from 'next/link';
 import styles from './style.module.css';
 import Logo from '../../../public/Logo';
+import React, { useState } from 'react';
+
 
 const NAV_LINKS = [
   { name: 'Home', href: '/' },
@@ -12,11 +15,19 @@ const NAV_LINKS = [
 ];
 
 const Navbar: React.FC = () => {
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
   return (
     <nav className={styles.navbar}>
       <div className={styles.navbarContent}>
         <Logo />
-        <ul className={styles.navLinks}>
+        <button
+          className={styles.menuToggle}
+          onClick={() => setIsMenuOpen(!isMenuOpen)}
+          aria-label="Toggle menu"
+        >
+          ☰
+        </button>
+        <ul className={`${styles.navLinks} ${isMenuOpen ? styles.navLinksOpen : ''}`}>
           {NAV_LINKS.map(link => (
             <li key={link.name}>
               <Link href={link.href}>{link.name}</Link>

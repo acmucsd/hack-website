@@ -4,6 +4,7 @@
   border-top: 3px solid transparent; /* Placeholder for gradient */
   border-bottom: 3px solid hsl(var(--nextra-primary-hue)); /* Placeholder for gradient */
   margin-bottom: 0.5rem;
+  position: relative;
 }
 
 .navbarContent {
@@ -54,3 +55,42 @@
 .loginButton:hover {
   background-color: #555; /* Slightly lighter on hover */
 }
+
+.menuToggle {
+  display: none;
+  background: none;
+  border: none;
+  font-size: 1.8rem;
+  cursor: pointer;
+  color: #333;
+}
+
+/* Mobile styles */
+@media (max-width: 768px) {
+  .navLinks {
+    display: none;
+    flex-direction: column;
+    align-items: flex-start;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background-color: white;
+    padding: 1rem 2rem;
+    z-index: 1000;
+    border-top: 1px solid #ddd;
+  }
+
+  .navLinksOpen {
+    display: flex;
+  }
+
+  .menuToggle {
+    display: block;
+  }
+
+  .navLinks li {
+    margin: 1rem 0;
+  }
+}
+
