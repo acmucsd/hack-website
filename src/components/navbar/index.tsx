@@ -17,11 +17,11 @@ const NAV_LINKS = [
 const Navbar: React.FC = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   return (
-    <nav className={styles.navbar}>
+    <nav className={`${styles.navbar} ${isMenuOpen ? styles.navbarOpen : ''}`}>
       <div className={styles.navbarContent}>
         <Logo />
         <button
-          className={styles.menuToggle}
+          className={`${styles.menuToggle} ${isMenuOpen ? styles.menuToggleOpen : ''}`}
           onClick={() => setIsMenuOpen(!isMenuOpen)}
           aria-label="Toggle menu"
         >
