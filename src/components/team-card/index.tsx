@@ -21,7 +21,7 @@ const TeamCard: React.FC = () => {
     },
     {
       name: 'Sarah Li',
-      position: 'Diamond Staff',
+      position: 'Hack Technical Event Director',
       email: 'sarah@acmucsd.org',
       linkedinLink: 'https://www.linkedin.com/in/sarah-li-448b90218/',
       imageUrl: '/assets/board/sarah.png',
