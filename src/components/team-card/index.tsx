@@ -46,7 +46,7 @@ const TeamCard: React.FC = () => {
       email: 'ayush@acmucsd.org',
       linkedinLink: 'https://www.linkedin.com/in/ayush--shah/',
       imageUrl: '/assets/board/ayush.jpeg',
-    }
+    },
   ];
 
   return (

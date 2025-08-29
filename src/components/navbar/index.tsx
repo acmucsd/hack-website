@@ -1,9 +1,9 @@
 'use client';
+
 import Link from 'next/link';
+import React, { useState } from 'react';
 import styles from './style.module.css';
 import Logo from '../../../public/Logo';
-import React, { useState } from 'react';
-
 
 const NAV_LINKS = [
   { name: 'Home', href: '/' },
@@ -21,6 +21,7 @@ const Navbar: React.FC = () => {
       <div className={styles.navbarContent}>
         <Logo />
         <button
+          type="button"
           className={`${styles.menuToggle} ${isMenuOpen ? styles.menuToggleOpen : ''}`}
           onClick={() => setIsMenuOpen(!isMenuOpen)}
           aria-label="Toggle menu"
