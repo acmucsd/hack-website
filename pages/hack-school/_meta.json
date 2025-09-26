@@ -3,8 +3,8 @@
   "logistics": "Hack School Logistics",
   "tools": "Developer Tools",
   "git-github": "Git/GitHub",
-  "week1": "Intro to Web Dev: HTML, CSS, and JavaScript",
-  "react": "Week 1: React and Next.js",
+  "week1": "Week 1: HTML, CSS, and JavaScript",
+  "react": "Week 2: React and Next.js",
   "express": "Week 3: APIs with Express",
   "mongodb": "Week 4: Databases with MongoDB",
   "deployment": "Week 5: Debugging and Deployment"
