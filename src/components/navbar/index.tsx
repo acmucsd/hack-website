@@ -1,7 +1,6 @@
 'use client';
 
 import Link from 'next/link';
-import { useRouter } from 'next/router';
 import React, { useState } from 'react';
 import styles from './style.module.css';
 import Logo from '../../../public/Logo';
@@ -17,7 +16,6 @@ const NAV_LINKS = [
 
 const Navbar: React.FC = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const router = useRouter();
 
   // Inject smooth scroll CSS once
   React.useEffect(() => {
@@ -30,7 +28,7 @@ const Navbar: React.FC = () => {
   }, []);
 
   // Custom click handler for hash links
-  const handleNavClick = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
+  const handleNavClick = (e: React.MouseEvent<HTMLElement>, href: string) => {
     if (href.startsWith('/#')) {
       e.preventDefault();
       const id = href.split('#')[1];
@@ -46,7 +44,7 @@ const Navbar: React.FC = () => {
   };
 
   return (
-  <nav className={styles.navbar}>
+    <nav className={styles.navbar}>
       <div className={styles.navbarContent}>
         <Logo />
         <button
@@ -60,9 +58,25 @@ const Navbar: React.FC = () => {
         <ul className={`${styles.navLinks} ${isMenuOpen ? styles.navLinksOpen : ''}`}>
           {NAV_LINKS.map(link => (
             <li key={link.name}>
-              <Link href={link.href} legacyBehavior>
-                <a onClick={e => handleNavClick(e, link.href)}>{link.name}</a>
-              </Link>
+              {link.href.startsWith('/#') ? (
+                <button
+                  type="button"
+                  className={styles.navButton}
+                  onClick={e => handleNavClick(e, link.href)}
+                  onKeyDown={e => {
+                    if (e.key === 'Enter' || e.key === ' ') {
+                      handleNavClick(e as any, link.href);
+                    }
+                  }}
+                  tabIndex={0}
+                  aria-label={link.name}
+                  role="link"
+                >
+                  {link.name}
+                </button>
+              ) : (
+                <Link href={link.href}>{link.name}</Link>
+              )}
             </li>
           ))}
         </ul>

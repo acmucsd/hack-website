@@ -23,9 +23,7 @@ const HomePage: NextPage<{ past_events: EventsArray; future_events: EventsArray 
       <section id="team">
         <Team />
       </section>
-      <section id="contact">
-        {/* Add your Contact component or content here */}
-      </section>
+      <section id="contact">{/* Add your Contact component or content here */}</section>
     </main>
   );
 };

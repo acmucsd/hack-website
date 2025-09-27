@@ -26,10 +26,18 @@ const Footer: React.FC = () => {
           <a href="https://github.com/acmucsd" className={styles.link} target="_blank">
             <FaGithub /> Github
           </a>
-          <a href="https://www.instagram.com/acm.ucsd/?hl=en" className={styles.link} target="_blank">
+          <a
+            href="https://www.instagram.com/acm.ucsd/?hl=en"
+            className={styles.link}
+            target="_blank"
+          >
             <FaInstagram /> Instagram
           </a>
-          <a href="https://www.linkedin.com/company/acm-ucsd/" className={styles.link} target="_blank">
+          <a
+            href="https://www.linkedin.com/company/acm-ucsd/"
+            className={styles.link}
+            target="_blank"
+          >
             <FaLinkedinIn /> LinkedIn
           </a>
           <a href="https://www.facebook.com/acmucsd/" className={styles.link} target="_blank">
