@@ -1,0 +1,1465 @@
+import ToggleCodeBlock from './toggle_component';
+
+# Week 1: HTML, CSS, and JavaScript
+
+## What is HTML?
+
+Before we start, we would like to mention that this section is indeed long, and contains a lot of information. However, 
+we hope that the examples provided help clarify the concepts prevented!
+
+**HTML** or **Hyper Text Markup Language**, is the standard "language" used for creating websites (note: it
+is not actually a programming language, it is a markup language). It is the foundation of web
+development, and allows you to include text, and media such as images, videos, links, etc to your
+website. It is often paired up with CSS and JavaScript to add styles and functionality respectively.
+The job of your HTML code is to describe the appearance of your web page.
+
+To achieve this, HTML code comprises of "html elements". These denote the structural semantics for
+your text such as headings, paragraphs, lists, images and more. Tags are enclosed in angle brackets
+(`< >`) and come in pairs: an opening tag and a closing tag. The content between the opening and
+closing tags defines the element.
+
+---
+
+## Text formatting and Hyperlinks in HTML
+
+### Fundamentals of HTML Text
+
+Maintaining the structural hierarchy of the content is essential when creating an HTML website.
+Different HTML tags tell the browser how to distinguish between various elements such as 
+paragraphs and headings.
+More interestingly, search engines take into account the headings as keywords, when indexing pages!
+In addition, for easily styling content using CSS and/or to add functionality using JavaScript,
+ structuring things properly is essential -- this is because your content must 
+be wrapped around the correct HTML tag to apply the appropriate property of interest. 
+
+| Code               | Description                                    |
+| ----------------- | ---------------------------------------------- |
+| `<h1>` ... `<h6>` | Headings with decreasing levels of importance. |
+| `<p>`             | Paragraphs of text.                            |
+| `<code>`          | Inline code snippets.                          |
+| `<pre>`           | Preformatted text, maintaining whitespace.     |
+| `<blockquote>`    | Block-level quotation from another source.     |
+| `<cite>`          | Citation of the title of a work.               |
+| `<abbr>`          | Abbreviation or acronym with explanation.      |
+| `<mark>`          | Highlighted or marked text.                    |
+| `<q>`             | Inline quotation.                              |
+| `<var>`           | Variable or placeholder text.                  |
+| `<kbd>`           | Keyboard input or user action.                 |
+| `<samp>`          | Sample output or data.                         |
+
+We reccomened you try these examples on your own!
+
+```javascript copy showLineNumbers
+   <h1>Large Heading</h1>
+   <h2>Not so large Heading</h2>
+   <h3>Smaller Heading</h3>
+   <h4> Small Heading</h4>
+   <h5> Smaller Heading</h5>
+   <h6> Tiny Heading</h6>
+   <blockquote> Hi! I am a blockquote.</blockquote>
+   <pre>
+      I am the pre tag, and I maintain whitespaces! 
+      For instance, here is a binary search tree diagram! 
+
+      33
+      /    \  
+     16        57
+   /  \      /   \
+  8    21   42    66
+   </pre>
+   <mark> Look at me! I am highlighted!</mark>
+   <p> Press <kbd>Ctrl</kbd> + <kbd>C</kbd> to copy this code!</p>
+```
+
+These will be displayed as:
+
+![text-formatting-example](pages/hack-school/HTML_images/text-formatting-example.png)
+
+
+### Text Formatting
+
+There are various HTML tags that can be used to format text. Here are some of the important ones:
+
+| Code                                       | Description     |
+| -------------------------------------------| --------------- |
+| `<strong> ... </strong>` or `<b> ... </b>` |Bold Text        |
+| `<em>...</em>` or `<i>...</i>`             | Italic Text     |
+| `<u>...</u>`                               | Underlined Text |
+|`<s> ...</s>` or `<del>...</del>`           | Strikethrough   |
+| `<sup>...</sup>`                           |Superscript      |
+| `<sub>...</sub>`                           |Subscript        |
+
+### Boilerplate
+
+
+On Visual Studio Code, you can type `!` into a blank HTML file and press `Enter` as a shortcut to get a basic boilerplate. This will generate the essential structure every HTML file should start with. Here is what the shortcut HTML boilerplate looks like:
+
+```html copy showLineNumbers
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+  </body>
+</html>
+```
+
+**Explanation:**
+
+- `<!DOCTYPE html>` tells the browser this is an HTML5 document.
+- The `<html>` tag wraps all your content.
+- The `<head>` contains meta information, like the page title and character encoding.
+- The `<body>` is where you put everything that will be visible on your webpage.
+
+You should always start your HTML files with this structure to ensure your page displays correctly in all browsers.
+
+### Hyperlinks
+
+Hyperlinks play a significant role in enabling users to move seamlessly between different web pages. To
+achieve this, we make use of a tool known as the "anchor tag." While this tag is commonly employed
+to create connections to external websites and resources, it also allows you to navigate within the
+same webpage. Here is how you can implement a hyperlink:
+
+```javascript copy showLineNumbers
+<a href="https://en.wikipedia.org/wiki/Cat">Cat Wiki</a>
+```
+
+Here, `href` stands for Hypertext Reference or target, and contains the web address you wish to
+direct to. You can also make images "clickable". To do this, you will need:
+
+```javascript copy showLineNumbers
+<a href="https://www.somewebsite.com">
+   <img src="kitten_image.jpg" alt="cat photo">
+</a>
+```
+
+### Lists
+
+You will often feel the need to list items. There are two kinds of lists you can make in HTML --
+ordered or unordered.
+
+**Unordered List**
+
+```javascript copy showLineNumbers
+<ul>
+  <li>Siamese Cat</li>
+  <li>Persian Cat</li>
+  <li>American Shorthair</li>
+  <li>Bongo cat</li>
+</ul>
+```
+
+As you can see in the image below, we get bullet points with no specific ordering:
+
+![unordered-list](pages/hack-school/HTML_images/unordered-list.png)
+
+**Ordered List**
+
+```javascript copy showLineNumbers
+<ol>
+  <li>American Pitbull Terrier</li>
+  <li>Great Dane</li>
+  <li>Rottweiler</li>
+  <li>Dobermann</li>
+</ol>
+```
+
+However, often times an order is important. This is why HTML provides ordered lists as well. You can include an ordered list by 
+including the list elements in between the `<ol> <\ol>` tags:
+
+This is displayed as:
+
+![ordered-list](pages/hack-school/HTML_images/ordered-list.png)
+
+### Images
+
+You can embed your images in your webpage with a `<img>` tag. Elements whose tags don't have a closing tag,
+are called *void elements*. An example is the `<img>` tag. If your image is saved in the same directory as your HTML page, then you
+can include it as follows:
+
+```javascript copy showLineNumbers
+<img src="pow.jpg" alt="Pow Pow" />
+```
+
+However, if your image is not in the same directory as your HTML file, then you will have to include
+its path in the src field. Let's suppose I have a photo of a kitten in my cats folder. I can include
+it by:
+
+```javascript copy showLineNumbers
+<img src="cats/kitten.png" alt="Meow" />
+```
+
+![cat](pages/hack-school/HTML_images/ojew.jpg)
+
+The alt text is supposed to be a textual description of the image. It is used when the image cannot
+be properly rendered due to external problems. When including images in your HTML page, always make
+sure you own the image, or have permission to use it. Most images released under a permissive
+license, such as MIT, BSD, or a suitable Creative Commons (CC) license can be used freely.
+
+### Tables
+
+Tables are always a great way to organize content. Luckily, HTML allows one to arrange text, images, links etc. in 
+a tabular format. 
+
+- `<table>...</table>` is wraps the entire table 
+- `<tr>...</tr>` is the table row. 
+- `<td>...</td>` is the table cell. 
+- `<th>...</th>` is the table header. 
+-  The `border = 1` attribute controls the width of your table's border
+
+HTML table row elements contain the cell elements. The table header tags are nested inside the first HTML table row element. 
+Here is a basic example:
+
+```javascript copy showLineNumbers
+<table border="1">
+        <tr>
+            <th>Cat Breed</th> <! -- Heading column 1 -->
+            <th>Location of origin </th> <! -- Heading column 2 -->
+         </tr>
+         <tr>
+            <td> British Shorthair </td>  <! -- Row 2, column 1 -->
+            <td>the United Kingdom</td>  <! -- Row 2, column 2 -->
+         </tr>
+         <tr>
+            <td>Chartreux</td> <! -- Row 3, column 1 -->
+            <td>France</td> 
+         </tr>
+         <tr>
+            <td>Siberian </td>
+            <td>Russia, Ukraine</td> 
+         </tr>
+</table>
+```
+
+This is what it would render as: 
+
+![table example 1](pages/hack-school/HTML_images/tables_example1.png)
+
+
+**Colspan and Rowspan**
+
+You can use the `colspan` attribute if you want to merge two or more columns into one. Furthermore, you can use 
+the `rowspan` attribute if you want to merge two or more rows into one. 
+
+**Cellpadding and Cellspacing**
+The `cellspacing` attribute defines space between table cells while 
+the `cellpadding` represents the distance between cell borders and the content within a cell. 
+
+Let's add some of these properties to our table! 
+
+```javascript copy showLineNumbers
+<table border="1" cellpadding = "5" cellspacing = "5" >
+        <tr>
+            <th>Region</th> 
+            <th>Cat Breed</th> 
+            <th>Location of origin </th> 
+         </tr>
+         <tr>
+            <td rowspan = "3"> Europe</td>
+            <td> British Shorthair </td>  
+            <td>the United Kingdom</td>  
+         </tr>
+         <tr>
+            <td>Chartreux</td> 
+            <td>France</td> 
+         </tr>
+         <tr>
+            <td>Africa</td>
+            <td>Sokoke </td>
+            <td>Kenya</td> 
+         </tr>
+</table>
+```
+This is what it would render as:
+
+![table example 1](pages/hack-school/HTML_images/tables_example1.png)
+
+## Attributes
+
+All HTML elements *can* have attributes. They dont need to, but attributes tend to give the elements some personality. 
+HTML attributes contain additional information about an element and appear inside the opening tag to control the element's behaviour.
+HTML attributes are a modifier of an HTML element type. In addition, they always appear as name value pairs. 
+
+For instance when using `<img src="cats/kitten.png" alt="Meow" />` to include an image on our webpage, we have that `src` is an attribute of the 
+image tag. Another example is when we made an HTML table using, `<table border="1" cellpadding = "5" cellspacing = "5" > ...</table>`. Here, the `border`, `cellpadding` and `cellspacing` are all attributes of the HTML table element. 
+
+There are three main types of attributes -- required, standard and event attributes. There are a *lot* of HTML attributes, but we 
+will be going over the most important ones. 
+
+### Required Attributes
+
+Required attribues are essential for the element to have a valid and meaningful representation on a web page. Without these, 
+certain elements do not work. Here is a list of some of the important ones:
+
+| Attribute | Description                                         | Common Tags                 |
+|-----------|-----------------------------------------------------|--------------------------------|
+| `src`     | Specifies the source URL for media elements.       | `<img>`, `<source>`, `<track>` |
+| `href`    | Specifies the URL for hyperlinks.                  | `<a>`, `<area>`, `<link>`      |
+| `alt`     | Provides alternative text for media elements.      | `<img>`, `<area>`              |
+
+
+### Standard Attributes
+
+Standard Attributes are also sometimes refered to as "Global Attrbutes". These attribues should work with most HTML elements. Following is a table 
+of some common, useful HTML attributes and the HTML tags that they can be used with:
+
+
+| Attribute     | Description                                           | Common Tags                              |
+|---------------|-------------------------------------------------------|------------------------------------------|
+| `class`       | Used for classifying elements. Can have multiple classnames. Can match elements by class for styling purposes. | All HTML elements  |
+| `id`          | Specifies a document-wide unique identifier for an element. Can be used as a CSS selector.      | All HTML elements     |
+| `style`       | Applies inline CSS styles to an element.            | All HTML elements                       |
+| `width`       | Sets the width of an element (e.g., images).       | `<img>`, `<table>`, `<canvas>`           |
+| `height`      | Sets the height of an element (e.g., images).      | `<img>`, `<table>`, `<canvas>`           |
+| `colspan`     | Specifies the number of columns an element spans.  | `<td>`, `<th>` (table cells)            |
+| `rowspan`     | Specifies the number of rows an element spans.     | `<td>`, `<th>` (table cells)            |
+| `disabled`    | Disables user interaction with an element.         | `<input>`, `<button>`, `<select>`       |
+| `readonly`    | Makes input elements read-only.                   | `<input>`, `<textarea>`                 |
+| `checked`     | Pre-selects checkboxes or radio buttons.          | `<input type="checkbox">`, `<input type="radio">` |
+| `selected`    | Pre-selects an option in a dropdown.              | `<option>` (within `<select>`)          |
+| `placeholder` | Provides a hint to users in input fields.         | `<input>`, `<textarea>`                 |
+| `required`    | Marks input fields as mandatory.                 | `<input>`, `<select>`, `<textarea>`     |
+| `aria-label`  | Adds accessibility labels for screen readers.      | All HTML elements                       |
+| `data-*`      | Custom data attributes for storing data.            | All HTML elements                       |
+| `target`      | Specifies where a link should open (e.g., `_blank`). | `<a>`, `<base>`                        |
+| `rel`         | Describes the relationship between linked documents. | `<a>`, `<link>`                        |
+
+
+Note: Keep the `class` and `id` in mind since these are heavily used in the CSS section!
+
+### Event Attributes 
+The standard attributes include the "event handler attributes", and enable you to 
+associate JavaScript code with specific events that occur on an HTML element. These could be "events" such as 
+hovering over an element, clicking an element, keyboard inputs, dragging things and more. Some important event 
+attributes include `onclick` , `onclick` , `onload`, `onsubmit`  etc. 
+
+For example, if you have an HTML button element, and you wanted to do something when the button is clicked, you could 
+do something as follows: 
+
+```javascript copy showLineNumbers
+<button onclick="doSomethingFunction()">Click Here!</button>
+```
+
+So in this case when you click the button, the `doSomethingFunction()` gets triggered. This could be implemented in 
+a separate JavaScript file, or within a `style` tag.
+
+
+---
+
+### `<div> <\div>` and `<span> <\span>`
+
+The div (division) element is a generic block-level element. You should use this to organize your content into 
+distingushable blocks. These are also useful when you want to apply a specific style to a chunk of content. In that case, 
+you can simply wrap the content of interest around the div tag. 
+
+```javascript copy showLineNumbers
+<div id=“important_info”>
+    <p>Notion is the best way to take notes.</p>
+    <p>Notion helps you be organized.</p>
+    <p>We <3 Notion</p>    
+</div>
+```
+
+Similarly (but not so similarly), `span` is a generic inline element. Just like the `div` tag, `span` supports all global attributes in HTML. 
+This means that you can add classnames and ids to these HTML elements to control and modify them. For example, if I want to make only one word in 
+a sentence appear brown, I can do something like this:
+
+```javascript copy showLineNumbers
+<p> My golden retriever has <span style="color:brown">brown</span> eyes.</p>
+```
+
+This would render as follows: 
+
+![inline-styling](pages/hack-school/HTML_images/in-line-style.png)
+
+The important thing to note here is that although `div` and `span` have similar functions, they give us a different 
+degree of control over the content of our HTML page. 
+
+---
+
+## Getting User Input 
+
+### HTML Form Element 
+An HTML form element can be used to allow the user to input data, which can then be sent to the server for doing other things. 
+
+```javascript copy showLineNumbers
+<form>...</form>
+```
+
+The form element is a **container** for different input elements. 
+
+### HTML Input Element 
+The `<input>` element represents a typed data field, usually with a form control to allow the user to edit the data.
+This element has a `type` attribute, which helps us determine what kind of data the form takes. This, for instance, could be 
+anything from text, images, pdfs etc. Here are some of the important ones:
+
+| Type                    | Description                                                    |
+|-------------------------|----------------------------------------------------------------|
+| `<input type="text">`   | A single-line text input field where users can enter text or data. |
+| `<input type="radio">`  | A radio button that allows users to select one option from a group of choices. Only one radio button in a group can be selected at a time. |
+| `<input type="checkbox">`|A  checkbox that allows users to select >= 0 options from a group of choices. Users can select multiple checkboxes. |
+| `<input type="submit">`  |A submit button within a form, which, when clicked, sends the form data to a server for processing. Typically used to submit forms. |
+| `<input type="button">`  |A clickable button that can trigger JavaScript functions or perform other actions defined by the developer. It's not associated with form submission by default. |
+
+
+### HTML Button Element 
+Instead of having an `input` element of type button, you can also just have an HTML button element. 
+Although the button element has a lot of different global and event attributes, it is reccomened to specify the button type. 
+Here are some examples:
+
+```javascript copy showLineNumbers
+<button type="button">I'm a regular button.</button>
+<button type="reset">I'm a reset button.</button>
+<button type="submit">I'm a submit button.</button>
+```
+
+Some important *global* button attributes include:
+
+| Attribute             | Description                                                                                      |
+|-----------------------|--------------------------------------------------------------------------------------------------|
+| `accesskey`           | Specifies a keyboard shortcut to activate or focus the button.                                 |
+| `autofocus`           | Specifies that the button should automatically have focus when the page loads.                 |
+| `disabled`            | Disables the button, preventing user interaction.                                               |
+| `form`                | Associates the button with a specific `<form>` element.                                         |
+| `formaction`          | Overrides the `<form>` element's action URL for form submission.                               | 
+| `formenctype`         | Specifies the encoding type for form data when submitting.                                     | 
+| `formmethod`          | Specifies the HTTP method to use when submitting the form.                                     | 
+| `formnovalidate`      | Disables form validation when the button is clicked.                                           | 
+| `formtarget`          | Specifies where to display the response after form submission.                                 | 
+| `name`                | Specifies a name for the button, used when submitting form data.                               | 
+| `type`                | Specifies the type of button (e.g., "submit", "reset", "button").                               | 
+| `value`               | Specifies an initial value for the button (used in form submissions).                          | 
+
+
+In addition, some important *event* button attributes include:
+
+| Attribute             | Description                                                                                      |
+|-----------------------|--------------------------------------------------------------------------------------------------|
+| `onclick`             | Defines a JavaScript function to be executed when the button is clicked.                        | Event     |
+| `ondblclick`          | Defines a JavaScript function to be executed when the button is double-clicked.                 | Event     |
+| `onmousedown`         | Defines a JavaScript function to be executed when the button is pressed down.                   | Event     |
+| `onmouseup`           | Defines a JavaScript function to be executed when the button is released.                       | Event     |
+| `onmouseenter`        | Defines a JavaScript function to be executed when the mouse enters the button's area.           | Event     |
+| `onmouseleave`        | Defines a JavaScript function to be executed when the mouse leaves the button's area.           | Event     |
+| `onkeydown`           | Defines a JavaScript function to be executed when a key is pressed down while the button is focused. | Event |
+| `onkeyup`             | Defines a JavaScript function to be executed when a key is released while the button is focused.   | Event |
+| `onfocus`             | Defines a JavaScript function to be executed when the button receives focus.                    | Event     |
+| `onblur`              | Defines a JavaScript function to be executed when the button loses focus.                        | Event     |
+
+---
+
+### Dropdown Menus
+
+You can use the `<select>` element to create a dropdown menu. The `<select>` element wraps around multiple 
+`option` elements, which represent an option in the dropdown menu. The value attribute defines the value 
+realted to a given option. Most global attributes such as `class` and `id` can be used with the `select` tag. 
+
+You can also use boolean attributes such as `disabled` to display an option, but not allow the users to use it.
+Here is an example of a a drop down menu:
+
+```javascript copy showLineNumbers
+<select name="cats" id="cats">
+  <option value="doggo" disabled>woof</option>
+  <option value="bengal_cat">Bengal Cat</option>
+  <option value="minskin_cat">Minskin Cat</option>
+  <option value="persian_cat" selected>Persian Cat</option>
+</select>
+```
+
+As you can see, the `selected` value is the "Persian Cat", therefore, we see that it is the value that appears even when 
+the dropdown menu is closed. 
+
+![dropdown-menu-closed](pages/hack-school/HTML_images/dropdown-menu-closed.png)
+
+Moreover, the `disabled` option, "woof" appears gray. 
+
+![dropdown-menu-opened](pages/hack-school/HTML_images/dropdown-menu-opened.png)
+
+---
+
+## Website Structure 
+
+Most web pages tend to share some standard components such as headers, navigation bars, sidebars, main content etc. 
+It is a good practice to organize and implement sections of your code depending on the functionality. To implement such 
+semantic markup, html has a variety of HTML layout tags. We will be going over some of them in detail. 
+
+### Header 
+The `<header>` element represents a container for introductory content or a set of navigational links.
+
+```javascript copy showLineNumbers
+<header>
+  <h1> 10 Reasons to get a Cat </h1>
+  <h2>1. Cats are superior. </h2>
+      <p>blah blah blah <\p>
+</header>
+```
+You can wrap the header around an `<article>` tag. This tag is used to separate out a block of related content.
+
+### Navigation Bar 
+It is often a good idea to put all important links in one portion of the page so that it is easy for the users to navigate within a page. 
+To achieve this, you can utilize the HTML `<nav>` tag. Typically, you would want to use this as a "table of contents", and 
+should only put major links here. Overcrowding the navbar can defeat the purpose of having it in the first place.
+
+Here is a basic example of a navbar with an **unordered list**:
+
+```javascript copy showLineNumbers
+<nav class="cat-list">
+  <ul>
+    <li><a href="#">Cat Breeds</a></li>
+    <li><a href="#">Cat Food</a></li>
+    <li><a href="#">Memes</a></li>
+  </ul>
+</nav>
+```
+
+
+```javascript copy showLineNumbers
+<nav class="dog-list">
+  <ol>
+    <li class="crumb"><a href="#">Potential Pup Names</a></li>
+    <li class="crumb"><a href="#">Dog Treats</a></li>
+    <li class="crumb">Sweaters</li>
+  </ol>
+</nav>
+```
+
+
+
+### Main Content
+The `<main>` tag is used for content unique to the current page. 
+It is used only once in an HTML document, and is found directly inside the `<body>` tag.
+
+The `<section>` HTML element represents a generic standalone section of a document. 
+It does nto really have any other semantic meaning, other than just being a section of an HTML document. This typically contains a heading 
+inside it.
+
+
+### Footer
+If you wish to include a footer in your webpage, you can use the `footer` tag as follows:
+
+```javascript copy showLineNumbers
+<footer>
+    <p> Author: Someone at ACM</p>
+    <p>Contact us: contact@acmucsd.org </p>
+    <p>Medium: <a href="https://medium.com/acmucsd"> Medium Link</a> </p>
+    <p>Instagram: @acm.ucsd </p>
+  </footer>
+```
+
+![footer](pages/hack-school/HTML_images/footer.png)
+
+---
+## Metadata
+
+We will now be combining everything that we have learned so far into one HTML document! Here is
+where you can start:
+
+```javascript copy showLineNumbers
+<!doctype html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8" />
+    <title> ACM Hack School</title>
+  </head>
+  <body>
+    <p> Welcome to Hack School 2023 </p>
+  </body>
+</html>
+```
+
+The doctype is a historical artifact that needs to be included for everything else to work right.
+The `<html></html>` tags wrap all the other content on our page! The `<meta>` element contains all
+our "metadata" . This is basically all other data like `<base>`, `<link>`, `<script>`, `<style> `or
+`<title>`, which you cannot directly put/represent in your HTML document. The "charset" attribute
+specifies the character encoding for your document as UTF-8, and contains most characters you will
+ever need. The `<body> <\body>` tags contain all the rest of our content! :)
+
+---
+
+## Bonus: TeX on HTML
+
+Congratulations! You have made it through the HTML section! Here is an additional bonus section to learn how to include 
+math equations to your HTML Page. Note that this is a completely optional section.
+
+We encourage you  to stop using screenshots and images to display equations on HTML documents. Instead, use `MathJax`.
+
+MathJax is a JavaScript library that renders LaTeX math expressions on your web page. Note that you will need to have some 
+familiarity with laTeX to make the most out of this. You can look at this [wikipedia page](https://en.wikipedia.org/wiki/List_of_mathematical_symbols_by_subject)
+to look up relevant symbols. 
+
+First, you need to include the MathJax library in the `<head>` as follows:
+
+```javascript copy showLineNumbers
+<head>
+  <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+</head>
+```
+
+Then, everytime you want an **inline equation**, wrap the LaTeX expression around `\(` and `\)`. If you want to display an equation in the middle of the page, use `$$`
+
+```javascript copy showLineNumbers
+<body>
+  <p>This is an inline equation: \(\Phi_{P_i}(x) = x^{2}+ x^{3}+ x^{5} + x^{7} + x^{11} + ... \)</p>
+  
+  <p>This is a display equation:</p>
+  $$
+  [x^n] \Phi_{S}(x) =  [x^n] \sum\limits_{j=0}^{2j- n} \binom{2j-n}{j} x^{n+k} 
+  $$
+</body>
+```
+This would render as:
+
+![latexexample](pages/hack-school/HTML_images/latex.png)
+
+---
+
+## What is CSS?
+
+CSS (Cascading Style Sheets) is a fundamental web technology used to control the presentation 
+and layout of HTML documents. It provides a powerful set of rules and properties that allow 
+developers to customize the appearance of HTML elements, making it an essential tool for building 
+visually appealing and responsive web applications.
+
+## Applying CSS to HTML Components
+
+CSS can be applied to HTML components in various ways. Here are some common methods:
+
+### Inline CSS
+
+Inline CSS involves adding styles directly to an HTML element using the "style" attribute. 
+This method is handy for making quick style changes to specific elements, but it's generally 
+not recommended for extensive styling due to its lack of separation between content and presentation.
+
+```html copy showLineNumbers
+<h2 style="color: orange; text-align: center;">Come to Hack School Next Week!</h2>
+```
+
+### Internal CSS
+
+Internal CSS is placed within the `<style>` tags in the `<head>` section of the HTML document. 
+It allows you to define CSS rules that apply only to the specific HTML document.
+
+```html copy showLineNumbers
+<head>
+  <style>
+    h2 {
+      color: orange;
+      text-align: center;
+    }
+  </style>
+</head>
+
+<h2>Come to Hack School Next Week!</h2>
+```
+
+### External CSS
+
+External CSS involves creating a separate CSS file with all the styles and linking it 
+to the HTML document using the `<link>` tag. This method promotes better code organization 
+and maintainability, as you can reuse the same stylesheet across multiple HTML files.
+
+styles.css:
+```css copy showLineNumbers
+h2 {
+    color: orange;
+    text-align: center;
+}
+```
+
+index.html:
+```html copy showLineNumbers
+<head>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<h2>Come to Hack School Next Week!</h2>
+```
+
+### Selectors
+
+* Universal Selector: Selects all HTML elements. The universal selector is represented by an asterisk `*`.
+* Element Selector: Selects HTML elements by their tag name. For example, the p selector targets all `<div>` elements.
+
+styles.css:
+```css copy showLineNumbers
+* {
+    padding: 4px;
+}
+```
+
+index.html:
+```html copy showLineNumbers
+<div>
+    <p> The padding of this div is 4 px!</p>
+</div>
+<div>
+    <h3> The padding of this div is also 4 px!</p>
+</div>
+```
+
+This is how it would look like:
+
+![padding_div_example](pages/hack-school/CSS_images/padding_div_example.png)
+
+* Class Selector: Selects HTML elements by their class attribute. Class selectors start with a dot `.`, 
+followed by the class name. For example, the .important selector targets all elements with the class "important."
+* ID Selector: Selects a single HTML element by its ID attribute. ID selectors start with a hash `#`, 
+followed by the ID name. For example, the #special selector targets the element with the ID "special."
+
+styles.css:
+```css copy showLineNumbers
+#navbar {
+    background-color: black;
+    font-size: 16px;
+}
+
+.blue {
+    color: blue;
+}
+```
+
+index.html:
+```html copy showLineNumbers
+<div id="navbar">
+    <ul>
+        <li class="blue"><a href="home.asp">Blue Home</a></li>
+        <li><a href="contact.asp">Contact</a></li>
+        <li class="blue"><a href="about.asp">Blue About</a></li>
+    </ul>
+</div>
+```
+
+## Common Properties that CSS can Modify 
+
+- **Color**: `color` - Changing the text color, background color, or border color of elements.
+```html copy showLineNumbers
+<p style="color: orange;">Text with orange color</p>
+```
+![orange_color_text](pages/hack-school/CSS_images/orange_color_text.png)
+
+- **Font**: `font-family`, `font-size`, `font-weight`, `font-style`, etc. - Modifying the font family, size, weight, style, and other typography-related properties.
+```html copy showLineNumbers
+<p style="font-family: Arial, sans-serif; font-size: 16px; font-weight: bold;">Bold Arial 16px text</p>
+```
+![bold_arial_text](pages/hack-school/CSS_images/bold_arial_text.png)
+
+- **Margins**: `margin` - Adjusting the space around an element, controlling the gap between elements.
+```html copy showLineNumbers
+<div style="margin: 20px;">Content with a 20px margin</div>
+```
+![margin_text](pages/hack-school/CSS_images/margin_text.png)
+
+- **Padding**: `padding` - Adding space inside an element's boundaries, creating space between content and borders.
+```html copy showLineNumbers
+<div style="padding: 10px;">Content with 10px padding</div>
+```
+![tenpx_margin_text](pages/hack-school/CSS_images/tenpx_margin_text.png)
+
+- **Borders**: `border`, `border-width`, `border-style`, `border-color` - Styling borders around elements, controlling their width, style (solid, dashed, dotted, etc.), and color.
+```html copy showLineNumbers
+<div style="border: 1px solid black; width: 100px; height: 50px;">Box with black 1px solid border</div>
+```
+![box_with_border](pages/hack-school/CSS_images/box_with_border.png)
+
+*This is how margins, padding, and borders all come together!*
+
+![css_box_model](pages/hack-school/CSS_images/css_box_model.png)
+
+- **Width and Height**: `width`, `height` - Specifying the dimensions of an element, allowing control over its size.
+```html copy showLineNumbers
+<div style="width: 200px; height: 100px; background-color: lightgray;""></div>
+```
+- **Background**: `background-image`, `background-color`, `background-position`, etc. - Setting background images, colors, and positioning for elements.
+```html copy showLineNumbers
+<div style="width: 200px; height: 100px; background-color: orange;"></div>
+```
+![orange_box](pages/hack-school/CSS_images/orange_box.png)
+
+- **Text**: `text-align`, `text-decoration`, `text-transform` - Controlling text alignment, text decoration (underline, overline, etc.), and text transformation (uppercase, lowercase, capitalize).
+```html copy showLineNumbers
+<p style="text-align: center; text-decoration: underline; text-transform: uppercase;">Centered, underlined, uppercase text</p>
+```
+![centered_underlined_uppercase_text](pages/hack-school/CSS_images/centered_underlined_uppercase_text.png)
+
+- **Display**: `display` - Changing how elements are displayed (block, inline, flex, grid, etc.) and how they interact with other elements.
+```html copy showLineNumbers
+<div style="display: flex; justify-content: space-between;">
+  <div>Item 1</div>
+  <div>Item 2</div>
+</div>
+```
+![indexed_splits](pages/hack-school/CSS_images/indexed_splits.png)
+
+- **Positioning**: `position`, `top`, `bottom`, `left`, `right` - Controlling the positioning of elements on the page using properties like position, top, bottom, left, right, etc.
+```html copy showLineNumbers
+<div style="position: absolute; top: 50px; left: 100px;">Positioned at 50px from top and 100px from left</div>
+```
+![left_centered_text](pages/hack-school/CSS_images/left_centered_text.png)
+
+- **Float**: `float` - Floating elements to either the left or right side of their container.
+```html copy showLineNumbers
+<img src="image.jpg" style="float: left; margin-right: 10px;" alt="Floating image">
+```
+![floating_image](pages/hack-school/CSS_images/floating_image.png)
+
+- **Opacity**: `opacity` - Adjusting the transparency of elements and their content.
+```html copy showLineNumbers
+<div style="opacity: 0.7;">Semi-transparent content</div>
+```
+![semi_transparent_text](pages/hack-school/CSS_images/semi_transparent_text.png)
+
+- **Shadows**: `box-shadow`, `text-shadow` - Adding box shadows or text shadows to elements for visual effects.
+```html copy showLineNumbers
+<div style="box-shadow: 2px 2px 5px gray; text-shadow: 1px 1px 2px black;">Shadowed box and text</div>
+```
+![shadowed_box](pages/hack-school/CSS_images/shadowed_box.png)
+
+- **Flexbox and Grid**: `display: flex`, `display: grid`, etc. - Utilizing CSS layout systems like Flexbox and Grid to create responsive and flexible layouts (see section below).
+
+
+## Flexbox Layout
+
+### What is Flexbox?
+
+CSS Flexbox is a powerful layout system used to create flexible and responsive web designs. 
+It provides an intuitive way to arrange elements within a container and control their alignment, 
+distribution, and order.
+
+### Flex Container and Flex Items
+
+A Flex Container is an element to which you apply the CSS property 
+`display: flex;` or `display: inline-flex;`. This makes it a container 
+for Flex Items, which are the child elements within the Flex Container. 
+Flex Items are flexibly arranged inside the container.
+
+
+### Main Axis and Cross Axis
+
+Flexbox operates along two axes: the "Main Axis" and the "Cross Axis." 
+The Main Axis represents the primary direction of Flex Items' alignment, 
+and the Cross Axis is perpendicular to it.
+
+### Flex Container Properties
+
+#### 1. `flex-direction`
+
+The `flex-direction` property determines the direction of the Main Axis. It has four possible values:
+- `row`: Flex Items are placed horizontally in a row from left to right (default).
+- `row-reverse`: Flex Items are placed horizontally in a reversed order from right to left.
+- `column`: Flex Items are placed vertically in a column from top to bottom.
+- `column-reverse`: Flex Items are placed vertically in a reversed order from bottom to top.
+
+#### 2. `justify-content`
+
+The `justify-content` property aligns Flex Items along the Main Axis. 
+It offers various values to control the spacing between Flex Items:
+- `flex-start`: Items are aligned to the start of the container (default).
+- `flex-end`: Items are aligned to the end of the container.
+- `center`: Items are centered within the container.
+- `space-between`: Items are evenly distributed with the first item at the start and the last item at the end.
+- `space-around`: Items are evenly distributed with equal space around them.
+- `space-evenly`: Items are evenly distributed with equal space around and at the start and end.
+
+#### 3. `align-items`
+
+The `align-items` property aligns Flex Items along the Cross Axis. It has the following values:
+- `flex-start`: Items are aligned to the start of the container.
+- `flex-end`: Items are aligned to the end of the container.
+- `center`: Items are centered along the Cross Axis.
+- `baseline`: Items are aligned based on their text baselines.
+- `stretch`: Items are stretched to fill the container along the Cross Axis (default).
+
+#### 4. `flex-wrap`
+
+The `flex-wrap` property determines whether Flex Items should wrap to a new line when 
+they exceed the Flex Container's width. It has three possible values:
+- `nowrap`: Items are displayed in a single line (default).
+- `wrap`: Items wrap to a new line as necessary.
+- `wrap-reverse`: Items wrap to a new line in reverse order.
+
+#### 5. Quick Speed Hack
+
+The `flex-flow` property is a shorthand property for setting both the flex-direction and flex-wrap properties.
+
+```css copy showLineNumbers
+.flex-container {
+  display: flex;
+  flex-flow: row wrap;
+}
+```
+
+### Flexbox Example Usage:
+
+Creating the content using index.html:
+```html copy showLineNumbers
+<div class="table">
+  <div class="row header">
+    <div class="cell">Header 1</div>
+    <div class="cell">Header 2</div>
+    <div class="cell">Header 3</div>
+  </div>
+  <div class="row">
+    <div class="cell">Cell 1</div>
+    <div class="cell">Cell 2</div>
+    <div class="cell">Cell 3</div>
+  </div>
+</div>
+```
+
+Now we can style the table cells, area and the rows using Flexbox by adding the
+following code in style.css
+
+Styling the table cells:
+```css copy showLineNumbers
+.cell {
+  width: 100px;
+  padding: 10px;
+  border: 1px black solid;
+  background-color: #f1f1f1;
+}
+```
+Styling the table area:
+```css copy showLineNumbers
+.table {
+  width: 400px;
+  height: 400px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  background-color: #1e90ff;
+}
+```
+Styling the rows:
+```css copy showLineNumbers
+.row {
+  display: flex;
+  flex-direction: row;
+}
+```
+
+### Flex Item Properties
+
+#### 1. `flex-grow`, `flex-shrink`, and `flex-basis`
+
+These properties are collectively known as the "flex shorthand." They control the growth, shrinking, and initial size of Flex Items.
+- `flex-grow`: Determines how much an item should grow relative to other items when extra space is available.
+- `flex-shrink`: Determines how much an item should shrink relative to other items when there is not enough space.
+- `flex-basis`: Specifies the initial size of an item before any available space is distributed.
+
+#### 2. `order`
+
+The `order` property allows you to change the order in which Flex Items appear within the 
+Flex Container without changing their source order in the HTML.
+
+![css_flex_box](pages/hack-school/CSS_images/css_flex_box.png)
+
+### Games to Learn Flexbox:
+
+[Coding Fantasy](https://codingfantasy.com/games/flexboxadventure/play)
+
+[Flexbox Froggy](https://flexboxfroggy.com/)
+
+---
+## What is JavaScript?
+JavaScript is a versatile programming language used for adding interactivity, 
+dynamic content, and logic to web pages. It enables developers to create engaging user 
+experiences and enhance the functionality of web applications.
+
+## Printing
+The `console.log()` function is used to print output to the browser's console. 
+It's a valuable tool for debugging code and inspecting variables and values.
+
+Example:
+```javascript copy showLineNumbers
+console.log("Hello, world!");
+```
+
+## Semicolons
+In JavaScript, semicolons are used to terminate statements. 
+Unlike most programming languages, adding semicolons is optional — however, it's good practice to include 
+them in your code.
+
+## Comments
+Comments in JavaScript provide explanatory notes within the code. 
+Single-line comments use `//`, while multi-line comments use `/* */`.
+
+Example:
+```javascript copy showLineNumbers
+// This is a single-line comment.
+
+/*
+   This is a
+   multi-line comment.
+*/
+```
+
+## Variables
+Variables are used to store and manage data in JavaScript. 
+There are three ways to declare variables: `let`, `const`, and `var`.
+
+1. `let` is used for variables that can change value
+2. `const` is used for constants
+3. `var` is used to declare variables before ES6 (newer version)
+
+In general, only use `let` and `const` in your code.
+
+```javascript copy showLineNumbers
+let age = 25;
+const name = "Alice";
+var count = 10;
+```
+
+### let
+Let is block scoped, can be updated but not redeclared
+```javascript copy showLineNumbers
+let greeting = "say Hi";
+let greeting = "say Hello instead";
+// error: Identifier 'greeting' has already been declared
+
+if (true) {
+    let greeting = "say Hello instead";
+    console.log(greeting); // "say Hello instead"
+    //no error because different scope
+}
+
+console.log(greeting); // "say Hi"
+```
+
+### const
+Const is block scoped, cannot be updated or redeclared
+```javascript copy showLineNumbers
+const greeting = "say Hi";
+
+greeting = "hello";
+// error: Assignement to constant variable
+
+const greeting = "hey";
+// error: Identifier 'greeting' has already been declared
+
+//can update object properties
+const greet = {
+    message: "say Hi",
+    times: 4
+}
+greet.message = "hello!";
+```
+
+## Data Types
+JavaScript has various data types, including numbers, strings, booleans, arrays, and objects. 
+The language uses dynamic typing, allowing variables to change their type during runtime.
+
+```javascript copy showLineNumbers
+// Numbers:
+let workshopNum = 2;
+let length = 120;
+
+// Strings:
+let color = "Blue";
+let name = "ACM";
+
+// Booleans:
+let x = true;
+let y = false;
+
+// Object:
+let person = {firstName: "John", lastName: "Doe"};
+
+// Array object
+let communities = ["Hack", "AI", "Cyber", "Design"];
+```
+
+## Equality
+JavaScript offers loose equality (==) and strict equality (===) operators for comparison. 
+It's recommended to always use strict equality to avoid unexpected type conversions. Strict equality checks for both
+value and type while loose equality checks only value.
+
+Example:
+```javascript copy showLineNumbers
+console.log(5 == '5'); // true
+console.log(5 === '5'); // false
+```
+
+## Objects
+**Objects in JavaScript are collections of key-value pairs. They are versatile and widely used for organizing and managing data.**
+
+Creating an object:
+```javascript copy showLineNumbers
+const organization = {
+    name: "ACM UCSD", 
+    age: 5,
+    hackschool: () => {
+        console.log("JavaScript Workshop");
+    }
+}
+```
+**We can access properties of an object either through the dot notation or the bracket notation**
+
+Accessing properties (dot notation):
+```javascript copy showLineNumbers
+const myName = organization.name;
+console.log(myName); // prints "ACM UCSD"
+```
+
+Accessing properties (bracket notation):
+```javascript copy showLineNumbers
+const myName = organization[age];
+console.log(myName); // prints 5
+```
+
+**Similarly we can modify properties using both the dot and bracket notation**
+
+Modifying properties (dot notation):
+```javascript copy showLineNumbers
+organization.name = "HACK";
+console.log(organization.name); // prints "HACK"
+```
+
+Modifying properties (bracket notation):
+```javascript copy showLineNumbers
+organization[age] = 6;
+console.log(organization[age]); // prints 6
+```
+
+**To call methods stored in an object use dot notation**
+```javascript copy showLineNumbers
+organization.hackschool(); // prints "JavaScript Workshop"
+```
+
+## Exercise 2: Creating and Manipulating Objects
+Create an object representing a UCSD student. Include properties such as name, college, year, and favorite subject.
+Then, write a function that updates the student's favorite subject.
+
+<ToggleCodeBlock>
+```javascript copy showLineNumbers
+let student = {
+  name: "Billy",
+  college: "Sixth",
+  year: "Freshman",
+  favoriteSubject: "Math",
+}
+
+function updateFavoriteSubject(student, subject) {
+  student.favoriteSubject = subject
+}
+```
+</ToggleCodeBlock>
+## Loops
+Loops allow you to execute a block of code repeatedly. Common loop types are `while` and `for` loops.
+
+**While Loop:**
+```javascript copy showLineNumbers
+let ind = 0;
+while (ind < 4) {
+    console.log(ind);
+    ind ++;
+}
+// prints 0-3 (0, 1, 2, 3)
+```
+
+**For Loop:**
+```javascript copy showLineNumbers
+for (let i = 0; i < 4; i ++){
+    console.log(i)
+}
+// prints 0-3 (0, 1, 2, 3)
+```
+
+**For each Loop:**
+```javascript copy showLineNumbers
+let colleges = ["Revelle", "Muir", "Marshall", "Warren", "ERC", "Sixth", "Seventh", "Eight"]
+for (i of colleges) {
+    console.log(i);
+}
+// prints each college in list
+```
+```javascript copy showLineNumbers
+let acm = "ACM UCSD"
+for (i of acm) {
+    console.log(i);
+}
+// prints A C M   U C S D
+```
+
+## Arrays
+Arrays are ordered collections of data in JavaScript. They are commonly used for storing lists of items.
+
+Example:
+```javascript copy showLineNumbers
+const emptyArr = []; //empty arrray
+const numArr = [1, 2, 3, 4];
+const strArr = ["ACM", "UCSD", "HACK"];
+const diffArr = [8, "JS Workshop", true, 16.16];
+```
+### Common Array Operations:
+1. Accessing Elements:
+Use index notation to access individual elements in an array.
+```javascript copy showLineNumbers
+const diffArr = [8, "JS Workshop", true, 16.16];
+console.log(diffArr[2]); // true
+```
+2. Adding Elements:
+`push()`: Adds one or more elements to the end of an array.
+`unshift()`: Adds one or more elements to the beginning of an array.
+```javascript copy showLineNumbers
+const diffArr = [8, "JS Workshop", true, 16.16];
+console.log(diffArr); // 8, "JS Workshop", true, 16.16
+diffArr.push("adding")
+console.log(diffArr); // 8, "JS Workshop", true, 16.16, "adding"
+diffArr.unshift("front")
+console.log(diffArr); // "front", 8, "JS Workshop", true, 16.16, "adding"
+```
+3. Removing Elements:
+`pop()`: Removes the last element from an array and returns it.
+`shift()`: Removes the first element from an array and returns it.
+`splice()`: Removes elements from a specific index with optional insertion of new elements.
+```javascript copy showLineNumbers
+const diffArr = ["front", 8, "JS Workshop", true, 16.16, "adding"];
+console.log(diffArr); // "front", 8, "JS Workshop", true, 16.16, "adding"
+pop = diffArr.pop()
+console.log(pop) // "adding"
+console.log(diffArr); // "front", 8, "JS Workshop", true, 16.16
+shift = diffArr.shift()
+console.log(shift) // "front"
+console.log(diffArr); // 8, "JS Workshop", true, 16.16
+```
+4. Concatenating Arrays:
+`concat()`: Combines two or more arrays to create a new array.
+```javascript copy showLineNumbers
+let arr1 = [1, 2];
+let arr2 = [3, 4];
+let combined = arr1.concat(arr2);
+console.log(combined); // [1, 2, 3, 4]
+```
+5. Slicing:
+`slice()`: Creates a new array by extracting a portion of an existing array based on start and end indices.
+```javascript copy showLineNumbers
+let numbers = [1, 2, 3, 4, 5];
+let sliced = numbers.slice(1, 4);
+console.log(sliced); // [2, 3, 4]
+```
+
+There are many more operations like reversing, sorting, searching and filtering, more can be found at: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array
+
+## Functions
+Functions are reusable blocks of code that can be called with arguments and can return values. 
+They promote code organization and reusability.
+
+Example:
+```javascript copy showLineNumbers
+let collegesUCSD = ["Revelle", "Muir", "Marshall", "Warren", "ERC", "Sixth", "Seventh", "Eight"]
+function getColleges(collegesList) {
+    let size = 0;
+    for (i of collegesList) {
+        console.log(i);
+        size += 1;
+    }
+    return size;
+}
+
+const numColleges = getColleges(collegesUCSD);
+// prints every colleges in collegesUCSD
+console.log(numColleges);
+// prints 8
+```
+
+## Arrow functions
+Arrow functions provide a concise way to write functions in JavaScript. They are considred anonymous functions and allows the function to refer to the object that defined it.
+
+Syntax:
+```javascript copy showLineNumbers /arg1/ /arg2/ /const myFunction/
+const myFunction = (arg1, arg2) => {
+    // stuff the function does
+};
+```
+* `const myFunction` declares a constant named "myFunction"
+* `=` assigns the function to myFunction
+* `arg1` and `arg2` specify the arguments the function accepts
+
+Difference:
+```javascript copy showLineNumbers /arg1/ /arg2/ /const myFunction/
+// Regular function
+function add_nums(num1, num2) {
+    return num1 + num2;
+}
+// Arrow function
+let add_nums = (num1, num2) => num1 + num2;
+
+console.log(add_nums(5, 9)) // both would print 9
+```
+
+Example:
+```javascript copy showLineNumbers /arg1/ /arg2/ /const myFunction/
+function regularFunction() {
+    console.log(this);
+}
+
+const arrowFunction = () => {
+    consoloe.log(this);
+};
+
+const obj = {
+    hello: regularFunction,
+    greeting: arrowFunction
+};
+
+obj.hello();
+// prints obj
+
+obj.greeting();
+// prints window
+```
+
+## Exercise 3: Creating Functions
+Create your own array of food items.
+Then, write a function findFood() that takes in the array and a food item.
+It will loop through the array and return true if the item exists in the array, and false otherwise. 
+<ToggleCodeBlock>
+```javascript copy showLineNumbers
+let foodList = ["banana", "apple", "peach", "orange"]
+
+function findFood(foodList, food){
+  for (item in foodList){
+    if (item === food){
+      return true
+    }
+  }
+  return false
+}
+
+console.log(findFood(foodList, "apple")) // true
+console.log(findFood(foodList, "kiwi")) // false
+```
+</ToggleCodeBlock>
+
+## Callbacks
+Callbacks are functions passed as arguments to other functions. They are commonly used for asynchronous programming and event handling.
+
+Example:
+```javascript copy showLineNumbers
+function greet(name, callback) {
+    console.log('Hello' + ' ' + name);
+    callback();
+}
+
+// callback function
+function callMe() {
+    console.log('Call me back!');
+}
+
+// passing function as an argument
+greet('Nikhil', callMe);
+// Output:
+// Hello Nikhil
+// Call me back!
+```
+## Promises
+Promises are used to handle asynchronous operations in JavaScript. They provide a structured way to handle success and error cases. \
+A promise has a parameter that is known as the Executor function. This function takes in two parameters: `resolve` and `reject`. 
+
+`resolve`: This function is called when the asynchronous operation completes successfully. It accepts a single argument, which is the value the promise will be resolved with.
+
+`reject`: This function is called when the asynchronous operation fails. It accepts a single argument, which is the reason (error) for the rejection.
+
+![text-formatting-example](pages/hack-school/images/promises.png)
+
+```javascript copy showLineNumbers
+let checkLength = new Promise((resolve, reject) => {
+  let sentence = "Hack is the best";
+  // Resolve is like return
+  if (sentence.length < 10) {
+    resolve("Valid sentence!");
+  }
+  // Reject produces error
+  else {
+    reject(new Error("Too long!"));
+  }
+});
+```
+## Async/Await
+An async function always returns a promise. 
+If the function returns a value, the promise will be resolved with that value. 
+If the function throws an error, the promise will be rejected with that error.
+
+Example:
+```javascript copy showLineNumbers
+
+async function fetchData() {
+  // Start an asynchronous fetch request to the given URL
+  let response = await fetch('https://examplewebsite.com/data');
+
+  // Wait for the response and parse it
+  let data = await response.json();
+
+  // Log the parsed data to the console
+  console.log(data);
+}
+
+// Call the async function to execute the fetch operation
+fetchData();
+```
+
+## Then/Catch
+The `then()` and `catch()` methods are fundamental to working with Promises. `then()` is used to specify what to do when a Promise is resolved
+where the `catch()` is used to handle errors that occur during Promise execution.
+
+Example:
+```javascript copy showLineNumbers
+function checkRandomNumber() {
+  return new Promise((resolve, reject) => {
+    // Math.random returns a random number [0, 1)
+    const randomNum = Math.random();
+
+    if (randomNum < 0.5) {
+      resolve(randomNum);
+    }
+    // Rejects with error
+    else {
+      reject(new Error("Error: The random number is too high."));
+    }
+  });
+}
+```
+Using then and catch which can also be chained for successive events
+```javascript copy showLineNumbers
+findUser()
+  .then((data) => {
+    console.log("Our number:", data);
+    return data;
+  })
+  .catch((error) => console.error("Error:", error.message));
+```
+
+## Exercise 4: Async await practice
+
+Create an async function fetchData that simulates an API call to fetch user data. The function should return a promise that resolves after 2 seconds with a user object containing name and email.
+
+Then, write another async function displayUser that uses await to call fetchData and logs the user's information to the console.
+
+<ToggleCodeBlock> 
+```javascript copy showLineNumbers 
+// Simulate API call using a Promise that resolves after 2 seconds 
+async function fetchData() { 
+  return new Promise((resolve) => { 
+    setTimeout(() => { 
+      resolve({ name: "John Doe", email: "john.doe@example.com" }); 
+    }, 2000); 
+  }); 
+}
+
+// Use async/await to fetch and display user data
+async function displayUser() { 
+  try { 
+    const user = await fetchData(); 
+    console.log("User Name:", user.name); 
+    console.log("User Email:", user.email); 
+  } catch (error) { 
+    console.error("Error:", error.message); 
+  } 
+}
+// Call the displayUser function displayUser();
+```
+</ToggleCodeBlock>

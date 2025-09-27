@@ -3,6 +3,8 @@ import React from 'react';
 import { DocsThemeConfig, useConfig } from 'nextra-theme-docs';
 import { useRouter } from 'next/router';
 import Logo from './public/Logo';
+import Footer from './src/components/footer';
+import Navbar from './src/components/navbar';
 
 const config: DocsThemeConfig = {
   logo: <Logo />,
@@ -53,7 +55,7 @@ const config: DocsThemeConfig = {
     };
   },
   footer: {
-    text: 'Made with 🧡 by ACM Hack!',
+    component: () => <Footer />,
   },
   search: {
     placeholder: 'Search',
@@ -62,6 +64,9 @@ const config: DocsThemeConfig = {
     toggleButton: true,
   },
   docsRepositoryBase: 'https://github.com/acmucsd/hack-website/blob/main',
+  navbar: {
+    component: () => <Navbar />,
+  },
 };
 
 export default config;

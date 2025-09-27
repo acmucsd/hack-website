@@ -1,0 +1,129 @@
+.footer {
+  background-color: #333;
+  color: #fff;
+  padding: 40px 20px;
+  text-align: center;
+}
+
+.title {
+  margin-bottom: 30px;
+  font-size: 2em;
+}
+
+.content {
+  display: flex;
+  justify-content: space-around;
+  align-items: flex-start;
+  flex-wrap: wrap; /* Allow wrapping on smaller screens */
+  max-width: 1000px; /* Adjust as needed */
+  margin: 0 auto;
+}
+
+.socialLinks {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* Two columns */
+  gap: 15px 30px; /* Row gap, Column gap */
+  text-align: left;
+  margin-bottom: 20px; /* Add space below on smaller screens when wrapping */
+}
+
+.link {
+  color: #fff;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 10px; /* Space between icon and text */
+  font-size: 1.1em;
+}
+
+.link svg {
+  font-size: 1.5em; /* Adjust icon size */
+}
+
+.link:hover {
+  color: #ccc;
+}
+
+.newsletter {
+  text-align: left;
+  max-width: 300px; /* Adjust as needed */
+}
+
+.newsletter h3 {
+  margin-bottom: 10px;
+  font-size: 1.4em;
+}
+
+.newsletter p {
+  margin-bottom: 20px;
+  color: #ccc;
+}
+
+.subscribeButton {
+  background-color: #666;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1em;
+  margin-bottom: 20px; /* Space before Vercel badge */
+}
+
+.subscribeButton:hover {
+  background-color: #555;
+}
+
+.vercelBadge {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background-color: #000;
+  color: #fff;
+  padding: 5px 10px;
+  border-radius: 5px;
+  text-decoration: none;
+  font-size: 0.9em;
+}
+
+.vercelBadge svg {
+  font-size: 1.2em;
+}
+
+/* Basic responsive adjustments */
+@media (max-width: 768px) {
+  .content {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .socialLinks {
+    grid-template-columns: repeat(2, 1fr);
+    width: 100%; /* Make links take full width available */
+    max-width: 400px; /* Limit width */
+    margin-bottom: 30px;
+    justify-content: center; /* Center links */
+    padding: 0 20px;
+    box-sizing: border-box;
+  }
+
+  .newsletter {
+    text-align: center;
+    max-width: 90%; /* Adjust max width for smaller screens */
+  }
+
+  .vercelBadge {
+    margin: 0 auto; /* Center badge */
+  }
+}
+
+@media (max-width: 480px) {
+  .socialLinks {
+    grid-template-columns: 1fr; /* Single column on very small screens */
+    text-align: center;
+    gap: 10px;
+  }
+  .link {
+    justify-content: center;
+  }
+}
