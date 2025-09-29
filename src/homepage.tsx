@@ -14,9 +14,16 @@ const HomePage: NextPage<{ past_events: EventsArray; future_events: EventsArray 
   return (
     <main>
       <Hero />
-      <About />
-      <Events past_events={past_events} future_events={future_events} />
-      <Team />
+      <section id="about">
+        <About />
+      </section>
+      <section id="events">
+        <Events past_events={past_events} future_events={future_events} />
+      </section>
+      <section id="team">
+        <Team />
+      </section>
+      <section id="contact">{/* Add your Contact component or content here */}</section>
     </main>
   );
 };
