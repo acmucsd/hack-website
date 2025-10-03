@@ -2,9 +2,9 @@
 
 import Link from 'next/link';
 import React, { useState } from 'react';
+import { useRouter, usePathname } from 'next/navigation';
 import styles from './style.module.css';
 import Logo from '../../../public/Logo';
-import { useRouter, usePathname } from 'next/navigation';
 
 const NAV_LINKS = [
   { name: 'Home', href: '/' },
