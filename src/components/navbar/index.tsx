@@ -2,6 +2,7 @@
 
 import Link from 'next/link';
 import React, { useState } from 'react';
+import { useRouter, usePathname } from 'next/navigation';
 import styles from './style.module.css';
 import Logo from '../../../public/Logo';
 
@@ -16,6 +17,8 @@ const NAV_LINKS = [
 
 const Navbar: React.FC = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const router = useRouter();
+  const pathname = usePathname();
 
   // Inject smooth scroll CSS once
   React.useEffect(() => {
@@ -31,15 +34,19 @@ const Navbar: React.FC = () => {
   const handleNavClick = (e: React.MouseEvent<HTMLElement>, href: string) => {
     if (href.startsWith('/#')) {
       e.preventDefault();
-      const id = href.split('#')[1];
-      const el = document.getElementById(id);
-      if (el) {
-        el.scrollIntoView({ behavior: 'smooth' });
-      }
-      // Optionally close menu on mobile
       setIsMenuOpen(false);
-      // Update URL hash without page reload
-      window.history.pushState(null, '', href);
+      if (pathname === '/') {
+        // Already on home, scroll smoothly
+        const id = href.split('#')[1];
+        const el = document.getElementById(id);
+        if (el) {
+          el.scrollIntoView({ behavior: 'smooth' });
+        }
+        window.history.pushState(null, '', href);
+      } else {
+        // Not on home, navigate to home with hash
+        router.push(href);
+      }
     }
   };
 
