@@ -47,13 +47,17 @@ const Navbar: React.FC = () => {
         // Not on home, navigate to home with hash
         router.push(href);
       }
+    } else {
+      setIsMenuOpen(false);
     }
   };
 
   return (
     <nav className={styles.navbar}>
       <div className={styles.navbarContent}>
-        <Logo />
+        <Link href="/" onClick={() => setIsMenuOpen(false)} aria-label="Home">
+          <Logo />
+        </Link>
         <button
           type="button"
           className={`${styles.menuToggle} ${isMenuOpen ? styles.menuToggleOpen : ''}`}
@@ -82,7 +86,9 @@ const Navbar: React.FC = () => {
                   {link.name}
                 </button>
               ) : (
-                <Link href={link.href}>{link.name}</Link>
+                <Link href={link.href} onClick={() => setIsMenuOpen(false)}>
+                  {link.name}
+                </Link>
               )}
             </li>
           ))}
