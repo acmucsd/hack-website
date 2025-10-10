@@ -106,7 +106,8 @@
     overflow: hidden;
     opacity: 0;
     transition: max-height 0.4s ease, opacity 0.3s ease, padding 0.3s ease;
-    background-color: #111;
+    /* Default background for navLinks (mobile) */
+    background-color: var(--docs-light-bg, #e5e5e560);
   }
 
   .navLinksOpen {
@@ -137,4 +138,14 @@
   .navLinksOpen li:nth-child(4) { transition-delay: 0.25s; }
   .navLinksOpen li:nth-child(5) { transition-delay: 0.3s; }
   .navLinksOpen li:nth-child(6) { transition-delay: 0.35s; }
+}
+
+/* Light mode for navLinks (mobile) */
+html[class~='light'] .navLinks {
+  background-color: var(--docs-light-bg, #fff);
+}
+
+/* Dark mode for navLinks (mobile) */
+html[class~='dark'] .navLinks {
+  background-color: var(--docs-dark-bg, #111);
 }
