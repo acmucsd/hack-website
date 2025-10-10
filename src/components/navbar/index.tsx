@@ -47,8 +47,7 @@ const Navbar: React.FC = () => {
         // Not on home, navigate to home with hash
         router.push(href);
       }
-    }
-    else{
+    } else {
       setIsMenuOpen(false);
     }
   };
@@ -87,10 +86,7 @@ const Navbar: React.FC = () => {
                   {link.name}
                 </button>
               ) : (
-                <Link
-                  href={link.href}
-                  onClick={() => setIsMenuOpen(false)}
-                >
+                <Link href={link.href} onClick={() => setIsMenuOpen(false)}>
                   {link.name}
                 </Link>
               )}
