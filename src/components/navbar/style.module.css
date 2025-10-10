@@ -142,10 +142,10 @@
 
 /* Light mode for navLinks (mobile) */
 html[class~='light'] .navLinks {
-  background-color: var(--docs-light-bg, #fff);
+  background-color: #fff;
 }
 
 /* Dark mode for navLinks (mobile) */
 html[class~='dark'] .navLinks {
-  background-color: var(--docs-dark-bg, #111);
+  background-color: #111;
 }
