@@ -40,8 +40,8 @@ const Footer: React.FC = () => {
           >
             <FaLinkedinIn /> LinkedIn
           </a>
-          <a href="https://www.facebook.com/acmucsd/" className={styles.link} target="_blank">
-            <FaFacebookF /> Facebook
+          <a href="https://www.youtube.com/@acmucsd" className={styles.link} target="_blank">
+            <FaYoutube /> YouTube
           </a>
         </div>
         <div className={styles.newsletter}>
