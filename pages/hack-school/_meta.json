@@ -7,5 +7,7 @@
   "react": "Week 1: React and Next.js",
   "mongodb": "Week 2: Databases with MongoDB",
   "express": "Week 3: APIs with Express",
-  "deployment": "Week 4: Debugging and Deployment"
+  "deployment": "Week 4: Debugging and Deployment",
+  "resume": "Building a Resume",
+  "interview-prep": "Interview Prep"
 }
