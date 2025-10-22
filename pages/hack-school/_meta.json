@@ -1,13 +1,23 @@
 {
+    "---": {
+    "type": "separator",
+    "title": "Hack School"
+  },
+  
   "index": "Welcome to ACM Hack School!",
   "logistics": "Hack School Logistics",
-  "tools": "Developer Tools",
-  "git-github": "Git/GitHub",
   "week1": "Week 0: HTML, CSS, and JavaScript",
   "react": "Week 1: React and Next.js",
   "mongodb": "Week 2: Databases with MongoDB",
   "express": "Week 3: APIs with Express",
   "deployment": "Week 4: Debugging and Deployment",
+
+  "---2": {
+    "type": "separator"
+  },
+
+  "tools": "Developer Tools",
+  "git-github": "Git/GitHub",
   "resume": "Building a Resume",
   "interview-prep": "Interview Prep"
 }
