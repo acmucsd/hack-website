@@ -13,6 +13,7 @@ const NAV_LINKS = [
   { name: 'Team', href: '/#team' },
   { name: 'Contact', href: '/#contact' },
   { name: 'Hack School', href: '/hack-school' },
+  { name: 'Additional Tools', href: '/hack-school/tools' }
 ];
 
 const Navbar: React.FC = () => {
