@@ -1,9 +1,20 @@
 {
-    "---": {
+  "---": {
+    "type": "separator",
+    "title": "Winter Workshops"
+  },
+
+  "docker": "Essence of Backend Engineering: Docker",
+  "design": "Introduction to System Design",
+  "sketch": "Foundations of Frontend Engineering: Sketch to Site",
+  "sql": "Let's Get Relational: SQL & Database Design",
+  "responsive": "Foundations of Frontend Engineering: Responsive Web Design",
+
+  "---1": {
     "type": "separator",
     "title": "Hack School"
   },
-  
+
   "index": "Welcome to ACM Hack School!",
   "logistics": "Hack School Logistics",
   "week1": "Week 0: HTML, CSS, and JavaScript",
