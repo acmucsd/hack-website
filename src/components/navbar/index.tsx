@@ -1,10 +1,10 @@
 'use client';
 
 import Link from 'next/link';
+import { usePathname, useRouter } from 'next/navigation';
 import React, { useState } from 'react';
-import { useRouter, usePathname } from 'next/navigation';
-import styles from './style.module.css';
 import Logo from '../../../public/Logo';
+import styles from './style.module.css';
 
 const NAV_LINKS = [
   { name: 'Home', href: '/' },
@@ -13,6 +13,7 @@ const NAV_LINKS = [
   { name: 'Team', href: '/#team' },
   { name: 'Contact', href: '/#contact' },
   { name: 'Hack School', href: '/hack-school' },
+  { name: 'Winter Workshops', href: '/hack-school/docker' },
 ];
 
 const Navbar: React.FC = () => {
