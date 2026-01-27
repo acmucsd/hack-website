@@ -1,0 +1,228 @@
+# Introduction to System Design
+
+## What Is System Design?
+
+System design is the process of architecting systems that can:
+
+- Scale to millions of users
+- Remain reliable under failure
+- Maintain low latency and high availability
+
+It becomes increasingly important at senior SWE levels, but even interns may encounter system design
+questions in interviews.
+
+---
+
+## The System Design Process
+
+Typical stages:
+
+1. Define requirements
+2. Identify core entities
+3. Design APIs
+4. Create high-level architecture
+5. Deep-dive and refine bottlenecks
+
+---
+
+## Requirements
+
+There are two types of requirements:
+
+### Functional Requirements
+
+What users should be able to do.
+
+- “Users should be able to shorten a URL”
+- “Users should be able to edit a URL”
+
+### Non-Functional Requirements
+
+How well the system performs.
+
+- Latency < 100 ms
+- Supports 10M daily active users
+- High availability and uniqueness guarantees
+
+---
+
+## CAP Theorem
+
+In distributed systems, you can only guarantee **two of the following three**:
+
+- **Consistency (C):** Reads return the most recent write
+- **Availability (A):** Every request gets a response
+- **Partition Tolerance (P):** System works despite network failures
+
+Perfectly reliable distributed databases do not exist.
+
+---
+
+## Caching
+
+- Databases often bottleneck on reads
+- Caches store frequently accessed data in fast memory
+- Typical flow: **Cache → Database**
+
+---
+
+## Consistent Hashing
+
+- Distributes keys across servers arranged in a ring
+- When servers are added or removed, only nearby keys are remapped
+- Enables efficient horizontal scaling of caches and databases
+
+---
+
+## Networking Basics
+
+- **HTTP:** Stateless CRUD-based APIs (most systems)
+- **TCP:** Persistent connections (e.g., game servers)
+- **gRPC:** High-performance service-to-service communication
+
+---
+
+## Load Balancers
+
+- Distribute traffic across backend servers
+- Prevent overload and reroute around failures
+
+### Types
+
+- **L4 Load Balancer:** TCP-level (e.g., WebSockets)
+- **L7 Load Balancer:** Routes based on HTTP content (URLs, headers)
+
+---
+
+## Data Modeling
+
+### SQL (Relational Databases)
+
+- Fixed schemas
+- Tables with rows and columns
+- Strong consistency
+- Good for complex queries and joins
+
+### NoSQL
+
+- Flexible or schema-less data
+- Horizontally scalable
+- Eventual or tunable consistency
+- Common concepts:
+  - **Partition key:** Determines shard placement
+  - **Sort key:** Orders data within a partition
+
+---
+
+## Data Indexing
+
+- Improves query speed using auxiliary data structures
+- Tradeoff:
+  - Faster reads
+  - Slower writes
+  - Extra storage cost
+
+---
+
+## API Design Concepts
+
+- **CRUD:** Create (POST), Read (GET), Update (PUT), Delete (DELETE)
+- **REST:** URLs represent resources
+- **Statelessness:** Each request is self-contained
+
+Stateless APIs improve scalability and reliability.
+
+---
+
+## API Gateway
+
+- Entry point between clients and backend services
+- Routes requests
+- Handles authentication, rate limiting, and traffic control
+- Simplifies API management
+
+---
+
+## Queues
+
+Used to handle bursty traffic and background jobs.
+
+- Requests are queued instead of dropped
+- Workers process jobs asynchronously
+- Enables independent scaling of producers and consumers
+- Supports backpressure to protect the system
+
+---
+
+## Streams & Pub/Sub
+
+- Events stored as ordered streams
+- Enables real-time processing and replay
+- Multiple consumers can read from the same stream
+- Supports windowing (e.g., hourly analytics)
+
+---
+
+## Distributed Locks
+
+- Ensure only one machine modifies a shared resource at a time
+- Used for inventory updates, ticket sales, etc.
+- Improves consistency at the cost of performance
+
+---
+
+## Distributed Cache
+
+- Cache data across multiple machines
+- Keys distributed using consistent hashing
+- Enables near-infinite cache scaling
+
+Example: Redis
+
+---
+
+## Blob Storage
+
+Used for large, unstructured data.
+
+- Stores binary objects (images, videos, documents)
+- Core database stores pointers to blobs
+- Extremely scalable, durable, and cost-effective
+
+---
+
+## Sharding
+
+Used when a single database cannot handle the data volume.
+
+- Split data into smaller shards
+- Spread load across machines
+- Add shards as data grows
+
+---
+
+## CDNs (Content Delivery Networks)
+
+- Cache content close to users
+- Reduce latency and origin server load
+- Serve cached content if available; otherwise fetch and cache
+
+Used for:
+
+- Static assets
+- Media files
+- Frequently accessed API responses
+
+Examples:
+
+- Cloudflare
+- Akamai
+- Amazon CloudFront
+
+---
+
+## Common System Design Issues
+
+- **Hot shard:** One shard receives disproportionate traffic
+- **Thundering herd:** Large traffic spike after downtime
+- **Cache avalanche:** Mass cache expiration causing DB overload

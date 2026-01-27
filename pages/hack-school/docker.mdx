@@ -1,0 +1,151 @@
+# Essence of Backend Engineering: Docker
+
+## What is Docker?
+
+From the official docs:
+
+> Docker is an open platform for developing, shipping, and running applications.
+
+Docker simplifies the process of building, distributing, and running applications by packaging them
+into **images** that can be run consistently across different machines.
+
+Docker allows you to:
+
+- Pull images for any OS or platform
+- Build your own application into an image
+- Run images as isolated containers
+
+As long as Docker is installed, containers can run on any machine.
+
+---
+
+## From Servers to Containers
+
+Before Docker, applications were deployed on either **physical servers** or **virtual machines**.
+
+- **Physical servers** required one application per machine, each with its own OS and hardware
+  resources, leading to high costs, difficult maintenance, and poor scalability.
+- **Virtual machines** improved utilization by running multiple OSs on the same hardware via a
+  hypervisor, but each VM still required a full operating system, resulting in slow startup times
+  and heavy resource usage.
+
+**Containers** solve these problems by providing lightweight, isolated environments that share the
+host OS kernel instead of duplicating entire operating systems. This makes them faster to start,
+more efficient in resource usage, and easier to scale.
+
+By virtualizing at the **OS level** rather than the hardware level, Docker enables consistent
+environments across development and deployment, effectively eliminating the classic “it works on my
+machine” problem.
+
+---
+
+## Docker Images & Containers
+
+### Docker Image
+
+A Docker image is a collection of configurations and instructions used to create containers.
+
+- Images are executed by Docker Engine
+- Many free images exist on Docker Hub, including:
+  - Node.js
+  - PostgreSQL
+  - Java
+  - Ubuntu
+
+Docker Hub: https://hub.docker.com/
+
+### Docker Container
+
+A container is a running instance of a Docker image.
+
+---
+
+## Installing Docker
+
+### Windows
+
+- Install
+  [Docker Desktop for Windows](https://hub.docker.com/editions/community/docker-ce-desktop-windows)
+- **Windows 10 Home requires
+  [WSL 2](https://docs.microsoft.com/en-us/windows/wsl/install-win10#step-2---check-requirements-for-running-wsl-2)**
+
+### Mac
+
+- Install [Docker Desktop for Mac](https://hub.docker.com/editions/community/docker-ce-desktop-mac)
+
+### Linux
+
+- Install [Docker Engine](https://docs.docker.com/engine/install/ubuntu)
+
+Create a free Docker Hub account at: https://hub.docker.com/
+
+---
+
+## Docker CLI
+
+The Docker CLI lets you manage images and containers from the terminal.
+
+### Common Commands
+
+- `docker pull <image>` – Download an image from Docker Hub
+- `docker run --name <name> <image>` – Run a container  
+  Useful flags:
+  - `-d`: Run in background
+  - `-t`: Allocate terminal
+  - `-p`: Map ports
+- `docker ps` – View running containers
+- `docker images` – View local images
+- `docker exec` – Run a command inside a container
+
+---
+
+## Dockerfiles
+
+A **Dockerfile** is a text-based file containing instructions for building a Docker image.
+
+Think of it as a recipe.
+
+### Dockerfile Notes
+
+- The first instruction must be `FROM`
+- Common instructions:
+  - `FROM`, `RUN`, `COPY`, `WORKDIR`, `CMD`
+- Only **one** `CMD` instruction is allowed (the last one wins)
+
+**RUN vs CMD**
+
+- `RUN`: executes commands during image build
+- `CMD`: specifies the command run when the container starts
+
+---
+
+## Pushing Images to Docker Hub
+
+### Why Push?
+
+- Share images publicly
+- Allow others to run your app easily
+
+### Steps
+
+```bash
+docker login
+docker tag <current-name> <username>/<image-name>:<tag>
+docker push <username>/<image-name>:<tag>
+```
+
+View your image at: https://hub.docker.com/
+
+---
+
+## Extending Docker
+
+### Docker Compose
+
+- Multi-container applications
+- Defined in a single YAML file
+
+### Kubernetes
+
+- Container orchestration
+- Handles scaling, deployment, and maintenance
