@@ -1,1 +1,86 @@
 # Let's Get Relational: SQL & Database Design
+
+## Why Databases?
+
+Databases allow applications to store data **persistently** and provide:
+
+- Centralized storage
+- Data integrity
+- Scalability
+
+---
+
+## What is SQL?
+
+**Structured Query Language (SQL)** is the standard language used to:
+
+- Query data
+- Insert/update/delete records
+- Manage structured data
+
+Most SQL systems share similar syntax, though implementations differ slightly.
+
+---
+
+## Why Schema Design Matters
+
+Poor database design causes **data anomalies**:
+
+- **Deletion anomaly** — deleting one record removes unrelated data.
+- **Update anomaly** — updating one row creates inconsistencies.
+- **Insertion anomaly** — cannot insert data without unrelated fields.
+
+**Well-designed schemas prevent these issues.**
+
+---
+
+## Entity–Relationship Model
+
+Databases should be modeled using:
+
+### Entities
+
+Objects with attributes  
+Example:  
+`Student(student_id, name, major)`
+
+### Relationships
+
+Associations between entities  
+Example:  
+Enrollment links Students and Courses.
+
+**Design Rule:**  
+Store each entity in its own table and join them when needed.
+
+---
+
+## Table Structure Basics
+
+- **Table:** collection of records and their attributes (rows and columns)
+- **Row:** single record
+- **Column:** attribute of a record
+
+---
+
+## Keys & Integrity
+
+### Primary Key
+
+- - Unique identifier for each row
+- Cannot be NULL
+
+### Foreign Key
+
+- References another table’s primary key
+- Maintains relationships and prevents invalid references
+
+---
+
+## Basic SQL Syntax
+
+Always remember: SELECT ** FROM ** WHERE \_\_
+
+- SELECT (attribute-list) - all attributes you want to be returned from a query
+- FROM (table-list) - tables you want to pull data from
+- WHERE (selection-predicates) - filters you want to apply to the data
