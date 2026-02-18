@@ -20,8 +20,9 @@
   "homepage": "https://github.com/acmucsd/hack-website#readme",
   "dependencies": {
     "next": "^13.0.6",
-    "nextra": "latest",
-    "nextra-theme-docs": "latest",
+    "next-mdx-remote": "6.0.0",
+    "nextra": "2",
+    "nextra-theme-docs": "2",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-icons": "^4.11.0",
@@ -29,6 +30,7 @@
   },
   "devDependencies": {
     "@types/node": "18.11.10",
+    "@types/react": "19.2.14",
     "@typescript-eslint/eslint-plugin": "^6.1.0",
     "eslint": "^8.45.0",
     "eslint-config-airbnb": "^19.0.4",
