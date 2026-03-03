@@ -1,1 +1,330 @@
 # Foundations of Frontend Engineering: Responsive Web Design
+
+## What is Responsive Web Design?
+
+Responsive Web Design (RWD) is the practice of building websites that scale and adapt across all
+devices.
+
+It:
+
+- Uses CSS to adjust layouts based on:
+  - Screen resolution
+  - Orientation
+  - Platform
+
+- Ensures usability across desktop, tablet, and mobile devices.
+
+---
+
+## Viewport
+
+- The **viewport** is the user’s visible area of a web page.
+- It varies depending on device size.
+  - Smaller on mobile
+  - Larger on desktop
+
+---
+
+# Core Components of Responsive Web Design
+
+## 1. Fluid Layouts
+
+- Commonly uses a **12-column grid system**
+- Layout shrinks and expands as the screen resizes
+- Built using:
+  - Flexbox
+  - Grid
+
+---
+
+## 2. Media Queries
+
+- Conditionally apply CSS based on:
+  - Screen width
+  - Height
+  - Orientation
+  - Resolution
+
+---
+
+## 3. Responsive Images
+
+- Images that adjust automatically to screen size
+
+---
+
+# CSS Box Model
+
+Every HTML element is wrapped in a box.
+
+The box model controls:
+
+- Content
+- Padding
+- Border
+- Margin
+
+It determines spacing between and within elements.
+
+---
+
+# CSS Flexbox
+
+## Purpose
+
+- Designed for **one-dimensional layouts**
+- Works along:
+  - Row OR
+  - Column
+
+---
+
+## Flex Container Properties
+
+### Direction & Wrapping
+
+```css
+flex-direction: row | column;
+flex-wrap: wrap | nowrap;
+flex-flow: <flex-direction> <flex-wrap>;
+```
+
+- `flex-direction` → Defines whether items are arranged in rows or columns.
+- `flex-wrap` → Allows items to wrap onto multiple lines.
+- `flex-flow` → Shorthand for direction and wrapping.
+
+---
+
+### Alignment
+
+```css
+justify-content:
+align-items:
+align-content:
+```
+
+- `justify-content` → Aligns items along the main axis.
+- `align-items` → Aligns items along the cross axis.
+- `align-content` → Aligns wrapped lines inside the container.
+
+---
+
+### Flex Item Sizing
+
+```css
+flex-grow:
+flex-shrink:
+```
+
+- `flex-grow` → Determines how much an item expands relative to others.
+- `flex-shrink` → Determines how much an item shrinks relative to others.
+
+---
+
+### Spacing
+
+```css
+row-gap:
+column-gap:
+gap:
+```
+
+- `row-gap` → Space between rows.
+- `column-gap` → Space between columns.
+- `gap` → Sets both row and column gaps.
+
+---
+
+# CSS Grid
+
+## Purpose
+
+- Designed for **two-dimensional layouts**
+- Controls both rows and columns
+- Ideal for full page layouts
+
+---
+
+## Grid Structure
+
+```css
+grid-template-rows:
+grid-template-columns:
+```
+
+- Define number and sizes of rows and columns.
+
+---
+
+## Grid Areas
+
+```css
+grid-template-areas:
+grid-area:
+```
+
+- `grid-template-areas` → Defines named layout regions.
+- `grid-area` → Places elements into those regions.
+
+Example:
+
+```css
+grid-template-areas:
+  'header header'
+  'sidebar content'
+  'footer footer';
+```
+
+---
+
+## Alignment in Grid
+
+```css
+align-items:
+justify-items:
+align-content:
+justify-content:
+```
+
+- `align-items` → Align individual items on the cross axis.
+- `justify-items` → Align individual items on the main axis.
+- `align-content` → Align the grid container on the cross axis.
+- `justify-content` → Align the grid container on the main axis.
+
+Note: Item-level alignment overrides container-level alignment.
+
+---
+
+## repeat() and minmax()
+
+```css
+repeat()
+minmax(min, max)
+```
+
+- `repeat()` → Creates repeating row or column patterns.
+- `minmax()` → Sets minimum and maximum size limits.
+
+Example:
+
+```css
+grid-template-columns: repeat(3, minmax(200px, 1fr));
+```
+
+---
+
+## Auto-Sizing
+
+```css
+auto-fill
+auto-fit
+```
+
+- `auto-fill` → Creates as many columns as will fit.
+- `auto-fit` → Expands columns to fill available space.
+
+---
+
+# Flexbox vs Grid
+
+| Flexbox                   | Grid                       |
+| ------------------------- | -------------------------- |
+| One-dimensional           | Two-dimensional            |
+| Best for rows OR columns  | Best for full layouts      |
+| Simpler alignment control | Complex layout structuring |
+
+---
+
+# Media Queries
+
+Used to apply CSS conditionally based on device characteristics.
+
+Example:
+
+```css
+@media (max-width: 768px) {
+  .container {
+    grid-template-columns: 1fr;
+  }
+}
+```
+
+Media queries respond to:
+
+- Screen width
+- Screen height
+- Orientation
+- Resolution
+
+---
+
+# CSS Units: Absolute vs Relative
+
+## Absolute Units
+
+- `px`
+- `pt`
+- `pc`
+
+Used for:
+
+- Borders
+- Fixed widths
+- Precise control
+
+---
+
+## Relative Units
+
+- `rem`
+- `em`
+- `%`
+- `vw`
+- `vh`
+
+Used for:
+
+- Text sizing
+- Padding and margins
+- Responsive scaling
+
+### Guidelines
+
+- Use `rem`/`em` for scalable styling.
+- Use `px` for fixed elements like borders or max-width.
+
+---
+
+# Responsive Images
+
+## Key Properties
+
+```css
+object-fit:
+aspect-ratio:
+width:
+max-width:
+height:
+```
+
+### object-fit
+
+Controls how an image fits inside its container:
+
+- `cover`
+- `contain`
+- `fill`
+
+### aspect-ratio
+
+Defines width-to-height ratio.
+
+Example:
+
+```css
+img {
+  width: 100%;
+  aspect-ratio: 3 / 2;
+  object-fit: cover;
+}
+```
