@@ -14,6 +14,7 @@ const NAV_LINKS = [
   { name: 'Contact', href: '/#contact' },
   { name: 'Hack School', href: '/hack-school' },
   { name: 'Winter Workshops', href: '/hack-school/docker' },
+  { name: 'Spring Sessions', href: '/hack-school/sockets' },
 ];
 
 const Navbar: React.FC = () => {
