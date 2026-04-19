@@ -1,4 +1,10 @@
 {
+  "---3": {
+    "type": "separator",
+    "title": "Spring Sessions"
+  },
+
+  "sockets": "WebSockets: For When CRUD Hits the Fan",
   "---": {
     "type": "separator",
     "title": "Winter Workshops"
