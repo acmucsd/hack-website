@@ -1,0 +1,134 @@
+# WebSockets: For When CRUD Hits the Fan
+
+## Application Layer
+
+- Top layer in networking models
+- Interface for user-facing software
+- Common protocols: HTTP, DNS, SMTP
+
+---
+
+## HTTP
+
+- Request/response model
+- Server cannot send data unless client initiates
+- Stateless: each request is independent
+
+### Limitations
+
+- High overhead (repeated headers/context)
+- Higher latency
+- Not suitable for real-time applications
+
+---
+
+## WebSockets
+
+- Enables real-time, bidirectional communication
+- Client and server can both send messages independently
+- Persistent connection (state is maintained)
+
+### Advantages
+
+- Low latency
+- Reduced overhead
+- Efficient for real-time updates
+
+### Drawbacks
+
+- Harder to manage connection state at scale
+- Less scalable than HTTP
+- No built-in reconnection
+
+---
+
+## TCP
+
+- Underlying protocol for both HTTP and WebSockets
+- Ensures:
+  - Reliable delivery
+  - Ordered data transmission
+
+---
+
+## HTTP → WebSocket Upgrade
+
+1. Client sends HTTP request to upgrade protocol
+2. Server accepts upgrade
+3. Connection switches to WebSocket over same TCP connection
+
+---
+
+## Common Use Cases
+
+- Live messaging (chat apps, streaming chat)
+- Multiplayer games
+- Real-time updates
+
+---
+
+## Socket.io
+
+### Overview
+
+- Node.js library for bidirectional communication
+- Works with WebSockets (fallback to HTTP if needed)
+
+### Features
+
+- Simple API
+- Automatic reconnection
+- Supports rooms (separate channels)
+
+---
+
+## Core Concepts
+
+### `socket`
+
+- Represents a single client connection
+- Handles communication with server
+
+### `io`
+
+- Main server instance
+- Manages all client connections
+- Handles global events
+
+---
+
+## Events
+
+- Predefined events (connection, errors, etc.)
+- Custom events (user-defined behavior)
+
+---
+
+## Common Methods
+
+### Emit
+
+```js
+socket.emit('eventName', data);
+```
+
+### Listen
+
+```js
+socket.on('eventName', data => {
+  // handle event
+});
+```
+
+### Broadcast
+
+- Sends message to all clients except sender
+
+```js
+socket.broadcast.emit('eventName', data);
+```
+
+### Key Idea
+
+- WebSockets are preferred over HTTP when building applications that require continuous, real-time
+  communication with low latency.

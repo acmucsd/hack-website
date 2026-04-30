@@ -1,1 +1,206 @@
 # Foundations of Frontend Engineering: Responsive Web Design
+
+## What is Responsive Web Design?
+
+- Designing websites that adapt to different screen sizes and devices
+- Uses CSS to adjust layout based on:
+  - Screen size
+  - Resolution
+  - Orientation
+
+---
+
+## Viewport
+
+- The visible area of a webpage on a device
+- Varies depending on device size (smaller on mobile, larger on desktop)
+
+---
+
+## Core Components
+
+### Fluid Layouts
+
+- Layouts that scale with screen size
+- Often use a **12-column grid system**
+- Implemented using:
+  - Flexbox
+  - Grid
+
+### Media Queries
+
+- Apply CSS conditionally based on device characteristics
+
+### Responsive Images
+
+- Images that resize automatically to fit their container
+
+---
+
+## CSS Box Model
+
+- Every HTML element is wrapped in a box
+- Controls:
+  - Spacing inside elements (padding)
+  - Spacing between elements (margin)
+
+---
+
+## CSS Flexbox
+
+### Purpose
+
+- One-dimensional layouts (row OR column)
+
+### Key Properties
+
+- `display: flex`
+- `flex-direction`
+  - row | column
+- `flex-wrap`
+  - wrap elements across lines
+- `flex-flow`
+  - shorthand for direction + wrap
+
+### Alignment
+
+- `justify-content`
+  - Align along main axis
+- `align-items`
+  - Align along cross axis
+- `align-content`
+  - Align multiple rows/columns
+
+### Sizing
+
+- `flex-grow`
+  - Controls how items expand
+- `flex-shrink`
+  - Controls how items shrink
+
+### Spacing
+
+- `gap`
+- `row-gap`
+- `column-gap`
+
+---
+
+## CSS Grid
+
+### Purpose
+
+- Two-dimensional layouts (rows AND columns)
+
+### Grid Structure
+
+- `grid-template-rows`
+- `grid-template-columns`
+
+### Grid Areas
+
+- `grid-template-areas`
+  - Define layout regions
+- `grid-area`
+  - Assign elements to regions
+
+### Alignment
+
+- `justify-items`, `align-items`
+  - Align individual items
+- `justify-content`, `align-content`
+  - Align entire grid
+
+### Advanced Functions
+
+- `repeat()`
+  - Repeat column/row patterns
+- `minmax(min, max)`
+  - Define flexible sizing
+
+### Auto-Sizing
+
+- `auto-fill`
+  - Fill available space with columns
+- `auto-fit`
+  - Expand columns to fit space
+
+---
+
+## Flexbox vs Grid
+
+- **Flexbox**
+  - Best for 1D layouts (row OR column)
+
+- **Grid**
+  - Best for 2D layouts (rows AND columns)
+
+---
+
+## Media Queries
+
+- Apply styles based on:
+  - Screen width/height
+  - Device type
+  - Orientation
+
+### Example
+
+```css
+@media (max-width: 768px) {
+  /* mobile styles */
+}
+```
+
+## CSS Units
+
+### Absolute Units
+
+- `px`, `pt`, `pc`
+
+### Relative Units
+
+- `rem`, `em`, `%`, `vw`, `vh`
+
+### Guidelines
+
+- Use **relative units** for:
+  - Text
+  - Padding
+  - Layout scaling
+
+- Use **absolute units** for:
+  - Borders
+  - Fixed widths/heights when necessary
+
+---
+
+## Responsive Images
+
+- Ensure images scale properly across devices
+
+### Key Properties
+
+- `object-fit`
+  - Controls how an image fits within its container
+
+- `aspect-ratio`
+  - Maintains consistent width-to-height ratio
+
+- `width` / `height` vs `max-width` / `max-height`
+  - Prefer `max-width: 100%` to prevent overflow
+
+---
+
+## Image Behavior
+
+- Maintain consistent aspect ratios when resizing
+- Avoid distortion by constraining dimensions properly
+- Ensure images adapt to container size
+
+---
+
+## Key Idea
+
+Responsive design relies on flexible units and adaptive media to ensure consistent appearance and
+usability across all screen sizes.
