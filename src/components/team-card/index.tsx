@@ -6,11 +6,11 @@ import styles from './style.module.css';
 const TeamCard: React.FC = () => {
   const teamMembers = [
     {
-      name: 'Nathan Wang',
+      name: 'Ayush Shah',
       position: 'Hack President',
-      email: 'nathan@acmucsd.org',
-      linkedinLink: 'https://www.linkedin.com/in/nathan-wang-100b1a212/',
-      imageUrl: '/assets/board/nathan.png',
+      email: 'ayush@acmucsd.org',
+      linkedinLink: 'https://www.linkedin.com/in/ayush--shah/',
+      imageUrl: '/assets/board/ayush.jpg',
     },
     {
       name: 'Pansy Kuang',
@@ -39,13 +39,6 @@ const TeamCard: React.FC = () => {
       email: 'maxime@acmucsd.org',
       linkedinLink: 'https://www.linkedin.com/in/maxime-vergnet-984273303/',
       imageUrl: '/assets/board/maxime.jpeg',
-    },
-    {
-      name: 'Ayush Shah',
-      position: 'Hack Technical Wiki Director',
-      email: 'ayush@acmucsd.org',
-      linkedinLink: 'https://www.linkedin.com/in/ayush--shah/',
-      imageUrl: '/assets/board/ayush.jpeg',
     },
   ];
 
