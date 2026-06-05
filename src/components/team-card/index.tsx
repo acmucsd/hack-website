@@ -13,11 +13,11 @@ const TeamCard: React.FC = () => {
       imageUrl: '/assets/board/ayush.jpg',
     },
     {
-      name: 'Pansy Kuang',
+      name: 'William Widjaja',
       position: 'Hack Technical Event Director',
-      email: 'pansy@acmucsd.org',
-      linkedinLink: 'http://www.linkedin.com/in/pansykuang',
-      imageUrl: '/assets/board/pansy.jpeg',
+      email: 'williamwidjaja@acmucsd.org',
+      linkedinLink: 'https://www.linkedin.com/in/wwidjaja0',
+      imageUrl: '/assets/board/widjaja.jpg',
     },
     {
       name: 'Sarah Li',
