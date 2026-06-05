@@ -20,11 +20,11 @@ const TeamCard: React.FC = () => {
       imageUrl: '/assets/board/widjaja.jpg',
     },
     {
-      name: 'Sarah Li',
+      name: 'Andrew Rafal',
       position: 'Hack Technical Event Director',
-      email: 'sarah@acmucsd.org',
-      linkedinLink: 'https://www.linkedin.com/in/sarah-li-448b90218/',
-      imageUrl: '/assets/board/sarah.png',
+      email: 'andrewrafal@acmucsd.org',
+      linkedinLink: 'https://www.linkedin.com/in/andrew-rafal/',
+      imageUrl: '/assets/board/andrew.jpg',
     },
     {
       name: 'Tyler Hoang',
