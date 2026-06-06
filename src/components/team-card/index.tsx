@@ -27,11 +27,11 @@ const TeamCard: React.FC = () => {
       imageUrl: '/assets/board/andrew.jpg',
     },
     {
-      name: 'Tyler Hoang',
+      name: 'Jennifer Ju',
       position: 'Hack Technical Event Director',
-      email: 'tylerhoang@acmucsd.org',
-      linkedinLink: 'https://www.linkedin.com/in/tyler-hoang-8079ab246/',
-      imageUrl: '/assets/board/tyler.jpeg',
+      email: 'jenniferju@acmucsd.org',
+      linkedinLink: 'https://www.linkedin.com/in/jennifer-j-ju/',
+      imageUrl: '/assets/board/jennifer.JPG',
     },
     {
       name: 'Maxime Vergnet',
