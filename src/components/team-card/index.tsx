@@ -40,6 +40,13 @@ const TeamCard: React.FC = () => {
       linkedinLink: 'https://www.linkedin.com/in/maxime-vergnet-984273303/',
       imageUrl: '/assets/board/maxime.jpeg',
     },
+    {
+      name: 'Nikolas Espinoza',
+      position: 'Hack Technical Event Director',
+      email: 'nikolas@acmucsd.org',
+      linkedinLink: 'https://www.linkedin.com/in/nikolasespinoza/',
+      imageUrl: '/assets/board/nik.jpg',
+    },
   ];
 
   return (
