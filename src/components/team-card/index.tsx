@@ -34,11 +34,11 @@ const TeamCard: React.FC = () => {
       imageUrl: '/assets/board/jennifer.JPG',
     },
     {
-      name: 'Maxime Vergnet',
+      name: 'Natalin Duangpanya',
       position: 'Hack Technical Event Director',
-      email: 'maxime@acmucsd.org',
-      linkedinLink: 'https://www.linkedin.com/in/maxime-vergnet-984273303/',
-      imageUrl: '/assets/board/maxime.jpeg',
+      email: 'natalin@acmucsd.org',
+      linkedinLink: 'https://www.linkedin.com/in/ndpy/',
+      imageUrl: '/assets/board/nat.png',
     },
     {
       name: 'Nikolas Espinoza',
