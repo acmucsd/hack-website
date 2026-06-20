@@ -44,8 +44,8 @@ const TeamCard: React.FC = () => {
       name: 'Natalin Duangpanya',
       position: 'Hack Technical Event Director',
       email: 'natalin@acmucsd.org',
-      linkedinLink:'https://www.linkedin.com/in/ndpy/',
-      imageUrl: '/assets/board/nat.png'
+      linkedinLink: 'https://www.linkedin.com/in/ndpy/',
+      imageUrl: '/assets/board/nat.png',
     },
   ];
 
