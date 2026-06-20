@@ -40,6 +40,13 @@ const TeamCard: React.FC = () => {
       linkedinLink: 'https://www.linkedin.com/in/maxime-vergnet-984273303/',
       imageUrl: '/assets/board/maxime.jpeg',
     },
+    {
+      name: 'Natalin Duangpanya',
+      position: 'Hack Technical Event Director',
+      email: 'natalin@acmucsd.org',
+      linkedinLink:'https://www.linkedin.com/in/ndpy/',
+      imageUrl: '/assets/board/nat.png'
+    },
   ];
 
   return (
