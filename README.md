@@ -21,3 +21,10 @@ First, run `yarn` to install the dependencies.
 Then, run `yarn dev` to start the development server and visit localhost:3000.
 
 To lint, run `yarn lint --fix` to run linting and fix auto-fixable problems.
+
+To retire workshop pages from navigation, keep their entries in
+`pages/hack-school/_meta.json` with their existing `title` and `"display": "hidden"`.
+Removing an entry makes Nextra automatically list the page with a generated title.
+Hidden pages remain accessible at their existing URLs; remove `display` when the
+content is ready to appear in navigation again. Update seasonal links in
+`src/components/navbar/index.tsx` as well.
