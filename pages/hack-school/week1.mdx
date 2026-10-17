@@ -2,6 +2,36 @@ import ToggleCodeBlock from './toggle_component';
 
 # Week 0: HTML, CSS, and JavaScript
 
+## Workshop Introduction: Frontend and Backend
+
+Web development combines the **frontend**, which runs in the user's browser, and the **backend**, which handles requests, application logic, and stored data on a server.
+
+| Part | What it does | Common examples |
+| --- | --- | --- |
+| Frontend | Determines what users see and how they interact with a website. | HTML for structure, CSS for styling, and JavaScript for interaction. |
+| Backend | Processes requests and manages application data. | Servers, APIs, and databases. |
+
+In this workshop, we focus on frontend development. HTML defines **what** is on the screen, CSS defines **what it looks like**, and JavaScript defines **how it responds** when the user interacts with it. Later Hack School sessions cover the other pieces of a web application.
+
+### Fall 2026 Workshop Project and Setup
+
+Throughout the workshop, we will experiment with a **Wordle-style game** to connect HTML, CSS, and JavaScript. The examples below extend the general reference material in this page rather than replace it.
+
+Install [Visual Studio Code](https://code.visualstudio.com/) and [Git](https://git-scm.com/install/), then open a terminal and clone the workshop's starter project:
+
+```bash copy
+git clone https://github.com/acmucsd/hackschool-fa26-0
+cd hackschool-fa26-0
+```
+
+Open the folder in VS Code and work in the starter files provided by the repository.
+
+- [Workshop presentation](https://acmurl.com/hackschool-fa26-0-slides)
+- [Workshop GitHub repository](https://github.com/acmucsd/hackschool-fa26-0)
+- [Hack School project demo](https://hackschool-fa26.vercel.app/)
+
+---
+
 ## What is HTML?
 
 Before we start, we would like to mention that this section is indeed long, and contains a lot of information. However, 
@@ -480,6 +510,22 @@ Moreover, the `disabled` option, "woof" appears gray.
 
 ---
 
+### Workshop Activity 1: Make an Input Box and Submit Button
+
+The first 2026 workshop activity asks you to add an **input box** and **submit button** to the starter HTML file. You can use the input and button elements covered above:
+
+```html copy
+<label for="guess">Enter a five-letter guess:</label>
+<input id="guess" type="text" maxlength="5" />
+<button id="submit" type="button">Submit</button>
+```
+
+The `for` attribute connects the label to the input's `id`. The `maxlength` attribute limits the length of the text field to five characters. The `id` attributes will be useful when we select these elements with JavaScript later. At this stage, the button will not automatically check a guess; it needs JavaScript to respond to clicks.
+
+Use the starter project from the setup section above.
+
+---
+
 ## Website Structure 
 
 Most web pages tend to share some standard components such as headers, navigation bars, sidebars, main content etc. 
@@ -552,6 +598,30 @@ If you wish to include a footer in your webpage, you can use the `footer` tag as
 ![footer](pages/hack-school/HTML_images/footer.png)
 
 ---
+
+### Semantic HTML vs. "Div Soup" (2026 Workshop)
+
+The layout elements described above have different meanings. A generic `<div>` is useful for grouping content, but it does not identify what that content represents. Using `<div>` for every part of a page is sometimes called **div soup**.
+
+For example, you could structure a page with only generic containers, but descriptive tags make the same page easier to navigate and understand:
+
+```html copy
+<header>
+  <h1>Wordle</h1>
+</header>
+<main>
+  <section aria-label="Guess the word">
+    <div id="board"></div>
+    <input id="guess" type="text" aria-label="Your guess" />
+    <button id="submit" type="button">Submit Guess</button>
+  </section>
+</main>
+```
+
+Here, `<header>`, `<main>`, and `<section>` describe the structure of the page, while `<div id="board">` remains a reasonable generic container for the tiles. Semantic elements can improve accessibility, maintenance, and search-engine understanding of the page.
+
+---
+
 ## Metadata
 
 We will now be combining everything that we have learned so far into one HTML document! Here is
@@ -731,6 +801,20 @@ index.html:
     </ul>
 </div>
 ```
+
+### Grouping Selectors
+
+In addition to universal, element, class, and ID selectors, the workshop introduces the **grouping selector**. Separate selectors with commas to apply the same rule to all of them:
+
+```css copy
+h1, h2, h3 {
+  font-family: Arial, sans-serif;
+}
+```
+
+The rule above styles all `<h1>`, `<h2>`, and `<h3>` elements, without needing to repeat the same declaration three times.
+
+---
 
 ## Common Properties that CSS can Modify 
 
@@ -957,6 +1041,20 @@ Flex Container without changing their source order in the HTML.
 
 ![css_flex_box](pages/hack-school/CSS_images/css_flex_box.png)
 
+### Sharing Available Space with `flex`
+
+The workshop also demonstrates the `flex` shorthand on individual flex items. When three items in a row all have `flex: 1`, each gets one share of the available space. Setting `flex: 2` on one item gives that item two shares while each of the others gets one.
+
+```css copy
+.container { display: flex; }
+.item { flex: 1; }
+.item:first-child { flex: 2; }
+```
+
+With three equally flexible items, this can produce approximate widths of **50%, 25%, and 25%**, before accounting for factors such as gaps and padding. `flex` is shorthand for `flex-grow`, `flex-shrink`, and `flex-basis`, which are described above.
+
+---
+
 ### Games to Learn Flexbox:
 
 [Coding Fantasy](https://codingfantasy.com/games/flexboxadventure/play)
@@ -964,6 +1062,20 @@ Flex Container without changing their source order in the HTML.
 [Flexbox Froggy](https://flexboxfroggy.com/)
 
 ---
+
+### Workshop Activity 2: CSS Shenanigans
+
+Open the starter Wordle project's CSS file. For each of the following changes, observe what happens to the board and **undo the change before moving to the next one**:
+
+1. Change the board's `flex-direction: column` to `flex-direction: row`. The board's rows now line up beside each other instead of stacking vertically.
+2. Change each row's `display: flex` to `display: block`. The letter tiles no longer use the row's flex layout and will follow normal block/inline layout behavior based on their other CSS rules.
+3. Remove the five-pixel `gap` between the tiles. The tiles lose the spacing between them.
+4. Remove `justify-content: center` and `align-items: center` from the tiles. The letters no longer receive that Flexbox centering and may move toward the start of the tile.
+
+This activity demonstrates why `display: flex` and `flex-direction: column` are not equivalent to ordinary block layout. Flexbox provides explicit control over alignment, direction, and spacing of a container's children.
+
+---
+
 ## What is JavaScript?
 JavaScript is a versatile programming language used for adding interactivity, 
 dynamic content, and logic to web pages. It enables developers to create engaging user 
@@ -1082,6 +1194,27 @@ Example:
 console.log(5 == '5'); // true
 console.log(5 === '5'); // false
 ```
+
+## Conditionals and Early Returns
+The 2026 workshop uses **conditionals** to decide whether a player's guess is valid and how it should be evaluated. An `if` statement runs code only when its condition is true; an `else` statement handles the other case.
+
+```javascript copy
+function checkGuess(guess) {
+  if (guess.length !== 5) {
+    return "Enter exactly five letters.";
+  }
+
+  if (guess.toUpperCase() === "WORLD") {
+    return "You won!";
+  } else {
+    return "Try again.";
+  }
+}
+```
+
+An **early return** ends the function before any remaining work occurs. In this example, an invalid-length guess is rejected before it is compared with the answer. The workshop also uses loops to repeat the comparison for each of the five letters, rather than writing the same check five times.
+
+---
 
 ## Objects
 **Objects in JavaScript are collections of key-value pairs. They are versatile and widely used for organizing and managing data.**
@@ -1313,6 +1446,36 @@ obj.greeting();
 // prints window
 ```
 
+### Workshop Example: Wordle Game State
+
+The workshop brings together objects, arrays, functions, and strict equality by organizing a Wordle-like game's state in one object:
+
+```javascript copy
+const game = {
+  answer: "WORLD",
+  guesses: [],
+  currentRow: 0,
+};
+
+// Two ways to read a property:
+console.log(game.answer);       // "WORLD"
+console.log(game["currentRow"]); // 0
+
+// A property can change even though game is declared with const:
+game.answer = "APPLE";
+
+const checkGuess = (guess) => guess.toUpperCase() === game.answer;
+
+if (checkGuess("apple")) {
+  game.guesses.push("APPLE");
+  game.currentRow += 1;
+}
+```
+
+`game.answer` uses **dot notation**, while `game["currentRow"]` uses **bracket notation**. `game.guesses` is an array for storing guesses. The arrow function compares the guess with the answer using `===`, so it returns either `true` or `false`.
+
+---
+
 ## Exercise 3: Creating Functions
 Create your own array of food items.
 Then, write a function findFood() that takes in the array and a food item.
@@ -1334,6 +1497,61 @@ console.log(findFood(foodList, "apple")) // true
 console.log(findFood(foodList, "kiwi")) // false
 ```
 </ToggleCodeBlock>
+
+## The Document Object Model (DOM)
+
+The **Document Object Model (DOM)** is how JavaScript represents and interacts with the elements on a webpage. You can use `document.querySelector()` to select an element with the same CSS selector syntax introduced earlier.
+
+For example, suppose your HTML contains the following elements:
+
+```html copy
+<input id="guess" type="text" />
+<button id="submit" type="button">Submit</button>
+<p id="message"></p>
+```
+
+JavaScript can then read the input, update the message, and respond when the button is clicked:
+
+```javascript copy
+const input = document.querySelector("#guess");
+const button = document.querySelector("#submit");
+const messageText = document.querySelector("#message");
+
+function submitGuess() {
+  const guess = input.value.trim().toUpperCase();
+  messageText.textContent = `You guessed: ${guess}`;
+}
+
+button.addEventListener("click", submitGuess);
+```
+
+The `#` symbol means "select an element by its ID." The `.value` property reads what a user typed into an input, and `.textContent` changes the text within an element. `addEventListener()` registers a function to run when an event occurs. Here, the `submitGuess` function is a **callback**: it is passed into `addEventListener`, rather than called immediately.
+
+### Workshop Activity 3: Winning Our Game
+
+The third 2026 workshop activity practices modifying the DOM:
+
+1. Add a paragraph immediately below the page's main `<h1>` heading, giving the paragraph `id="message"`.
+2. Under the `TODO` comment in the starter JavaScript, define a variable named `messageText` that selects the new paragraph.
+3. Set that element's `.textContent` property to `"You won!"`.
+
+HTML:
+
+```html copy
+<h1>Wordle</h1>
+<p id="message"></p>
+```
+
+JavaScript:
+
+```javascript copy
+const messageText = document.querySelector("#message");
+messageText.textContent = "You won!";
+```
+
+This directly changes the text the browser displays, without manually rewriting the HTML. To make it happen after a correct guess, the same assignment can be placed inside your game's win-condition logic.
+
+---
 
 ## Callbacks
 Callbacks are functions passed as arguments to other functions. They are commonly used for asynchronous programming and event handling.
